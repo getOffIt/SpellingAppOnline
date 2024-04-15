@@ -1,82 +1,137 @@
 import SwiftUI
 import AVFoundation
 
+enum TestStatus {
+    case spelling, reviewing, learning
+}
+
 struct ContentView: View {
     @State private var selectedTab = 0
-    @State private var currentWordIndex = 0 // Added state variable to keep track of current word index
-    @State private var buttonLabel = "words" // Added state variable for button label
-    @State private var spokenWords: [String] = []
-    @State private var testCompletedSmall = false
+    
+    // Main test for Chloe
     @State private var testCompletedFull = false
-    @State private var testCompletedLeoFull = false
-    @State private var questionsSmall: [String] = WordsData().wordsNotMastered
-    @State private var answersSmall: [String] = []
-    @State private var questionsFull: [String] = WordsData().allWordsString
+    @State private var testNeedsLearning = false
+    @State private var testStatusFull = TestStatus.spelling
     @State private var answersFull: [String] = []
+    @State private var questionsFull: [String] = WordsData().allWordsYear6Part2
+
+    // Small tests for words not mastered Legacy
+    @State private var testCompletedSmall = false
+    @State private var testStatusSmall = TestStatus.learning
+    @State private var answersSmall: [String] = []
+    @State private var questionsSmall: [String] = WordsData().wordsNotMastered
+
+    // French test Chloe
+    @State private var testCompletedFrench = false
+    @State private var testStatusFrench = TestStatus.learning
+    @State private var questionsFrench: [String] = WordsData().wordsFrench
+    @State private var answersFrench: [String] = []
+
+    // Leo's test
+    @State private var testCompletedLeoFull = false
+    @State private var testStatusLeo = TestStatus.learning
     @State private var questionsLeoFull: [String] = WordsData().yearOnewords10
     @State private var answersLeoFull: [String] = []
     
+
+    
     var body: some View {
         TabView(selection: $selectedTab) {
-//            UnoGameView()
-//                .tag(0)
-//                .tabItem {
-//                    Image(systemName: "1.circle")
-//                    Text("Uno Game")
-//                }
-//            if testCompletedSmall {
-//                ResultsView(selfTestCompleted: $testCompletedSmall, questions: $questionsSmall, answers: $answersSmall)
+
+            switch testStatusFull {
+            case .spelling:
+                SelfTestView(testStatus: $testStatusFull, questions: $questionsFull, answers: $answersFull)
+                    .tabItem {
+                        Image(systemName: "1.circle")
+                        Text("Year6")
+                    }
+                    .tag(0)
+            case .reviewing:
+                ResultsView(testStatus: $testStatusFull, questions: $questionsFull, answers: $answersFull)
+                    .tabItem {
+                        Image(systemName: "1.circle")
+                        Text("Year6")
+                    }
+                    .tag(0)
+            case .learning:
+                LearningView(testStatus: $testStatusFull, questions: $questionsFull, answers: $answersFull)
+                    .tabItem {
+                        Image(systemName: "1.circle")
+                        Text("Year6")
+                    }
+                    .tag(0)
+            }
+            
+            switch testStatusLeo {
+            case .spelling:
+                SelfTestView(testStatus: $testStatusLeo, questions: $questionsLeoFull, answers: $answersLeoFull)
+                    .tabItem {
+                        Image(systemName: "2.circle")
+                        Text("Léo test")
+                    }
+                    .tag(1)
+            case .reviewing:
+                ResultsView(testStatus: $testStatusLeo, questions: $questionsLeoFull, answers: $answersLeoFull)
+                    .tabItem {
+                        Image(systemName: "2.circle")
+                        Text("Léo test")
+                    }
+                    .tag(1)
+            case .learning:
+                SelfTestView(testStatus: $testStatusLeo, questions: $questionsLeoFull, answers: $answersLeoFull)
+                    .tabItem {
+                        Image(systemName: "2.circle")
+                        Text("Léo test")
+                    }
+                    .tag(1)
+            }
+            switch testStatusFrench {
+            case .spelling:
+                SelfTestView(testStatus: $testStatusFrench, questions: $questionsFrench, answers: $answersFrench)
+                    .tabItem {
+                        Image(systemName: "3.circle")
+                        Text("French test")
+                    }
+                    .tag(2)
+            case .reviewing:
+                ResultsView(testStatus: $testStatusFrench, questions: $questionsFrench, answers: $answersFrench)
+                    .tabItem {
+                        Image(systemName: "3.circle")
+                        Text("French test")
+                    }
+                    .tag(2)
+            case .learning:
+                SelfTestView(testStatus: $testStatusFrench, questions: $questionsFrench, answers: $answersFrench)
+                    .tabItem {
+                        Image(systemName: "3.circle")
+                        Text("French test")
+                    }
+                    .tag(2)
+            }
+//            switch testStatusSmall {
+//            case .spelling:
+//                SelfTestView(testStatus: $testStatusSmall, questions: $questionsSmall, answers: $answersSmall)
+//                    .tabItem {
+//                        Image(systemName: "3.circle")
+//                        Text("Re-Learn")
+//                    }
+//                    .tag(1)
+//            case .reviewing:
+//                ResultsView(testStatus: $testStatusSmall, questions: $questionsSmall, answers: $answersSmall)
 //                    .tabItem {
 //                        Image(systemName: "3.circle")
 //                        Text("Learn")
 //                    }
 //                    .tag(1)
-//            }
-//            else {
-//                SelfTestView(selfTestCompleted: $testCompletedSmall, questions: $questionsSmall, answers: $answersSmall)
+//
+//            case .learning:
+//                SelfTestView(testStatus: $testStatusSmall, questions: $questionsSmall, answers: $answersSmall)
 //                    .tabItem {
 //                        Image(systemName: "3.circle")
 //                        Text("Re-Learn")
 //                    }
 //                    .tag(1)
 //            }
-            if testCompletedFull {
-                ResultsView(selfTestCompleted: $testCompletedFull, questions: $questionsFull, answers: $answersFull)
-                    .tabItem {
-                        Image(systemName: "3.circle")
-                        Text("Full test")
-                    }
-                    .tag(0)
-            }
-            else {
-                SelfTestView(selfTestCompleted: $testCompletedFull, questions: $questionsFull, answers: $answersFull)
-                    .tabItem {
-                        Image(systemName: "3.circle")
-                        Text("Full test")
-                    }
-                    .tag(0)
-            }
-            if testCompletedLeoFull {
-                ResultsView(selfTestCompleted: $testCompletedLeoFull, questions: $questionsLeoFull, answers: $answersLeoFull)
-                    .tabItem {
-                        Image(systemName: "4.circle")
-                        Text("Léo test")
-                    }
-                    .tag(1)
-            }
-            else {
-                SelfTestView(selfTestCompleted: $testCompletedLeoFull, questions: $questionsLeoFull, answers: $answersLeoFull)
-                    .tabItem {
-                        Image(systemName: "4.circle")
-                        Text("Léo test")
-                    }
-                    .tag(1)
-            }
-//            OralTestView()
-//                .tabItem {
-//                    Image(systemName: "2.circle")
-//                    Text("Oral test")
-//                }
 
         }
     }

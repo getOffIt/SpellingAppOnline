@@ -5,7 +5,7 @@ import AVFoundation
 import SwiftUI
 
 struct SelfTestView: View {
-    @Binding var selfTestCompleted: Bool
+    @Binding var testStatus: TestStatus
     @Binding var answers: [String]
     @Binding var questions: [String]
 
@@ -14,8 +14,8 @@ struct SelfTestView: View {
     @State private var index = 0
     @FocusState private var isInputActive: Bool
     
-    init(selfTestCompleted: Binding<Bool>, questions: Binding<[String]>, answers: Binding<[String]>) {
-        _selfTestCompleted = selfTestCompleted
+    init(testStatus: Binding<TestStatus>, questions: Binding<[String]>, answers: Binding<[String]>) {
+        _testStatus = testStatus
         _questions = questions
         _answers = answers
     }
@@ -79,7 +79,6 @@ struct SelfTestView: View {
         .onAppear {
             isInputActive = true
             playButton()
-            
         }
     }
     
@@ -100,7 +99,7 @@ struct SelfTestView: View {
         answers.append(trimmedWord)
 
         if index == questions.count - 1 {
-            selfTestCompleted = true
+            testStatus = .reviewing
             return
         }
         index += 1

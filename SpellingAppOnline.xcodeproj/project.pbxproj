@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B9AEA8F2BCD7BE200D663FB /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AEA8E2BCD7BE200D663FB /* LearningView.swift */; };
 		9BF514602B94F94500C75AFC /* SpellingAppOnlineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF5145F2B94F94500C75AFC /* SpellingAppOnlineApp.swift */; };
 		9BF514622B94F94500C75AFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF514612B94F94500C75AFC /* ContentView.swift */; };
 		9BF514642B94F94700C75AFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF514632B94F94700C75AFC /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B9AEA8E2BCD7BE200D663FB /* LearningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 		9BF5145C2B94F94500C75AFC /* SpellingAppOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpellingAppOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF5145F2B94F94500C75AFC /* SpellingAppOnlineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingAppOnlineApp.swift; sourceTree = "<group>"; };
 		9BF514612B94F94500C75AFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				9BF514972B95020700C75AFC /* README.md */,
 				9BF5145F2B94F94500C75AFC /* SpellingAppOnlineApp.swift */,
 				9BF514612B94F94500C75AFC /* ContentView.swift */,
+				9B9AEA8E2BCD7BE200D663FB /* LearningView.swift */,
 				9BF514892B94FA5B00C75AFC /* WordsData.swift */,
 				9BF5148B2B94FA8600C75AFC /* OralTestView.swift */,
 				9BF5148F2B94FA8600C75AFC /* ResultsView.swift */,
@@ -281,6 +284,7 @@
 			files = (
 				9BF514962B94FA8600C75AFC /* Speech.swift in Sources */,
 				9BF514622B94F94500C75AFC /* ContentView.swift in Sources */,
+				9B9AEA8F2BCD7BE200D663FB /* LearningView.swift in Sources */,
 				9BF514952B94FA8600C75AFC /* ResultsView.swift in Sources */,
 				9BF514932B94FA8600C75AFC /* UnoGameView.swift in Sources */,
 				9BF5148A2B94FA5B00C75AFC /* WordsData.swift in Sources */,

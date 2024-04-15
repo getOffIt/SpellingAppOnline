@@ -7,16 +7,25 @@ struct ResultsView: View {
     
     @State var completionDate:String = "13 Feb 2024 at 10:34"
     let duration = ""
-    @Binding var selfTestCompleted: Bool
+    @Binding var testStatus: TestStatus
     @Binding var answers: [String]
     @Binding var questions: [String]
     @State var correct = 0
     @State var pass = true
+    var needsLearning: Bool = false
+    @State var continueText = ""
     
-    init(selfTestCompleted: Binding<Bool>, questions: Binding<[String]>, answers: Binding<[String]>) {
-        _selfTestCompleted = selfTestCompleted
+    init(testStatus: Binding<TestStatus>, questions: Binding<[String]>, answers: Binding<[String]>) {
+        _testStatus = testStatus
         _questions = questions
         _answers = answers
+    }
+    var incorrectAnswers: [String] {
+        let currentQuestions = $questions.wrappedValue
+        let currentAnswers = $answers.wrappedValue
+        return currentQuestions.enumerated().filter { index, question in
+            currentAnswers[index] != question
+        }.map { $1 }
     }
     
     var body: some View {
@@ -89,10 +98,17 @@ struct ResultsView: View {
                 
                 Button(action: {
                     // Play again action
-                    selfTestCompleted = false
-                    answers = []
+                    if (incorrectAnswers.isEmpty) {
+                        testStatus = .spelling
+                        answers = []
+                    }
+                    else {
+                        testStatus = .learning
+                    }
+                    
+
                 }) {
-                    Text("Play again")
+                    Text(continueText)
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -103,6 +119,13 @@ struct ResultsView: View {
             }
             .frame(maxWidth: .infinity)
         }
+        .onAppear {
+            
+            if incorrectAnswers.isEmpty {
+                continueText = "Play again"
+            } else {
+                continueText = "Continue to Learn words page"
+            }        }
         .padding()
     }
     
