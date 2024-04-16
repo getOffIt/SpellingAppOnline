@@ -1,6 +1,6 @@
 import Foundation
 import SwiftUI
-//again a space to trigger a build
+//one a space to trigger a build
 struct LearningView: View {
     
     
