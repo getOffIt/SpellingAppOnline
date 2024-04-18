@@ -1,18 +1,45 @@
+# .circleci/config.yml
 version: 2.1
-orbs:
-  macos: circleci/macos@1.0.0
-  xcode: circleci/xcode@3.2.0
 jobs:
-  build:
+  build-and-test:
     macos:
       xcode: 15.3.0
+    environment:
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: test
     steps:
       - checkout
-      - xcode/test:
-          workspace: MyApp.xcworkspace
-          scheme: MyApp
+      - run: bundle install
+      - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output/scan
+
+  adhoc:
+    macos:
+      xcode: 15.3.0
+    environment:
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: adhoc
+    steps:
+      - checkout
+      - run: bundle install
+      - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: output
+
 workflows:
-  version: 2.1
-  build:
+  build-test-adhoc:
     jobs:
-      - build
+      - build-and-test
+      - adhoc:
+          filters:
+            branches:
+              only: development
+          requires:
+            - build-and-test
