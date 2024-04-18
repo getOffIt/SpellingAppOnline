@@ -2,7 +2,7 @@
 //  SpellingAppOnlineApp.swift
 //  SpellingAppOnline
 //
-//
+//build
 
 import SwiftUI
 import FirebaseCore
