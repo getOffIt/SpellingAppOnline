@@ -12,18 +12,22 @@ jobs:
       xcode: "15.3.0"  # Specify the Xcode version, match with your project requirements
     steps:
       - checkout
-      - restore_cache:  # This step attempts to restore a previously saved cache of the gems
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Install rbenv and Ruby
+          command: |
+            brew install rbenv
+            echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> $BASH_ENV
+            source $BASH_ENV
+            rbenv install -s 3.2.0
+            rbenv global 3.2.0
+      - run:
+          name: Install Bundler and dependencies
+          command: |
+            gem install bundler
+            bundle install --path vendor/bundle
       - run:
           name: Install Bundler
-          command: gem install bundler
-      - run:
-          name: Bundle Install
-          command: bundle install --path vendor/bundle
-      - save_cache:  # This step caches the installed gems based on a checksum of the Gemfile.lock
-          paths:
-            - vendor/bundle
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
+          command: bundle config set path 'vendor/bundle'
       - run:
           name: Execute Fastlane Beta Lane
           command: bundle exec fastlane beta
