@@ -20,6 +20,20 @@ platform :ios do
   lane :beta do
     increment_build_number(xcodeproj: "SpellingAppOnline.xcodeproj")
     build_app(scheme: "SpellingAppOnline")
+    app_store_connect_api_key(
+    key_id: ENV['APP_STORE_CONNECT_API_KEY_KEY_ID'],
+    issuer_id: ENV['APP_STORE_CONNECT_API_KEY_ISSUER_ID'],
+    key_content: ENV['APP_STORE_CONNECT_API_KEY_FILE_BASE64'],
+    is_key_content_base64: true,
+    in_house: ENV['APP_STORE_CONNECT_API_KEY_IN_HOUSE'] == "true"
+  )
     upload_to_testflight
   end
+
+  desc "Push a new beta build to TestFlight"
+  lane :justbuild do
+    increment_build_number(xcodeproj: "SpellingAppOnline.xcodeproj")
+    build_app(scheme: "SpellingAppOnline")
+  end
+
 end

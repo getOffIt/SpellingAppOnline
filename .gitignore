@@ -21,3 +21,4 @@ IDEWorkspaceChecks.plist
 contents.xcworkspacedata
 *.ipa
 *.zip
+report.xml
