@@ -1,45 +1,22 @@
 # .circleci/config.yml
 version: 2.1
-jobs:
-  build-and-test:
-    macos:
-      xcode: 15.3.0
-    environment:
-      FL_OUTPUT_DIR: output
-      FASTLANE_LANE: test
-    steps:
-      - checkout
-      - run: bundle install
-      - run:
-          name: Fastlane
-          command: bundle exec fastlane $FASTLANE_LANE
-      - store_artifacts:
-          path: output
-      - store_test_results:
-          path: output/scan
-
-  adhoc:
-    macos:
-      xcode: 15.3.0
-    environment:
-      FL_OUTPUT_DIR: output
-      FASTLANE_LANE: adhoc
-    steps:
-      - checkout
-      - run: bundle install
-      - run:
-          name: Fastlane
-          command: bundle exec fastlane $FASTLANE_LANE
-      - store_artifacts:
-          path: output
 
 workflows:
-  build-test-adhoc:
+  version: 2
+  build_and_deploy:
     jobs:
-      - build-and-test
-      - adhoc:
-          filters:
-            branches:
-              only: development
-          requires:
-            - build-and-test
+      - beta_release
+jobs:
+  beta_release:
+    macos:
+      xcode: "15.3.0"  # Specify the Xcode version, match with your project requirements
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: |
+            # Install specific version of Fastlane, or use bundler if Gemfile is used
+            gem install fastlane -NV
+      - run:
+          name: Execute Fastlane Beta Lane
+          command: fastlane beta
