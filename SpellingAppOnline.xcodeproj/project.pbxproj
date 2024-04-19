@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0790CE39E511D1D4FA6FF27F /* Pods_SpellingAppOnline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732A2D5DED08347E9AB3128B /* Pods_SpellingAppOnline.framework */; };
+		270427C7AC32CCCD579A43D8 /* Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CAB5A64AE5751BA1376A334 /* Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework */; };
+		8408249022F5E01176BE29CD /* Pods_SpellingAppOnlineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F6A3337B4F397DA5107159 /* Pods_SpellingAppOnlineTests.framework */; };
 		9B9AEA8F2BCD7BE200D663FB /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AEA8E2BCD7BE200D663FB /* LearningView.swift */; };
 		9BD67BDD2BD0281000330D70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BD67BDC2BD0281000330D70 /* GoogleService-Info.plist */; };
-		9BD67BE02BD02A0000330D70 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 9BD67BDF2BD02A0000330D70 /* FirebaseAnalyticsOnDeviceConversion */; };
-		9BD67BE22BD02A0000330D70 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9BD67BE12BD02A0000330D70 /* FirebaseAnalyticsSwift */; };
-		9BD67BE42BD02A0000330D70 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 9BD67BE32BD02A0000330D70 /* FirebaseAnalyticsWithoutAdIdSupport */; };
-		9BD67BE62BD02A0000330D70 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 9BD67BE52BD02A0000330D70 /* FirebaseAppDistribution-Beta */; };
-		9BD67BE82BD02A0000330D70 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9BD67BE72BD02A0000330D70 /* FirebaseCrashlytics */; };
 		9BF514602B94F94500C75AFC /* SpellingAppOnlineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF5145F2B94F94500C75AFC /* SpellingAppOnlineApp.swift */; };
 		9BF514622B94F94500C75AFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF514612B94F94500C75AFC /* ContentView.swift */; };
 		9BF514642B94F94700C75AFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF514632B94F94700C75AFC /* Assets.xcassets */; };
@@ -48,6 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		071CFB8B22D6F8F0A8E8BEC7 /* Pods-SpellingAppOnline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline.debug.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline/Pods-SpellingAppOnline.debug.xcconfig"; sourceTree = "<group>"; };
+		3FD2F7BB2DB69C1BE8375804 /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline-SpellingAppOnlineUITests.release.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline-SpellingAppOnlineUITests/Pods-SpellingAppOnline-SpellingAppOnlineUITests.release.xcconfig"; sourceTree = "<group>"; };
+		730584CCFEA0DA883A37678A /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline-SpellingAppOnlineUITests/Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		732A2D5DED08347E9AB3128B /* Pods_SpellingAppOnline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpellingAppOnline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74AE62957447459F029B3FE1 /* Pods-SpellingAppOnline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline.release.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline/Pods-SpellingAppOnline.release.xcconfig"; sourceTree = "<group>"; };
 		9B9AEA8E2BCD7BE200D663FB /* LearningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 		9BD67BDC2BD0281000330D70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BF5145C2B94F94500C75AFC /* SpellingAppOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpellingAppOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +70,10 @@
 		9BF5148F2B94FA8600C75AFC /* ResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		9BF514902B94FA8600C75AFC /* Speech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		9BF514972B95020700C75AFC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		9CAB5A64AE5751BA1376A334 /* Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2F6A3337B4F397DA5107159 /* Pods_SpellingAppOnlineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpellingAppOnlineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFED965180CA3EC4EDF81FB0 /* Pods-SpellingAppOnlineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnlineTests.release.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnlineTests/Pods-SpellingAppOnlineTests.release.xcconfig"; sourceTree = "<group>"; };
+		F3A3DDD55B956C86D6E4EF43 /* Pods-SpellingAppOnlineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnlineTests.debug.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnlineTests/Pods-SpellingAppOnlineTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BD67BE22BD02A0000330D70 /* FirebaseAnalyticsSwift in Frameworks */,
-				9BD67BE42BD02A0000330D70 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
-				9BD67BE82BD02A0000330D70 /* FirebaseCrashlytics in Frameworks */,
-				9BD67BE02BD02A0000330D70 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
-				9BD67BE62BD02A0000330D70 /* FirebaseAppDistribution-Beta in Frameworks */,
+				0790CE39E511D1D4FA6FF27F /* Pods_SpellingAppOnline.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8408249022F5E01176BE29CD /* Pods_SpellingAppOnlineTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,12 +97,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270427C7AC32CCCD579A43D8 /* Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DF26581EBF2EBDC9BFCEDD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				732A2D5DED08347E9AB3128B /* Pods_SpellingAppOnline.framework */,
+				9CAB5A64AE5751BA1376A334 /* Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework */,
+				E2F6A3337B4F397DA5107159 /* Pods_SpellingAppOnlineTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5613C3EF010647ED02080657 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				071CFB8B22D6F8F0A8E8BEC7 /* Pods-SpellingAppOnline.debug.xcconfig */,
+				74AE62957447459F029B3FE1 /* Pods-SpellingAppOnline.release.xcconfig */,
+				730584CCFEA0DA883A37678A /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig */,
+				3FD2F7BB2DB69C1BE8375804 /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.release.xcconfig */,
+				F3A3DDD55B956C86D6E4EF43 /* Pods-SpellingAppOnlineTests.debug.xcconfig */,
+				EFED965180CA3EC4EDF81FB0 /* Pods-SpellingAppOnlineTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9BF514532B94F94500C75AFC = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +134,8 @@
 				9BF5146F2B94F94700C75AFC /* SpellingAppOnlineTests */,
 				9BF514792B94F94700C75AFC /* SpellingAppOnlineUITests */,
 				9BF5145D2B94F94500C75AFC /* Products */,
+				5613C3EF010647ED02080657 /* Pods */,
+				2DF26581EBF2EBDC9BFCEDD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,22 +201,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BF514802B94F94700C75AFC /* Build configuration list for PBXNativeTarget "SpellingAppOnline" */;
 			buildPhases = (
+				DC77C8C9584AFF40AAB65293 /* [CP] Check Pods Manifest.lock */,
 				9BF514582B94F94500C75AFC /* Sources */,
 				9BF514592B94F94500C75AFC /* Frameworks */,
 				9BF5145A2B94F94500C75AFC /* Resources */,
+				99849B601F5CB61180D8201D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SpellingAppOnline;
-			packageProductDependencies = (
-				9BD67BDF2BD02A0000330D70 /* FirebaseAnalyticsOnDeviceConversion */,
-				9BD67BE12BD02A0000330D70 /* FirebaseAnalyticsSwift */,
-				9BD67BE32BD02A0000330D70 /* FirebaseAnalyticsWithoutAdIdSupport */,
-				9BD67BE52BD02A0000330D70 /* FirebaseAppDistribution-Beta */,
-				9BD67BE72BD02A0000330D70 /* FirebaseCrashlytics */,
-			);
 			productName = SpellingAppOnline;
 			productReference = 9BF5145C2B94F94500C75AFC /* SpellingAppOnline.app */;
 			productType = "com.apple.product-type.application";
@@ -195,6 +220,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BF514832B94F94700C75AFC /* Build configuration list for PBXNativeTarget "SpellingAppOnlineTests" */;
 			buildPhases = (
+				0E3DAFD12D09BF70FFE8D3A1 /* [CP] Check Pods Manifest.lock */,
 				9BF514682B94F94700C75AFC /* Sources */,
 				9BF514692B94F94700C75AFC /* Frameworks */,
 				9BF5146A2B94F94700C75AFC /* Resources */,
@@ -213,9 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BF514862B94F94700C75AFC /* Build configuration list for PBXNativeTarget "SpellingAppOnlineUITests" */;
 			buildPhases = (
+				07AAB14A77BE8833EB1EF4C2 /* [CP] Check Pods Manifest.lock */,
 				9BF514722B94F94700C75AFC /* Sources */,
 				9BF514732B94F94700C75AFC /* Frameworks */,
 				9BF514742B94F94700C75AFC /* Resources */,
+				196215BEEE00A1A2E8484D2C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -259,9 +287,6 @@
 				Base,
 			);
 			mainGroup = 9BF514532B94F94500C75AFC;
-			packageReferences = (
-				9BD67BDE2BD02A0000330D70 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-			);
 			productRefGroup = 9BF5145D2B94F94500C75AFC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -300,6 +325,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07AAB14A77BE8833EB1EF4C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpellingAppOnline-SpellingAppOnlineUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E3DAFD12D09BF70FFE8D3A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpellingAppOnlineTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		196215BEEE00A1A2E8484D2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpellingAppOnline-SpellingAppOnlineUITests/Pods-SpellingAppOnline-SpellingAppOnlineUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpellingAppOnline-SpellingAppOnlineUITests/Pods-SpellingAppOnline-SpellingAppOnlineUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpellingAppOnline-SpellingAppOnlineUITests/Pods-SpellingAppOnline-SpellingAppOnlineUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99849B601F5CB61180D8201D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpellingAppOnline/Pods-SpellingAppOnline-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpellingAppOnline/Pods-SpellingAppOnline-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpellingAppOnline/Pods-SpellingAppOnline-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC77C8C9584AFF40AAB65293 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpellingAppOnline-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9BF514582B94F94500C75AFC /* Sources */ = {
@@ -403,7 +531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -460,7 +588,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -472,15 +600,17 @@
 		};
 		9BF514812B94F94700C75AFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 071CFB8B22D6F8F0A8E8BEC7 /* Pods-SpellingAppOnline.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SpellingAppOnline/Preview Content\"";
 				DEVELOPMENT_TEAM = 2866SQ72L8;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -503,15 +633,17 @@
 		};
 		9BF514822B94F94700C75AFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74AE62957447459F029B3FE1 /* Pods-SpellingAppOnline.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SpellingAppOnline/Preview Content\"";
 				DEVELOPMENT_TEAM = 2866SQ72L8;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -534,13 +666,13 @@
 		};
 		9BF514842B94F94700C75AFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3A3DDD55B956C86D6E4EF43 /* Pods-SpellingAppOnlineTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nonetoday.SpellingAppOnlineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -553,13 +685,13 @@
 		};
 		9BF514852B94F94700C75AFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFED965180CA3EC4EDF81FB0 /* Pods-SpellingAppOnlineTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nonetoday.SpellingAppOnlineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -572,10 +704,10 @@
 		};
 		9BF514872B94F94700C75AFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 730584CCFEA0DA883A37678A /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nonetoday.SpellingAppOnlineUITests;
@@ -589,10 +721,10 @@
 		};
 		9BF514882B94F94700C75AFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FD2F7BB2DB69C1BE8375804 /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nonetoday.SpellingAppOnlineUITests;
@@ -644,45 +776,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		9BD67BDE2BD02A0000330D70 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.24.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9BD67BDF2BD02A0000330D70 /* FirebaseAnalyticsOnDeviceConversion */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9BD67BDE2BD02A0000330D70 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsOnDeviceConversion;
-		};
-		9BD67BE12BD02A0000330D70 /* FirebaseAnalyticsSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9BD67BDE2BD02A0000330D70 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsSwift;
-		};
-		9BD67BE32BD02A0000330D70 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9BD67BDE2BD02A0000330D70 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsWithoutAdIdSupport;
-		};
-		9BD67BE52BD02A0000330D70 /* FirebaseAppDistribution-Beta */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9BD67BDE2BD02A0000330D70 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseAppDistribution-Beta";
-		};
-		9BD67BE72BD02A0000330D70 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9BD67BDE2BD02A0000330D70 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9BF514542B94F94500C75AFC /* Project object */;
 }
