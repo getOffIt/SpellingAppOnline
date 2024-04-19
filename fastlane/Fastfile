@@ -33,6 +33,7 @@ platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :justbuild do
     increment_build_number(xcodeproj: "SpellingAppOnline.xcodeproj")
+    xcversion(version: "15.3")
     build_app(scheme: "SpellingAppOnline")
   end
 

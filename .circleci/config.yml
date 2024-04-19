@@ -12,11 +12,21 @@ jobs:
       xcode: "15.3.0"  # Specify the Xcode version, match with your project requirements
     steps:
       - checkout
+      - restore_cache:  # This step attempts to restore a previously saved cache of the gems
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
       - run:
-          name: Install Dependencies
-          command: |
-            # Install specific version of Fastlane, or use bundler if Gemfile is used
-            gem install fastlane -NV
+          name: Set Ruby Version
+          command: echo "ruby-3.0.0" > .ruby-version  # Ensure this matches the Ruby version used in your project
+      - run:
+          name: Install Bundler
+          command: gem install bundler
+      - run:
+          name: Bundle Install
+          command: bundle install --path vendor/bundle
+      - save_cache:  # This step caches the installed gems based on a checksum of the Gemfile.lock
+          paths:
+            - vendor/bundle
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
       - run:
           name: Execute Fastlane Beta Lane
-          command: fastlane beta
+          command: bundle exec fastlane beta
