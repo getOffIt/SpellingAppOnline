@@ -12,7 +12,7 @@ jobs:
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
-      FASTLANE_LANE: beta
+      FASTLANE_LANE: justbuild
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
