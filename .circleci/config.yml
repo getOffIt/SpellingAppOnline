@@ -20,6 +20,9 @@ jobs:
           version: "3.0"
       - ruby/install-deps
       - run:
+          name: pod install
+          command: pod install
+      - run:
           name: fastlane
           command: bundle exec fastlane $FASTLANE_LANE
       - store_artifacts:
