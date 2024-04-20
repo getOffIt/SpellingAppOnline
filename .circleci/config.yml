@@ -1,33 +1,33 @@
 # .circleci/config.yml
 version: 2.1
 
-workflows:
-  version: 2
-  build_and_deploy:
-    jobs:
-      - beta_release
+orbs:
+  macos: circleci/macos@2
+
 jobs:
-  beta_release:
+  build:
     macos:
-      xcode: "15.3.0"  # Specify the Xcode version, match with your project requirements
+      xcode: "15.3.0"
+    working_directory: /Users/distiller/project
+    environment:
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: beta
+    shell: /bin/bash --login -o pipefail
     steps:
       - checkout
+      - macos/switch-ruby:
+          version: "3.0"
+      - ruby/install-deps
       - run:
-          name: Install rbenv and Ruby
-          command: |
-            brew install rbenv
-            echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> $BASH_ENV
-            source $BASH_ENV
-            rbenv install -s 3.2.0
-            rbenv global 3.2.0
-      - run:
-          name: Install Bundler and dependencies
-          command: |
-            gem install bundler
-            bundle install --path vendor/bundle
-      - run:
-          name: Install Bundler
-          command: bundle config set path 'vendor/bundle'
-      - run:
-          name: Execute Fastlane Beta Lane
-          command: bundle exec fastlane beta
+          name: fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output/scan
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
