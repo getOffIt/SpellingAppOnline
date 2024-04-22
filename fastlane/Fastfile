@@ -45,11 +45,10 @@ platform :ios do
   lane :test do
     scan(
     scheme: "SpellingAppOnline",
-    devices: ["iPhone SE (3rd generation)"],
+    devices: ["iPad (10th generation) (17.2)"],
     output_directory: "./output",
     result_bundle: true,
     output_types: "html,junit",
-    result_bundle: true,
     clean: true
   )
   end
