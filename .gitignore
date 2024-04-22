@@ -17,3 +17,4 @@ contents.xcworkspacedata
 *.ipa
 *.zip
 report.xml
+fastlane/test_output
