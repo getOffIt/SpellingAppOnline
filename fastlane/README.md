@@ -29,7 +29,7 @@ Push a new beta build to TestFlight
 [bundle exec] fastlane ios justbuild
 ```
 
-Push a new beta build to TestFlight
+Just build, no signing or upload
 
 ### ios test
 
