@@ -20,6 +20,9 @@ platform :ios do
     setup_circle_ci
   end
 
+
+
+
   desc "Push a new beta build to TestFlight"
   lane :beta do
     increment_build_number(xcodeproj: "SpellingAppOnline.xcodeproj")
@@ -43,7 +46,11 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    scan
+    scan(
+      scheme: "SpellingAppOnline",
+      clean: true,
+      result_bundle: true
+    )
   end
 
 end
