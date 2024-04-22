@@ -18,3 +18,4 @@ contents.xcworkspacedata
 *.zip
 report.xml
 fastlane/test_output
+!project.xcworkspace/
