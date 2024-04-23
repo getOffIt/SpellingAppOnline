@@ -22,6 +22,7 @@ platform :ios do
 
   desc "Push a new beta build to TestFlight"
   lane :beta do
+    xcversion(version: "15.3")
     increment_build_number(xcodeproj: "SpellingAppOnline.xcodeproj")
     build_app(scheme: "SpellingAppOnline")
     app_store_connect_api_key(
@@ -38,11 +39,12 @@ platform :ios do
   lane :justbuild do
     increment_build_number(xcodeproj: "SpellingAppOnline.xcodeproj")
     xcversion(version: "15.3")
-    build_app(scheme: "SpellingAppOnline")
+    build_app(scheme: "SpellingAppOnline", export_method: 'development', export_xcargs: "-allowProvisioningUpdates")
   end
 
   desc "Runs all the tests"
   lane :test do
+    xcversion(version: "15.3")
     scan(
     scheme: "SpellingAppOnline",
     devices: ["iPad (10th generation) (17.2)"],
