@@ -24,7 +24,9 @@ platform :ios do
   lane :justbuild do
     xcversion(version: "15.3")
     match(type: "development")
-    build_app(scheme: "SpellingAppOnline", export_xcargs: "-allowProvisioningUpdates")
+    build_app(scheme: "SpellingAppOnline",
+    export_method: "development",
+    export_xcargs: "-allowProvisioningUpdates")
   end
 
 end
