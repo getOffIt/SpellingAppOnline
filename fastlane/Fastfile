@@ -23,6 +23,7 @@ platform :ios do
   desc "Just build, no signing or upload"
   lane :justbuild do
     xcversion(version: "15.3")
+    match(type: "development")
     build_app(scheme: "SpellingAppOnline", export_xcargs: "-allowProvisioningUpdates")
   end
 
