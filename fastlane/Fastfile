@@ -20,38 +20,10 @@ platform :ios do
     setup_circle_ci
   end
 
-  desc "Push a new beta build to TestFlight"
-  lane :beta do
-    xcversion(version: "15.3")
-    increment_build_number(xcodeproj: "SpellingAppOnline.xcodeproj")
-    build_app(scheme: "SpellingAppOnline")
-    app_store_connect_api_key(
-    key_id: ENV['APP_STORE_CONNECT_API_KEY_KEY_ID'],
-    issuer_id: ENV['APP_STORE_CONNECT_API_KEY_ISSUER_ID'],
-    key_content: ENV['APP_STORE_CONNECT_API_KEY_FILE_BASE64'],
-    is_key_content_base64: true,
-    in_house: ENV['APP_STORE_CONNECT_API_KEY_IN_HOUSE'] == "true"
-  )
-    upload_to_testflight
-  end
-
   desc "Just build, no signing or upload"
   lane :justbuild do
-    increment_build_number(xcodeproj: "SpellingAppOnline.xcodeproj")
     xcversion(version: "15.3")
-    build_app(scheme: "SpellingAppOnline", export_method: 'development', export_xcargs: "-allowProvisioningUpdates")
+    build_app(scheme: "SpellingAppOnline", export_xcargs: "-allowProvisioningUpdates")
   end
 
-  desc "Runs all the tests"
-  lane :test do
-    xcversion(version: "15.3")
-    scan(
-    scheme: "SpellingAppOnline",
-    devices: ["iPad (10th generation) (17.2)"],
-    output_directory: "./output",
-    result_bundle: true,
-    output_types: "html,junit",
-    clean: true
-  )
-  end
 end

@@ -27,10 +27,6 @@ jobs:
       - store_test_results:
           path: output/scan
 
-dependencies:
-  pre:
-    - xcrun instruments -w 'iPad (10th generation) (17.2)' || sleep 15
-
 workflows:
   version: 2
   build_and_deploy:
