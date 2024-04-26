@@ -17,9 +17,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
         remoteConfig = RemoteConfig.remoteConfig()
+        setRemoteConfigSettings()
         setupRemoteConfigDefaults()
-        fetchRemoteConfig()
+        fetchAndApplyRemoteConfig()
         return true
+    }
+    
+    func setRemoteConfigSettings() {
+        let settings = RemoteConfigSettings()
+        #warning("Dev mode for firebase is ON")
+        settings.minimumFetchInterval = 0
+        remoteConfig?.configSettings = settings
     }
     
     func setupRemoteConfigDefaults() {
@@ -31,7 +39,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         RemoteConfig.remoteConfig().setDefaults(defaultValues)
     }
     
-    func fetchRemoteConfig() {
+    func fetchAndApplyRemoteConfig() {
         remoteConfig!.fetch {(status, error) in
             switch status {
             case .success:
