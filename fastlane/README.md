@@ -31,6 +31,22 @@ Just build, no signing or upload
 
 Build for App Store distribution and upload to TestFlight
 
+### ios incrementBuildNumberDynamically
+
+```sh
+[bundle exec] fastlane ios incrementBuildNumberDynamically
+```
+
+increment build number +1 based on test flight latest number
+
+### ios fixbuildnumbertocurrentversion
+
+```sh
+[bundle exec] fastlane ios fixbuildnumbertocurrentversion
+```
+
+reset my build number to current version
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
