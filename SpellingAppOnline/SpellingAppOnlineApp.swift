@@ -9,12 +9,14 @@ import FirebaseCore
 import FirebaseRemoteConfig
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    
+    static var shared: AppDelegate!
+    var remoteConfigLocal = RemoteConfigLocal()
     private var remoteConfig: RemoteConfig? = nil
-
+    
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        AppDelegate.shared = self
         FirebaseApp.configure()
         remoteConfig = RemoteConfig.remoteConfig()
         setRemoteConfigSettings()
@@ -25,7 +27,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     func setRemoteConfigSettings() {
         let settings = RemoteConfigSettings()
-        #warning("Dev mode for firebase is ON")
+#warning("Dev mode for firebase is ON")
         settings.minimumFetchInterval = 0
         remoteConfig?.configSettings = settings
     }
@@ -33,7 +35,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func setupRemoteConfigDefaults() {
         let defaultValues = [
             "buttonText": "Default text!" as NSObject,
-            "buttonConstraintConstant": 50 as NSObject
+            "buttonConstraintConstant": 50 as NSObject,
+            "firsttabItemText": "Year 6" as NSObject
         ]
         
         RemoteConfig.remoteConfig().setDefaults(defaultValues)
@@ -48,6 +51,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                         print("An error occurred: \(error)")
                     } else {
                         print("Remote config successfully fetched and activated")
+                        DispatchQueue.main.async {
+                            self.remoteConfigLocal.firsttabItemText = self.remoteConfig!["firsttabItemText"].stringValue ?? "meh"
+                        }
                     }
                 }
             case .noFetchYet:
@@ -61,7 +67,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             case .throttled:
                 if let error = error {
                     print("An error occurred: \(error)")
-                }            @unknown default:
+                }            
+            @unknown default:
                 print("placeholder")
             }
         }

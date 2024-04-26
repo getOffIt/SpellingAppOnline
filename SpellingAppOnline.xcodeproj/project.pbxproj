@@ -11,6 +11,7 @@
 		270427C7AC32CCCD579A43D8 /* Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CAB5A64AE5751BA1376A334 /* Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework */; };
 		8408249022F5E01176BE29CD /* Pods_SpellingAppOnlineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F6A3337B4F397DA5107159 /* Pods_SpellingAppOnlineTests.framework */; };
 		9B9AEA8F2BCD7BE200D663FB /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AEA8E2BCD7BE200D663FB /* LearningView.swift */; };
+		9BA6C3812BDBC635000BB358 /* RemoteConfigLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6C3802BDBC635000BB358 /* RemoteConfigLocal.swift */; };
 		9BD67BDD2BD0281000330D70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BD67BDC2BD0281000330D70 /* GoogleService-Info.plist */; };
 		9BF514602B94F94500C75AFC /* SpellingAppOnlineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF5145F2B94F94500C75AFC /* SpellingAppOnlineApp.swift */; };
 		9BF514622B94F94500C75AFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF514612B94F94500C75AFC /* ContentView.swift */; };
@@ -52,6 +53,7 @@
 		732A2D5DED08347E9AB3128B /* Pods_SpellingAppOnline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpellingAppOnline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74AE62957447459F029B3FE1 /* Pods-SpellingAppOnline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline.release.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline/Pods-SpellingAppOnline.release.xcconfig"; sourceTree = "<group>"; };
 		9B9AEA8E2BCD7BE200D663FB /* LearningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
+		9BA6C3802BDBC635000BB358 /* RemoteConfigLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigLocal.swift; sourceTree = SOURCE_ROOT; };
 		9BD67BDC2BD0281000330D70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BF5145C2B94F94500C75AFC /* SpellingAppOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpellingAppOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF5145F2B94F94500C75AFC /* SpellingAppOnlineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingAppOnlineApp.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 		9BF5145E2B94F94500C75AFC /* SpellingAppOnline */ = {
 			isa = PBXGroup;
 			children = (
+				9BA6C3802BDBC635000BB358 /* RemoteConfigLocal.swift */,
 				9BF514972B95020700C75AFC /* README.md */,
 				9BF5145F2B94F94500C75AFC /* SpellingAppOnlineApp.swift */,
 				9BF514612B94F94500C75AFC /* ContentView.swift */,
@@ -441,6 +444,7 @@
 				9BF514932B94FA8600C75AFC /* UnoGameView.swift in Sources */,
 				9BF5148A2B94FA5B00C75AFC /* WordsData.swift in Sources */,
 				9BF514912B94FA8600C75AFC /* OralTestView.swift in Sources */,
+				9BA6C3812BDBC635000BB358 /* RemoteConfigLocal.swift in Sources */,
 				9BF514922B94FA8600C75AFC /* SelfTestView.swift in Sources */,
 				9BF514602B94F94500C75AFC /* SpellingAppOnlineApp.swift in Sources */,
 			);
