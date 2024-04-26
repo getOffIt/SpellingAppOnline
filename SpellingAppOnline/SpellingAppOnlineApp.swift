@@ -9,69 +9,14 @@ import FirebaseCore
 import FirebaseRemoteConfig
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    static var shared: AppDelegate!
-    var remoteConfigLocal = RemoteConfigLocal.shared
-    private var remoteConfig: RemoteConfig? = nil
+    var remoteConfigManager = RemoteConfigManager.shared
     
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        AppDelegate.shared = self
-        FirebaseApp.configure()
-        remoteConfig = RemoteConfig.remoteConfig()
-        setRemoteConfigSettings()
-        setupRemoteConfigDefaults()
-        fetchAndApplyRemoteConfig()
+        // Application cold launch
+
         return true
-    }
-    
-    func setRemoteConfigSettings() {
-        let settings = RemoteConfigSettings()
-#warning("Dev mode for firebase is ON")
-        settings.minimumFetchInterval = 0
-        remoteConfig?.configSettings = settings
-    }
-    
-    func setupRemoteConfigDefaults() {
-        let defaultValues = [
-            "buttonText": "Default text!" as NSObject,
-            "buttonConstraintConstant": 50 as NSObject,
-            "firsttabItemText": "Year 6" as NSObject
-        ]
-        
-        RemoteConfig.remoteConfig().setDefaults(defaultValues)
-    }
-    
-    func fetchAndApplyRemoteConfig() {
-        remoteConfig!.fetch {(status, error) in
-            switch status {
-            case .success:
-                self.remoteConfig!.activate { (changed, error) in
-                    if let error = error {
-                        print("An error occurred: \(error)")
-                    } else {
-                        print("Remote config successfully fetched and activated")
-                        DispatchQueue.main.async {
-                            self.remoteConfigLocal.firsttabItemText = self.remoteConfig!["firsttabItemText"].stringValue ?? "meh"
-                        }
-                    }
-                }
-            case .noFetchYet:
-                if let error = error {
-                    print("An error occurred: \(error)")
-                }
-            case .failure:
-                if let error = error {
-                    print("An error occurred: \(error)")
-                }
-            case .throttled:
-                if let error = error {
-                    print("An error occurred: \(error)")
-                }            
-            @unknown default:
-                print("placeholder")
-            }
-        }
     }
 }
 
@@ -79,11 +24,24 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct SpellingAppOnlineApp: App {
     //    register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some Scene {
         WindowGroup {
-            ContentView().onAppear() {
+            ContentView().onChange(of: scenePhase) {oldPhase, newPhase in
                 
+                switch newPhase {
+                case .active:
+                    print("active")
+                    RemoteConfigManager.shared.applyRemoteConfig()
+                    RemoteConfigManager.shared.fetchRemoteConfig()
+                case .background:
+                    print("background")
+                case .inactive:
+                    print("inactive")
+                @unknown default:
+                    print("@unknown default")
+                }
             }
         }
     }

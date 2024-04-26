@@ -9,7 +9,7 @@ enum TestStatus {
 struct ContentView: View {
     @State private var selectedTab = 0
     
-    @ObservedObject var remoteConfigLocal = RemoteConfigLocal.shared
+    @ObservedObject var remoteConfigLocal = RemoteConfigManager.shared
     
     // Main test for Chloe
     @State private var testCompletedFull = false
