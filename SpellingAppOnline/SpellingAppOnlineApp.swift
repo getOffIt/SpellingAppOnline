@@ -10,7 +10,7 @@ import FirebaseRemoteConfig
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     static var shared: AppDelegate!
-    var remoteConfigLocal = RemoteConfigLocal()
+    var remoteConfigLocal = RemoteConfigLocal.shared
     private var remoteConfig: RemoteConfig? = nil
     
     

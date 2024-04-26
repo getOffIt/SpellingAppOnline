@@ -9,7 +9,7 @@ enum TestStatus {
 struct ContentView: View {
     @State private var selectedTab = 0
     
-    @ObservedObject var remoteConfigLocal = AppDelegate.shared.remoteConfigLocal
+    @ObservedObject var remoteConfigLocal = RemoteConfigLocal.shared
     
     // Main test for Chloe
     @State private var testCompletedFull = false
@@ -46,7 +46,7 @@ struct ContentView: View {
                 SelfTestView(testStatus: $testStatusFull, questions: $questionsFull, answers: $answersFull)
                     .tabItem {
                         Image(systemName: "1.circle")
-                        Text(AppDelegate.shared.remoteConfigLocal.firsttabItemText)
+                        Text(remoteConfigLocal.firsttabItemText)
                     }
                     .tag(0)
             case .reviewing:
