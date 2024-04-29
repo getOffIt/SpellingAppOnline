@@ -18,7 +18,7 @@ struct LearningView: View {
     }
     
     var incorrectAnswers: [String] {
-        questions.indices.filter { answers[$0] != questions[$0] }.map { questions[$0] }
+        questions.indices.filter { answers.indices.contains($0) && answers[$0] != questions[$0] }.map { questions[$0] }
     }
     
     var body: some View {
@@ -38,7 +38,7 @@ struct LearningView: View {
                 }
                 Button("I'm Done") {
                     testStatus = .spelling
-                    
+                    answers = []
                 }
             }
             .padding()
