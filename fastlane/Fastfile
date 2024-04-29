@@ -68,6 +68,8 @@ platform :ios do
       is_key_content_base64: true,
       in_house: ENV['APP_STORE_CONNECT_API_KEY_IN_HOUSE'] == "true")
     snapshot
+    frameit
+    # deliver
   
   end
 
