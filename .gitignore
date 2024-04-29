@@ -19,3 +19,4 @@ contents.xcworkspacedata
 report.xml
 fastlane/test_output
 !project.xcworkspace/
+fastlane/screenshots

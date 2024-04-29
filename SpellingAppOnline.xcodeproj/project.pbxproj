@@ -12,6 +12,7 @@
 		8408249022F5E01176BE29CD /* Pods_SpellingAppOnlineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F6A3337B4F397DA5107159 /* Pods_SpellingAppOnlineTests.framework */; };
 		9B9AEA8F2BCD7BE200D663FB /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AEA8E2BCD7BE200D663FB /* LearningView.swift */; };
 		9BA6C3812BDBC635000BB358 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6C3802BDBC635000BB358 /* RemoteConfigManager.swift */; };
+		9BA6C3832BDD34C4000BB358 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6C3822BDD34C4000BB358 /* SnapshotHelper.swift */; };
 		9BD67BDD2BD0281000330D70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BD67BDC2BD0281000330D70 /* GoogleService-Info.plist */; };
 		9BF514602B94F94500C75AFC /* SpellingAppOnlineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF5145F2B94F94500C75AFC /* SpellingAppOnlineApp.swift */; };
 		9BF514622B94F94500C75AFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF514612B94F94500C75AFC /* ContentView.swift */; };
@@ -54,6 +55,7 @@
 		74AE62957447459F029B3FE1 /* Pods-SpellingAppOnline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline.release.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline/Pods-SpellingAppOnline.release.xcconfig"; sourceTree = "<group>"; };
 		9B9AEA8E2BCD7BE200D663FB /* LearningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 		9BA6C3802BDBC635000BB358 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = SOURCE_ROOT; };
+		9BA6C3822BDD34C4000BB358 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		9BD67BDC2BD0281000330D70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BF5145C2B94F94500C75AFC /* SpellingAppOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpellingAppOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF5145F2B94F94500C75AFC /* SpellingAppOnlineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingAppOnlineApp.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		9BF514792B94F94700C75AFC /* SpellingAppOnlineUITests */ = {
 			isa = PBXGroup;
 			children = (
+				9BA6C3822BDD34C4000BB358 /* SnapshotHelper.swift */,
 				9BF5147A2B94F94700C75AFC /* SpellingAppOnlineUITests.swift */,
 				9BF5147C2B94F94700C75AFC /* SpellingAppOnlineUITestsLaunchTests.swift */,
 			);
@@ -464,6 +467,7 @@
 			files = (
 				9BF5147B2B94F94700C75AFC /* SpellingAppOnlineUITests.swift in Sources */,
 				9BF5147D2B94F94700C75AFC /* SpellingAppOnlineUITestsLaunchTests.swift in Sources */,
+				9BA6C3832BDD34C4000BB358 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

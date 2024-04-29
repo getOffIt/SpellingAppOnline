@@ -19,7 +19,7 @@ struct YearWordSection {
     }
 }
 
-struct WordsData {
+public struct WordsData {
     var yearWordSection:[YearWordSection]
     var allWords: [String] {
         yearWordSection.flatMap { $0.words.map { $0.word } }
@@ -32,7 +32,7 @@ struct WordsData {
         return cpt
     }
     
-    init() {
+   public init() {
         var tempSections: [YearWordSection] = []
         theYear5WordsInFunnyFormat.forEach { (key: String, value: [String]) in
             let yearWordSection:YearWordSection = YearWordSection(title: key, words: value.map { Word(isDone: false, word: $0) })
@@ -246,7 +246,12 @@ struct WordsData {
         "shoulder"
         ]
 
-    let allWordsYear6Part2 = [
+    public let screenshots = [
+        "accommodate", // Double consonants
+        "apparent"
+         ]
+    
+   public let allWordsYear6Part2 = [
         "foreign", // Unstressed consonants
         "government",
         "yacht",

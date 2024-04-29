@@ -16,7 +16,7 @@ struct ContentView: View {
     @State private var testNeedsLearning = false
     @State private var testStatusFull = TestStatus.spelling
     @State private var answersFull: [String] = []
-    @State private var questionsFull: [String] = WordsData().allWordsYear6Part2
+    @State private var questionsFull: [String] = WordsData().screenshots
 
     // Small tests for words not mastered Legacy
     @State private var testCompletedSmall = false
