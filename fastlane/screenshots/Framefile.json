@@ -1,0 +1,12 @@
+{
+    "default": {
+        "title": {
+            "color": "#0000ff01",
+            "text": "."
+            },
+        "show_complete_frame":true,
+        "background": "./background.jpg",
+        "padding": 1
+        },
+    "data": []
+}
