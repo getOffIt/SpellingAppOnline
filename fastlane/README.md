@@ -31,6 +31,14 @@ Just build, no signing or upload
 
 Build for App Store distribution and upload to TestFlight
 
+### ios snapshotlane
+
+```sh
+[bundle exec] fastlane ios snapshotlane
+```
+
+Build for App Store distribution and upload to TestFlight
+
 ### ios incrementBuildNumberDynamically
 
 ```sh

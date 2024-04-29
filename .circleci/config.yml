@@ -47,7 +47,26 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
-
+  snapshotlane:
+    macos:
+      xcode: "15.3.0"
+    working_directory: /Users/distiller/project
+    environment:
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: snapshotlane
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
+      - macos/switch-ruby:
+          version: "3.0"
+      - ruby/install-deps
+      - run:
+          name: fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output/scan
 workflows:
   version: 2
   build_and_deploy:
