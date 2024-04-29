@@ -53,7 +53,8 @@ struct SelfTestView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                     .autocapitalization(.none)
-                    .disableAutocorrection(true)
+                    .keyboardType(.alphabet)
+                    .autocorrectionDisabled()
                     .submitLabel(.next)
                     .onSubmit {
                         nextButton()
