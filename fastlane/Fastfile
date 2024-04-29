@@ -59,7 +59,7 @@ platform :ios do
   lane :snapshotlane do
     xcversion(version: "15.3")  # Ensure you have this version installed
     match(
-      type: "debug",
+      type: "development",
       verbose: true)  # Fetch distribution certificates and profiles
     app_store_connect_api_key(
       key_id: ENV['APP_STORE_CONNECT_API_KEY_KEY_ID'],
