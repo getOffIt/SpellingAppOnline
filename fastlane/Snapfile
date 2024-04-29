@@ -3,11 +3,11 @@
 # A list of devices you want to take the screenshots from
 devices([
 "iPhone 15 Pro Max", #Mandatory 6.7" Display
-# "iPhone 14 Plus", #Mandatory 6.5" Display
-# "iPhone 15 Pro", # 6.1" Display
-# "iPhone 8 Plus", #Mandatory 5.5" Display
-# "iPad Pro (6th generation)", #Mandatory 12.9" Display
-# "iPad Pro (2nd generation)", #Mandatory 12.9" Display this is weird as it seems the same as the above
+"iPhone 14 Plus", #Mandatory 6.5" Display
+"iPhone 15 Pro", # 6.1" Display
+"iPhone 8 Plus", #Mandatory 5.5" Display
+"iPad Pro (6th generation)", #Mandatory 12.9" Display
+"iPad Pro (2nd generation)", #Mandatory 12.9" Display this is weird as it seems the same as the above
 #   "iPhone 8",
 #   "iPhone 8 Plus",
 #   "iPhone SE",
