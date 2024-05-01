@@ -23,12 +23,11 @@ class RemoteConfigManager: ObservableObject {
         setRemoteConfigSettings()
         setupRemoteConfigDefaults()
         fetchRemoteConfig()
+        remoteConfig?.addOnConfigUpdateListener(remoteConfigUpdateCompletion: {_, _ in} )
     }
     
     func setRemoteConfigSettings() {
         let settings = RemoteConfigSettings()
-//#warning("Dev mode for firebase is ON")
-//        settings.minimumFetchInterval = 0
         remoteConfig?.configSettings = settings
     }
     
