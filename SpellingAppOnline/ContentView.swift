@@ -57,7 +57,6 @@ struct ContentView: View {
                         Text(remoteConfigLocal.firsttabItemText)
                     }
                     .tag(0)
-                Text("Spelling Test")
             case .learning:
                 Text("Spelling Test")
                 LearningView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
@@ -72,13 +71,13 @@ struct ContentView: View {
             case .spelling:
                 SelfTestView(testStatus: $testStatusSmall, questions: questionsSmall, answers: $answersSmall)
                     .tabItem {
-                        Image(systemName: "3.circle")
+                        Image(systemName: "2.circle")
                         Text(remoteConfigLocal.secondTabItemText) }
                     .tag(1)
             case .reviewing:
                 ResultsView(testStatus: $testStatusSmall, questions: questionsSmall, answers: $answersSmall)
                     .tabItem {
-                        Image(systemName: "3.circle")
+                        Image(systemName: "2.circle")
                         Text(remoteConfigLocal.secondTabItemText)
                     }
                     .tag(1)
@@ -86,7 +85,7 @@ struct ContentView: View {
             case .learning:
                 SelfTestView(testStatus: $testStatusSmall, questions: questionsSmall, answers: $answersSmall)
                     .tabItem {
-                        Image(systemName: "3.circle")
+                        Image(systemName: "2.circle")
                         Text(remoteConfigLocal.secondTabItemText)
                     }
                     .tag(1)
