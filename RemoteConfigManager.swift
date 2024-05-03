@@ -14,8 +14,11 @@ class RemoteConfigManager: ObservableObject {
     var remoteConfig: RemoteConfig? = nil
     
     
-    @Published var firsttabItemText = "Year 6D"
-    
+    @Published var firsttabItemText = "Year 6"
+    @Published var firsttabItemWordList: [String] = WordsData().allWordsYear6Part2
+    @Published var secondTabItemText = "Words to master"
+    @Published var secondTabItemWordList: [String] = WordsData().wordsNotMastered
+
     
     init() {
         FirebaseApp.configure()
@@ -37,8 +40,12 @@ class RemoteConfigManager: ObservableObject {
                 print("An error occurred: \(error)")
             } else {
                 print("Remote config successfully fetched and activated")
+                print(self.remoteConfig ?? "")
                 DispatchQueue.main.async {
-                    self.firsttabItemText = self.remoteConfig!["firsttabItemText"].stringValue ?? "meh"
+                    self.firsttabItemText = self.remoteConfig!["firsttabItemText"].stringValue ?? "Year 6"
+                    self.firsttabItemWordList = self.remoteConfig!["firsttabItemWordList"].jsonValue as? [String] ?? WordsData().allWordsYear6Part2
+                    self.secondTabItemText = self.remoteConfig!["secondTabItemText"].stringValue ?? "Words to master"
+                    self.secondTabItemWordList = self.remoteConfig!["secondTabItemWordList"].jsonValue as? [String] ?? WordsData().wordsNotMastered
                 }
             }
         }

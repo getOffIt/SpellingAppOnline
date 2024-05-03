@@ -6,14 +6,14 @@ struct LearningView: View {
     
     @Binding var testStatus: TestStatus
     @Binding var answers: [String]
-    @Binding var questions: [String]
+    var questions: [String]
     
     // Updated to track the user input for each incorrect answer
     @State private var userInputs: [String: String] = [:]
     
-    init(testStatus: Binding<TestStatus>, questions: Binding<[String]>, answers: Binding<[String]>) {
+    init(testStatus: Binding<TestStatus>, questions: [String], answers: Binding<[String]>) {
         _testStatus = testStatus
-        _questions = questions
+        self.questions = questions
         _answers = answers
     }
     

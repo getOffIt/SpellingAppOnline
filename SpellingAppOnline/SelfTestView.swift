@@ -7,16 +7,16 @@ import SwiftUI
 struct SelfTestView: View {
     @Binding var testStatus: TestStatus
     @Binding var answers: [String]
-    @Binding var questions: [String]
+    var questions: [String]
 
     var speech: Speech = Speech()
     @State private var typedWord: String = ""
     @State private var index = 0
     @FocusState private var isInputActive: Bool
     
-    init(testStatus: Binding<TestStatus>, questions: Binding<[String]>, answers: Binding<[String]>) {
+    init(testStatus: Binding<TestStatus>, questions: [String], answers: Binding<[String]>) {
         _testStatus = testStatus
-        _questions = questions
+        self.questions = questions
         _answers = answers
     }
     

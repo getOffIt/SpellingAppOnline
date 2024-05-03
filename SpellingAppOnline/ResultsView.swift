@@ -7,21 +7,24 @@ struct ResultsView: View {
     
     @State var completionDate:String = "13 Feb 2024 at 10:34"
     let duration = ""
+    
     @Binding var testStatus: TestStatus
     @Binding var answers: [String]
-    @Binding var questions: [String]
+    var questions: [String]
+
+    
     @State var correct = 0
     @State var pass = true
     var needsLearning: Bool = false
     @State var continueText = ""
     
-    init(testStatus: Binding<TestStatus>, questions: Binding<[String]>, answers: Binding<[String]>) {
+    init(testStatus: Binding<TestStatus>, questions: [String], answers: Binding<[String]>) {
         _testStatus = testStatus
-        _questions = questions
+        self.questions = questions
         _answers = answers
     }
     var incorrectAnswers: [String] {
-        let currentQuestions = $questions.wrappedValue
+        let currentQuestions = questions
         let currentAnswers = $answers.wrappedValue
         return currentQuestions.enumerated().filter { index, question in
             currentAnswers[index] != question
