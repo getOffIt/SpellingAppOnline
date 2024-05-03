@@ -79,7 +79,6 @@ struct SelfTestView: View {
         }
         .onAppear {
             isInputActive = true
-            playButton()
         }
     }
     
