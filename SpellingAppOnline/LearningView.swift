@@ -33,7 +33,8 @@ struct LearningView: View {
                     ))
                     .frame(minHeight: 80)
                     .border(Color.gray, width: 1)
-                    .disableAutocorrection(true)
+                    .keyboardType(.alphabet)
+                    .autocorrectionDisabled()
                     .padding(.bottom, 20)
                 }
                 Button("I'm Done") {
