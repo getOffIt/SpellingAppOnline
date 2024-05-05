@@ -2,7 +2,6 @@ import Foundation
 import SwiftUI
 
 struct ResultsView: View {
-
     @State var score: Double = 50 // Replace with actual score
     @State private var currentTime = Date() // Initializes with the current date and time
     
@@ -12,15 +11,12 @@ struct ResultsView: View {
     @Binding var testStatus: TestStatus
     @Binding var answers: [String]
     var questions: [String]
-    
+
     
     @State var correct = 0
     @State var pass = true
     var needsLearning: Bool = false
     @State var continueText = ""
-    
-    @State private var screenshot: UIImage? = nil
-    @State private var isSharing = false
     
     init(testStatus: Binding<TestStatus>, questions: [String], answers: Binding<[String]>) {
         _testStatus = testStatus
@@ -102,24 +98,7 @@ struct ResultsView: View {
                     }
                 }
                 Spacer()
-                VStack {
-                    Button(action: {
-                            self.isSharing = true
-                        }) {
-                            VStack(spacing: 20) {
-                                Text("Share results")
-                            }
-                        }
-                        .sheet(isPresented: $isSharing) {
-                            if let screenshot = self.screenshot {
-                                ActivityView(activityItems: [screenshot])
-                            }
-                        }
-                        .background(ScreenshotView(onScreenshotCaptured:{ screenshot in
-                            // Handle the captured screenshot
-                            self.screenshot = screenshot
-                        }).onAppear())
-                }
+                
                 Button(action: {
                     // Play again action
                     if (incorrectAnswers.isEmpty) {
@@ -130,7 +109,7 @@ struct ResultsView: View {
                         testStatus = .learning
                     }
                     
-                    
+
                 }) {
                     Text(continueText)
                         .foregroundColor(.white)
@@ -140,23 +119,18 @@ struct ResultsView: View {
                         .cornerRadius(10)
                 }
                 .padding()
-                
             }
             .frame(maxWidth: .infinity)
         }
         .onAppear {
+            
             if incorrectAnswers.isEmpty {
                 continueText = "Play again"
             } else {
                 continueText = "Continue to Learn words page"
-            }
-        }
+            }        }
         .padding()
     }
-    
-    func didCaptureScreenshot(_ screenshot: UIImage) {
-          self.screenshot = screenshot
-      }
     
     private var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -189,44 +163,5 @@ struct ResultsView: View {
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-
-struct ScreenshotView: UIViewRepresentable {
-    let onScreenshotCaptured: (UIImage) -> Void
-
-    func makeUIView(context: Context) -> UIView {
-        return UIView()
-    }
-    
-    func updateUIView(_ uiView: UIView, context: Context) {
-            guard let window = UIApplication.shared.windows.first else { return }
-            let renderer = UIGraphicsImageRenderer(bounds: window.bounds)
-            let screenshot = renderer.image { (context) in
-                window.drawHierarchy(in: window.bounds, afterScreenUpdates: true)
-            }
-        onScreenshotCaptured(screenshot) // Call the closure
-        }
-    
-    func makeCoordinator() -> Coordinator {
-        return Coordinator()
-    }
-    
-    class Coordinator: NSObject {
-        var screenshot: UIImage?
-    }
-}
-
-struct ActivityView: UIViewControllerRepresentable {
-    var activityItems: [Any]
-    var applicationActivities: [UIActivity]? = nil
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityView>) -> UIActivityViewController {
-        let controller = UIActivityViewController(activityItems: activityItems, applicationActivities: applicationActivities)
-        return controller
-    }
-    
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityView>) {
     }
 }
