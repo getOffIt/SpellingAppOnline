@@ -13,6 +13,7 @@ struct SelfTestView: View {
     @State private var typedWord: String = ""
     @State private var index = 0
     @FocusState private var isInputActive: Bool
+
     
     init(testStatus: Binding<TestStatus>, questions: [String], answers: Binding<[String]>) {
         _testStatus = testStatus
