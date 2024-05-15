@@ -24,11 +24,7 @@ struct ResultsView: View {
         _answers = answers
     }
     var incorrectAnswers: [String] {
-        let currentQuestions = questions
-        let currentAnswers = $answers.wrappedValue
-        return currentQuestions.enumerated().filter { index, question in
-            currentAnswers[index] != question
-        }.map { $1 }
+        questions.indices.filter { answers.indices.contains($0) && answers[$0] != questions[$0] }.map { questions[$0] }
     }
     
     var body: some View {
@@ -141,13 +137,16 @@ struct ResultsView: View {
     private func calculateScore() -> Double {
         let total = questions.count
         correct = 0
-        
-        for (index, question) in questions.enumerated() {
-            if answers[index] == question {
-                correct += 1
+        if !answers.isEmpty {
+            for (index, question) in questions.enumerated() {
+                if answers[index] == question {
+                    correct += 1
+                }
             }
         }
-        
+        else {
+            correct = 1 // I've only had this happen when running on the simulator and using the enter key on keyboard when during the spelling test phase
+        }
         let percentage = Double(correct) / Double(total) * 100
         if percentage > 89.40 {
             pass = true
