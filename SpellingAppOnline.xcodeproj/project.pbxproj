@@ -16,7 +16,6 @@
 		9BD67BDD2BD0281000330D70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BD67BDC2BD0281000330D70 /* GoogleService-Info.plist */; };
 		9BD716482C08B8ED005371B0 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD716472C08B8ED005371B0 /* ShareView.swift */; };
 		9BD7164C2C08BA5A005371B0 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7164B2C08BA5A005371B0 /* ImageManager.swift */; };
-		9BD7164E2C08BDF3005371B0 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7164D2C08BDF3005371B0 /* ShareView.swift */; };
 		9BF514602B94F94500C75AFC /* SpellingAppOnlineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF5145F2B94F94500C75AFC /* SpellingAppOnlineApp.swift */; };
 		9BF514622B94F94500C75AFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF514612B94F94500C75AFC /* ContentView.swift */; };
 		9BF514642B94F94700C75AFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF514632B94F94700C75AFC /* Assets.xcassets */; };
@@ -62,7 +61,6 @@
 		9BD67BDC2BD0281000330D70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BD716472C08B8ED005371B0 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		9BD7164B2C08BA5A005371B0 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
-		9BD7164D2C08BDF3005371B0 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		9BF5145C2B94F94500C75AFC /* SpellingAppOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpellingAppOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF5145F2B94F94500C75AFC /* SpellingAppOnlineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingAppOnlineApp.swift; sourceTree = "<group>"; };
 		9BF514612B94F94500C75AFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 				9BD67BDC2BD0281000330D70 /* GoogleService-Info.plist */,
 				9BF514632B94F94700C75AFC /* Assets.xcassets */,
 				9BF514652B94F94700C75AFC /* Preview Content */,
-				9BD7164D2C08BDF3005371B0 /* ShareView.swift */,
 				9BD7164B2C08BA5A005371B0 /* ImageManager.swift */,
 			);
 			path = SpellingAppOnline;
@@ -450,7 +447,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BF514962B94FA8600C75AFC /* Speech.swift in Sources */,
-				9BD7164E2C08BDF3005371B0 /* ShareView.swift in Sources */,
 				9BF514622B94F94500C75AFC /* ContentView.swift in Sources */,
 				9BD716482C08B8ED005371B0 /* ShareView.swift in Sources */,
 				9B9AEA8F2BCD7BE200D663FB /* LearningView.swift in Sources */,
