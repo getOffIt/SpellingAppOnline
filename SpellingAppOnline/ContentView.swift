@@ -16,8 +16,8 @@ struct ContentView: View {
     @State private var testNeedsLearning = false
     @State private var testStatusFull = TestStatus.spelling
     @State private var answersFull: [String] = []
-    private var questionsFull: [String] {get {RemoteConfigManager.shared.firsttabItemWordList}}
-    //    private var questionsFull = WordsData().testDataShort
+//    private var questionsFull: [String] {get {RemoteConfigManager.shared.firsttabItemWordList}}
+        private var questionsFull = WordsData().testDataShort
     // Small tests for words not mastered Legacy
     @State private var testCompletedSmall = false
     @State private var testStatusSmall = TestStatus.learning
@@ -77,30 +77,58 @@ struct ContentView: View {
                     .tag(0)
             }
             
-            switch testStatusSmall {
-            case .spelling:
-                SelfTestView(testStatus: $testStatusSmall, questions: questionsSmall, answers: $answersSmall)
-                    .tabItem {
-                        Image(systemName: "2.circle")
-                        Text(remoteConfigLocal.secondTabItemText) }
-                    .tag(1)
-            case .reviewing:
-                ResultsView(testStatus: $testStatusSmall, questions: questionsSmall, answers: $answersSmall)
-                    .tabItem {
-                        Image(systemName: "2.circle")
-                        Text(remoteConfigLocal.secondTabItemText)
-                    }
-                    .tag(1)
-                
-            case .learning:
-                SelfTestView(testStatus: $testStatusSmall, questions: questionsSmall, answers: $answersSmall)
-                    .tabItem {
-                        Image(systemName: "2.circle")
-                        Text(remoteConfigLocal.secondTabItemText)
-                    }
-                    .tag(1)
-            }
+//            switch testStatusSmall {
+//            case .spelling:
+//                SelfTestView(testStatus: $testStatusSmall, questions: questionsSmall, answers: $answersSmall)
+//                    .tabItem {
+//                        Image(systemName: "2.circle")
+//                        Text(remoteConfigLocal.secondTabItemText) }
+//                    .tag(1)
+//            case .reviewing:
+//                ResultsView(testStatus: $testStatusSmall, questions: questionsSmall, answers: $answersSmall)
+//                    .tabItem {
+//                        Image(systemName: "2.circle")
+//                        Text(remoteConfigLocal.secondTabItemText)
+//                    }
+//                    .tag(1)
+//                
+//            case .learning:
+//                SelfTestView(testStatus: $testStatusSmall, questions: questionsSmall, answers: $answersSmall)
+//                    .tabItem {
+//                        Image(systemName: "2.circle")
+//                        Text(remoteConfigLocal.secondTabItemText)
+//                    }
+//                    .tag(1)
+//            }
+            ShareView(content: CardView(imageName: "checkmark"), caption: "My Results")
+                .tabItem {
+                    Image(systemName: "3.circle")
+                    Text("Test")
+                }
+                .tag(2)
+
         }
     }
 }
 
+fileprivate struct CardView: View {
+    let imageName: String
+    
+    var body: some View {
+        
+        VStack(spacing: 30) {
+            Text(imageName)
+            Image(systemName: imageName)
+        }
+        .foregroundStyle(Color.red)
+        .font(.system(size: 20, weight: .bold))
+        .padding(.vertical, 50)
+        .padding(.horizontal, 30)
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color.red.opacity(0.1))
+                .stroke(Color.red, style: StrokeStyle(lineWidth: 3))
+        )
+        
+    }
+}
