@@ -28,104 +28,106 @@ struct ResultsView: View {
     }
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 20) {
-                Text("Results")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                
-                VStack(alignment: .leading) {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("SCORE")
-                                .fontWeight(.bold)
-                            Text("\(Int(score))%").onAppear(){ score = calculateScore() }.foregroundColor(pass ? .green : .red)
-                            Text("\(correct)/\(questions.count)").foregroundColor(pass ? .green : .red)
-                        }
-                        Spacer()
-                        VStack(alignment: .leading) {
-                            Text("COMPLETED")
-                                .fontWeight(.bold)
-                            Text(completionDate).onAppear(){
-                                completionDate = dateFormatter.string(from: currentTime)
+        ZStack {
+            ScrollView {
+                VStack(spacing: 20) {
+                    Text("Results")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    
+                    VStack(alignment: .leading) {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("SCORE")
+                                    .fontWeight(.bold)
+                                Text("\(Int(score))%").onAppear(){ score = calculateScore() }.foregroundColor(pass ? .green : .red)
+                                Text("\(correct)/\(questions.count)").foregroundColor(pass ? .green : .red)
+                            }
+                            Spacer()
+                            VStack(alignment: .leading) {
+                                Text("COMPLETED")
+                                    .fontWeight(.bold)
+                                Text(completionDate).onAppear(){
+                                    completionDate = dateFormatter.string(from: currentTime)
+                                }
+                            }
+                            Spacer()
+                            VStack(alignment: .leading) {
+                                Text("DURATION")
+                                    .fontWeight(.bold)
+                                Text(duration)
                             }
                         }
-                        Spacer()
-                        VStack(alignment: .leading) {
-                            Text("DURATION")
-                                .fontWeight(.bold)
-                            Text(duration)
-                        }
                     }
-                }
-                .padding()
-                
-                HStack {
-                    Text("QUESTION")
-                    Spacer()
-                    Text("RESPONSE").frame(width: 100, alignment: .center)
-                    Spacer()
-                }
-                if answers.count == questions.count {
-                    ForEach(Array(zip(questions.indices, questions)), id: \.0) { index, question in
-                        VStack(alignment: .leading) {
-                            HStack {
-                                VStack {
-                                    HStack {
-                                        Text("\(index + 1).")
-                                            .bold()
-                                        Text(question)
+                    .padding()
+                    
+                    HStack {
+                        Text("QUESTION")
+                        Spacer()
+                        Text("RESPONSE").frame(width: 100, alignment: .center)
+                        Spacer()
+                    }
+                    if answers.count == questions.count {
+                        ForEach(Array(zip(questions.indices, questions)), id: \.0) { index, question in
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    VStack {
+                                        HStack {
+                                            Text("\(index + 1).")
+                                                .bold()
+                                            Text(question)
+                                            
+                                        }
                                         
                                     }
+                                    Spacer()
                                     
+                                    VStack {
+                                        Text(answers[index]).frame(alignment: .center)
+                                    }
+                                    Spacer()
+                                    Image(systemName: answers[index] == questions[index] ? "checkmark.circle.fill" : "xmark.circle.fill")
+                                        .foregroundColor(answers[index] == questions[index] ? .green : .red)
                                 }
-                                Spacer()
                                 
-                                VStack {
-                                    Text(answers[index]).frame(alignment: .center)
-                                }
-                                Spacer()
-                                Image(systemName: answers[index] == questions[index] ? "checkmark.circle.fill" : "xmark.circle.fill")
-                                    .foregroundColor(answers[index] == questions[index] ? .green : .red)
                             }
-                            
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
-                    }
-                }
-                Spacer()
-                
-                Button(action: {
-                    // Play again action
-                    if (incorrectAnswers.isEmpty) {
-                        testStatus = .spelling
-                        answers = []
-                    }
-                    else {
-                        testStatus = .learning
                     }
                     
-
-                }) {
-                    Text(continueText)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.purple)
-                        .cornerRadius(10)
+                    Button(action: {
+                        // Play again action
+                        if (incorrectAnswers.isEmpty) {
+                            testStatus = .spelling
+                            answers = []
+                        }
+                        else {
+                            testStatus = .learning
+                        }
+                        
+                        
+                    }) {
+                        Text(continueText)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.purple)
+                            .cornerRadius(10)
+                    }
+                    .padding()
                 }
-                .padding()
+                .frame(maxWidth: .infinity)
             }
-            .frame(maxWidth: .infinity)
+            .onAppear {
+                
+                if incorrectAnswers.isEmpty {
+                    continueText = "Play again"
+                } else {
+                    continueText = "Continue to Learn words page"
+                }        }
+            .padding()
+            .frame(maxHeight: .infinity)
         }
-        .onAppear {
-            
-            if incorrectAnswers.isEmpty {
-                continueText = "Play again"
-            } else {
-                continueText = "Continue to Learn words page"
-            }        }
-        .padding()
     }
     
     private var dateFormatter: DateFormatter {

@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var testStatusFull = TestStatus.spelling
     @State private var answersFull: [String] = []
     private var questionsFull: [String] {get {RemoteConfigManager.shared.firsttabItemWordList}}
-    
+    //    private var questionsFull = WordsData().testDataShort
     // Small tests for words not mastered Legacy
     @State private var testCompletedSmall = false
     @State private var testStatusSmall = TestStatus.learning
@@ -51,12 +51,22 @@ struct ContentView: View {
                     }
                     .tag(0)
             case .reviewing:
-                ResultsView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
-                    .tabItem {
-                        Image(systemName: "1.circle")
-                        Text(remoteConfigLocal.firsttabItemText)
-                    }
-                    .tag(0)
+                if (RemoteConfigManager.shared.sharingResultsEnabled) {
+                    ShareView(content: ResultsView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull), caption: "My Results")
+                        .tabItem {
+                            Image(systemName: "1.circle")
+                            Text(remoteConfigLocal.firsttabItemText)
+                        }
+                        .tag(0)
+                }
+                else {
+                    ResultsView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
+                        .tabItem {
+                            Image(systemName: "1.circle")
+                            Text(remoteConfigLocal.firsttabItemText)
+                        }
+                        .tag(0)
+                }
             case .learning:
                 Text("Spelling Test")
                 LearningView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
@@ -93,51 +103,4 @@ struct ContentView: View {
         }
     }
 }
-
-//            switch testStatusLeo {
-//            case .spelling:
-//                SelfTestView(testStatus: $testStatusLeo, questions: $questionsLeoFull, answers: $answersLeoFull)
-//                    .tabItem {
-//                        Image(systemName: "2.circle")
-//                        Text("Léo test")
-//                    }
-//                    .tag(1)
-//            case .reviewing:
-//                ResultsView(testStatus: $testStatusLeo, questions: $questionsLeoFull, answers: $answersLeoFull)
-//                    .tabItem {
-//                        Image(systemName: "2.circle")
-//                        Text("Léo test")
-//                    }
-//                    .tag(1)
-//            case .learning:
-//                SelfTestView(testStatus: $testStatusLeo, questions: $questionsLeoFull, answers: $answersLeoFull)
-//                    .tabItem {
-//                        Image(systemName: "2.circle")
-//                        Text("Léo test")
-//                    }
-//                    .tag(1)
-//            }
-//            switch testStatusFrench {
-//            case .spelling:
-//                SelfTestView(testStatus: $testStatusFrench, questions: $questionsFrench, answers: $answersFrench)
-//                    .tabItem {
-//                        Image(systemName: "3.circle")
-//                        Text("French test")
-//                    }
-//                    .tag(2)
-//            case .reviewing:
-//                ResultsView(testStatus: $testStatusFrench, questions: $questionsFrench, answers: $answersFrench)
-//                    .tabItem {
-//                        Image(systemName: "3.circle")
-//                        Text("French test")
-//                    }
-//                    .tag(2)
-//            case .learning:
-//                SelfTestView(testStatus: $testStatusFrench, questions: $questionsFrench, answers: $answersFrench)
-//                    .tabItem {
-//                        Image(systemName: "3.circle")
-//                        Text("French test")
-//                    }
-//                    .tag(2)
-//            }
 

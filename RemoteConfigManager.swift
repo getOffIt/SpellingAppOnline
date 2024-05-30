@@ -18,7 +18,7 @@ class RemoteConfigManager: ObservableObject {
     @Published var firsttabItemWordList: [String] = WordsData().allWordsYear6Part2
     @Published var secondTabItemText = "Words to master"
     @Published var secondTabItemWordList: [String] = WordsData().wordsNotMastered
-
+    @Published var sharingResultsEnabled = false
     
     init() {
         FirebaseApp.configure()
@@ -46,6 +46,7 @@ class RemoteConfigManager: ObservableObject {
                     self.firsttabItemWordList = self.remoteConfig!["firsttabItemWordList"].jsonValue as? [String] ?? WordsData().allWordsYear6Part2
                     self.secondTabItemText = self.remoteConfig!["secondTabItemText"].stringValue ?? "Words to master"
                     self.secondTabItemWordList = self.remoteConfig!["secondTabItemWordList"].jsonValue as? [String] ?? WordsData().wordsNotMastered
+                    self.sharingResultsEnabled = self.remoteConfig!["sharingResultsEnabled"].boolValue
                 }
             }
         }
