@@ -11,7 +11,7 @@ struct ResultsView: View {
     @Binding var testStatus: TestStatus
     @Binding var answers: [String]
     var questions: [String]
-
+    
     
     @State var correct = 0
     @State var pass = true
@@ -26,6 +26,11 @@ struct ResultsView: View {
     var incorrectAnswers: [String] {
         questions.indices.filter { answers.indices.contains($0) && answers[$0] != questions[$0] }.map { questions[$0] }
     }
+    
+    //Share related
+    @StateObject var imageManager: ImageManager = ImageManager()
+    @Environment(\.displayScale) var displayScale
+    @State private var imageShareTransferable: ImageManager.ImageShareTransferable?
     
     var body: some View {
         ZStack {
@@ -76,9 +81,7 @@ struct ResultsView: View {
                                             Text("\(index + 1).")
                                                 .bold()
                                             Text(question)
-                                            
                                         }
-                                        
                                     }
                                     Spacer()
                                     
@@ -94,7 +97,6 @@ struct ResultsView: View {
                             .padding(.horizontal)
                         }
                     }
-                    
                     Button(action: {
                         // Play again action
                         if (incorrectAnswers.isEmpty) {
@@ -104,8 +106,6 @@ struct ResultsView: View {
                         else {
                             testStatus = .learning
                         }
-                        
-                        
                     }) {
                         Text(continueText)
                             .foregroundColor(.white)
@@ -115,6 +115,22 @@ struct ResultsView: View {
                             .cornerRadius(10)
                     }
                     .padding()
+                    if (RemoteConfigManager.shared.sharingResultsEnabled) {
+                        if let imageShareTransferable = imageShareTransferable {
+                            ShareLink(
+                                item: imageShareTransferable,
+                                preview: SharePreview(
+                                    imageShareTransferable.caption,
+                                    image: imageShareTransferable.image)) {
+                                        HStack {
+                                            Image(systemName: "square.and.arrow.up")
+                                            Text("Share my Results")
+                                            
+                                        }
+                                    }
+                                    .padding()
+                        }
+                    }
                 }
                 .frame(maxWidth: .infinity)
             }
@@ -124,7 +140,11 @@ struct ResultsView: View {
                     continueText = "Play again"
                 } else {
                     continueText = "Continue to Learn words page"
-                }        }
+                }
+                if (RemoteConfigManager.shared.sharingResultsEnabled) {
+                    imageShareTransferable = imageManager.getTransferable(ResultsViewShare(score: calculateScore(), pass: pass, correctAnswers: correct, questions: questions,answers: answers , completionDate: completionDate), scale: displayScale, caption: "My Results")
+                }
+            }
             .padding()
             .frame(maxHeight: .infinity)
         }
