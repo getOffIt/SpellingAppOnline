@@ -245,6 +245,18 @@ public struct WordsData {
         "restaurant",
         "shoulder"
         ]
+    
+    let allWordsYear6Part1DebugResponses = [
+        "bruise", // Unstressed vowels
+        "cemetery",
+        "desperate",
+        "guaranteeee",
+        "nuisance",
+        "privildege",
+        "queue",
+        "restaurant",
+        "shoulderr"
+        ]
 
     public let screenshots = [
         "accommodate", // Double consonants

@@ -37,34 +37,35 @@ struct ContentView: View {
     @State private var questionsLeoFull: [String] = WordsData().yearOnewords10
     @State private var answersLeoFull: [String] = []
     
-    
+    private var enableTabBarForDebug = true
+    @State private var testStatusResultsDebug = TestStatus.reviewing
+    @State private var testStatusResultsDebugQuestions: [String] = WordsData().allWordsYear6Part1
+    @State private var testStatusResultsDebugAnswers: [String] = WordsData().allWordsYear6Part1DebugResponses
     
     var body: some View {
-        if RemoteConfigManager.shared.debugMode {
+        if RemoteConfigManager.shared.debugMode && enableTabBarForDebug {
             TabView(selection: $selectedTab) {
+                ResultsView(testStatus: $testStatusFull, questions: testStatusResultsDebugQuestions, answers: $testStatusResultsDebugAnswers)
+                    .tabItem {
+                        Text("Results")
+                    }
                 switch testStatusFull {
                 case .spelling:
                     SelfTestView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
                         .tabItem {
-                            Image(systemName: "1.circle")
                             Text(remoteConfigLocal.firsttabItemText)
                         }
-                        .tag(0)
                 case .reviewing:
                         ResultsView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
                             .tabItem {
-                                Image(systemName: "1.circle")
                                 Text(remoteConfigLocal.firsttabItemText)
                             }
-                            .tag(0)
                 case .learning:
                     Text("Spelling Test")
-                    LearningView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
+                    LearningView(testStatus: $testStatusResultsDebug, questions: questionsFull, answers: $answersFull)
                         .tabItem {
-                            Image(systemName: "1.circle")
                             Text(remoteConfigLocal.firsttabItemText)
                         }
-                        .tag(0)
                 }
             }
         }
