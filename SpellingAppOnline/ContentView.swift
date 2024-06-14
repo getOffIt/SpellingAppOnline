@@ -40,7 +40,35 @@ struct ContentView: View {
     
     
     var body: some View {
-        TabView(selection: $selectedTab) {
+        if RemoteConfigManager.shared.debugMode {
+            TabView(selection: $selectedTab) {
+                switch testStatusFull {
+                case .spelling:
+                    SelfTestView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
+                        .tabItem {
+                            Image(systemName: "1.circle")
+                            Text(remoteConfigLocal.firsttabItemText)
+                        }
+                        .tag(0)
+                case .reviewing:
+                        ResultsView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
+                            .tabItem {
+                                Image(systemName: "1.circle")
+                                Text(remoteConfigLocal.firsttabItemText)
+                            }
+                            .tag(0)
+                case .learning:
+                    Text("Spelling Test")
+                    LearningView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
+                        .tabItem {
+                            Image(systemName: "1.circle")
+                            Text(remoteConfigLocal.firsttabItemText)
+                        }
+                        .tag(0)
+                }
+            }
+        }
+        else {
             switch testStatusFull {
             case .spelling:
                 SelfTestView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
@@ -48,14 +76,12 @@ struct ContentView: View {
                         Image(systemName: "1.circle")
                         Text(remoteConfigLocal.firsttabItemText)
                     }
-                    .tag(0)
             case .reviewing:
                     ResultsView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
                         .tabItem {
                             Image(systemName: "1.circle")
                             Text(remoteConfigLocal.firsttabItemText)
                         }
-                        .tag(0)
             case .learning:
                 Text("Spelling Test")
                 LearningView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
@@ -63,7 +89,6 @@ struct ContentView: View {
                         Image(systemName: "1.circle")
                         Text(remoteConfigLocal.firsttabItemText)
                     }
-                    .tag(0)
             }
         }
     }
