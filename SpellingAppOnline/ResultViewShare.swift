@@ -8,6 +8,12 @@ struct ResultsViewShare: View {
     let answers: [String]
     let completionDate: String
     
+    private let columns = [
+        GridItem(.fixed(120), alignment: .leading),
+        GridItem(.fixed(150), alignment: .leading),
+        GridItem(.fixed(50), alignment: .center)
+    ]
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -25,41 +31,38 @@ struct ResultsViewShare: View {
             }
             .padding()
             
-            HStack {
+            LazyVGrid(columns: columns, spacing: 10) {
                 Text("QUESTION")
                     .font(.subheadline)
                     .fontWeight(.bold)
-                Spacer()
                 Text("RESPONSE")
                     .font(.subheadline)
                     .fontWeight(.bold)
-                    .frame(width: 150, alignment: .center)
-                Spacer()
-                Text("RESULT")
+                Text("-")
                     .font(.subheadline)
                     .fontWeight(.bold)
             }
             .padding(.horizontal)
             
-            Divider()
-            
-            if answers.count == questions.count {
+            LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(Array(zip(questions.indices, questions)), id: \.0) { index, question in
-                    VStack {
-                        HStack {
-                            Text("\(index + 1). \(question)")
-                            Spacer()
-                            Text(answers[index])
-                                .frame(width: 150, alignment: .center)
-                            Spacer()
-                            Image(systemName: answers[index] == questions[index] ? "checkmark.circle.fill" : "xmark.circle.fill")
-                                .foregroundColor(answers[index] == questions[index] ? .green : .red)
-                        }
-                        Divider()
+                    HStack {
+                        Text("\(index + 1). \(question)")
+                        Spacer()
                     }
-                    .padding(.horizontal)
+                    HStack {
+                        Text(answers[index])
+                        Spacer()
+                    }
+                    HStack {
+                        Image(systemName: answers[index] == questions[index] ? "checkmark.circle.fill" : "xmark.circle.fill")
+                            .foregroundColor(answers[index] == questions[index] ? .green : .red)
+                    }
                 }
             }
+            .padding(.horizontal)
+            
+            Spacer()
         }
         .padding()
     }
