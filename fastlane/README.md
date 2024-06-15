@@ -15,13 +15,45 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
-### ios justbuild
+### ios justbuildDevelopmentbuild
 
 ```sh
-[bundle exec] fastlane ios justbuild
+[bundle exec] fastlane ios justbuildDevelopmentbuild
 ```
 
-Just build, no signing or upload
+Just build a dev build, no signing or upload
+
+### ios fetchDistributionCertificatesAndProfiles
+
+```sh
+[bundle exec] fastlane ios fetchDistributionCertificatesAndProfiles
+```
+
+Fetch distribution certificates and profiles
+
+### ios setup_xcode_version
+
+```sh
+[bundle exec] fastlane ios setup_xcode_version
+```
+
+setup xcode version
+
+### ios app_store_connect_api_key_setup
+
+```sh
+[bundle exec] fastlane ios app_store_connect_api_key_setup
+```
+
+Setup App Store Connect connection
+
+### ios build_prod_app
+
+```sh
+[bundle exec] fastlane ios build_prod_app
+```
+
+Build prod App
 
 ### ios beta
 
@@ -37,7 +69,7 @@ Build for App Store distribution and upload to TestFlight
 [bundle exec] fastlane ios snapshotlane
 ```
 
-Build for App Store distribution and upload to TestFlight
+run the screenshot code
 
 ### ios incrementBuildNumberDynamically
 
