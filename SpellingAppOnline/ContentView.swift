@@ -37,7 +37,7 @@ struct ContentView: View {
     @State private var questionsLeoFull: [String] = WordsData().yearOnewords10
     @State private var answersLeoFull: [String] = []
     
-    private var enableTabBarForDebug = true
+    private var enableTabBarForDebug = false
     @State private var testStatusResultsDebug = TestStatus.reviewing
     @State private var testStatusResultsDebugQuestions: [String] = WordsData().allWordsYear6Part1
     @State private var testStatusResultsDebugAnswers: [String] = WordsData().allWordsYear6Part1DebugResponses
