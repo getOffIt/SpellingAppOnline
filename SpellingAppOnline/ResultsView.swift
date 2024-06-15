@@ -31,69 +31,90 @@ struct ResultsView: View {
     @Environment(\.displayScale) var displayScale
     @State private var imageShareTransferable: ImageManager.ImageShareTransferable?
     
+    // Layout related
+    
+    private let columns = [
+        GridItem(.fixed(120), alignment: .leading),
+        GridItem(.fixed(150), alignment: .leading),
+        GridItem(.fixed(50), alignment: .center)
+    ]
+    
     var body: some View {
-        ZStack {
+        
             ScrollView {
-                VStack(spacing: 20) {
-                    Text("Results")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    
-                    VStack(alignment: .leading, spacing: 10) { // Adjusted spacing
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("SCORE")
-                                    .fontWeight(.bold)
-                                Text("\(Int(score))%")
-                                    .foregroundColor(pass ? .green : .red)
-                                    .onAppear {
-                                        score = calculateScore()
-                                    }
-                                Text("\(correct)/\(questions.count)")
-                                    .foregroundColor(pass ? .green : .red)
-                            }
-                            Spacer()
-                            VStack(alignment: .leading) {
-                                Text("COMPLETED")
-                                    .fontWeight(.bold)
-                                Text(completionDate)
-                                    .onAppear {
-                                        completionDate = dateFormatter.string(from: currentTime)
-                                    }
-                            }
-                            Spacer()
-                            VStack(alignment: .leading) {
-                                Text("DURATION")
-                                    .fontWeight(.bold)
-                                Text(duration)
-                            }
-                        }
-                    }
-                    .padding()
-                    
-                    HStack {
+               VStack() {
+                   Text("Results")
+                       .font(.largeTitle)
+                       .fontWeight(.bold)
+                   
+                   VStack(alignment: .leading, spacing: 10) { // Adjusted spacing
+                       HStack {
+                           VStack(alignment: .leading) {
+                               Text("SCORE")
+                                   .fontWeight(.bold)
+                               Text("\(Int(score))%")
+                                   .foregroundColor(pass ? .green : .red)
+                                   .onAppear {
+                                       score = calculateScore()
+                                   }
+                               Text("\(correct)/\(questions.count)")
+                                   .foregroundColor(pass ? .green : .red)
+                           }
+                           Spacer()
+                           VStack(alignment: .leading) {
+                               Text("COMPLETED")
+                                   .fontWeight(.bold)
+                               Text(completionDate)
+                                   .onAppear {
+                                       completionDate = dateFormatter.string(from: currentTime)
+                                   }
+                           }
+                           Spacer()
+                           VStack(alignment: .leading) {
+                               Text("DURATION")
+                                   .fontWeight(.bold)
+                               Text(duration)
+                           }
+                       }
+                   }
+                   .padding()
+                   
+                    LazyVGrid(columns: columns, spacing: 10) {
                         Text("QUESTION")
-                        Spacer()
-                        Text("RESPONSE").frame(width: 100, alignment: .center)
+                            .font(.subheadline)
+                            .fontWeight(.bold)
+                        Text("RESPONSE")
+                            .font(.subheadline)
+                            .fontWeight(.bold)
+                        Text("-")
+                            .font(.subheadline)
+                            .fontWeight(.bold)
                     }
                     .padding(.horizontal)
                     
                     if answers.count == questions.count {
-                        ForEach(Array(zip(questions.indices, questions)), id: \.0) { index, question in
-                            VStack(alignment: .leading) {
+                        LazyVGrid(columns: columns, spacing: 10) {
+                            ForEach(Array(zip(questions.indices, questions)), id: \.0) { index, question in
                                 HStack {
                                     Text("\(index + 1). \(question)")
                                     Spacer()
+                                }
+                                HStack {
                                     Text(answers[index])
                                         .frame(width: 100, alignment: .center)
+                                    Spacer()
+                                    
+                                }
+                                HStack {
                                     Image(systemName: answers[index] == questions[index] ? "checkmark.circle.fill" : "xmark.circle.fill")
                                         .foregroundColor(answers[index] == questions[index] ? .green : .red)
+                                    
                                 }
-                                .padding(.horizontal)
-                                .padding(.vertical, 5)
-                                .background(index % 2 == 0 ? Color(UIColor.systemGray6) : Color(UIColor.systemGray5)) // Alternating background colors
-                                .cornerRadius(8) // Rounded corners for background
                             }
+//                                .padding(.vertical, 5)
+//                                .background(index % 2 == 0 ? Color(UIColor.systemGray6) : Color(UIColor.systemGray5)) // Alternating background colors
+//                                .cornerRadius(8) // Rounded corners for background
+                            
                         }
                     }
                     
@@ -126,13 +147,13 @@ struct ResultsView: View {
                                             Image(systemName: "square.and.arrow.up")
                                             Text("Share my Results")
                                         }
-                                    }
-                                    .padding()
-                        }
+                                }
+                                  .padding()
                     }
                 }
-                .padding()
-                .frame(maxWidth: .infinity)
+              }
+              .padding()
+              .frame(maxWidth: .infinity)
             }
             .onAppear {
                 if incorrectAnswers.isEmpty {
@@ -144,7 +165,7 @@ struct ResultsView: View {
                     imageShareTransferable = imageManager.getTransferable(ResultsViewShare(score: calculateScore(), pass: pass, correctAnswers: correct, questions: questions, answers: answers, completionDate: completionDate), scale: displayScale, caption: "My Results")
                 }
             }
-        }
+        
     }
     
     private var dateFormatter: DateFormatter {
