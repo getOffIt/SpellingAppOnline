@@ -263,6 +263,16 @@ public struct WordsData {
         "apparent"
          ]
     
+    public let latest15June2024 = [
+          "convenience",
+          "existence",
+          "hindrance",
+          "prejudice",
+          "sacrifice",
+          "conscious",
+          "disastrous"
+    ]
+    
    public let allWordsYear6Part2 = [
         "foreign", // Unstressed consonants
         "government",
