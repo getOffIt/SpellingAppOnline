@@ -95,6 +95,14 @@ Create new version on iTunes connect
 
 Update app version number using current date
 
+### ios releaseLatestTestFlightBuild
+
+```sh
+[bundle exec] fastlane ios releaseLatestTestFlightBuild
+```
+
+Release latest testflight build
+
 ### ios beta
 
 ```sh

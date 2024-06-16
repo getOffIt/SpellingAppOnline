@@ -190,6 +190,34 @@ platform :ios do
     UI.message("Updated version number to #{new_version}")
   end
 
+  desc "Release latest testflight build"
+  lane :releaseLatestTestFlightBuild do
+    deliver(
+      skip_binary_upload: true,
+      submit_for_review: true,
+      automatic_release: true,
+      skip_screenshots: true,
+      force: true,
+      submission_information: {
+        add_id_info_uses_idfa: false,
+        content_rights_has_rights: false,
+        content_rights_contains_third_party_content: false,
+        export_compliance_platform: 'ios',
+        export_compliance_compliance_required: false,
+        export_compliance_encryption_updated: false,
+        export_compliance_app_type: nil,
+        export_compliance_uses_encryption: false,
+        export_compliance_is_exempt: false,
+        export_compliance_contains_third_party_cryptography: false,
+        export_compliance_contains_proprietary_cryptography: false,
+        export_compliance_available_on_french_store: false
+      },
+      release_notes: {
+        'en-GB' => "Fixes bugs"
+      },
+    )
+  end
+
   desc "Build for App Store distribution and upload to TestFlight"
   lane :beta do
     fetchDistributionCertificatesAndProfiles
@@ -199,6 +227,7 @@ platform :ios do
     increment_build_number(xcodeproj: 'SpellingAppOnline.xcodeproj', build_number: current_build_number + 1)
     build_prod_app
     upload_to_testflight
+    
   end
   
   desc "run the screenshot code"
