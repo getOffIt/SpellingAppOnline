@@ -64,6 +64,132 @@ platform :ios do
     
   end
 
+  desc "List all apps using Spaceship"
+  lane :listApps do
+    require 'spaceship'
+
+    # Authenticate with the Apple Developer Portal
+    Spaceship::Portal.login(ENV['APPFILE_APPLE_ID'], ENV['APPFILE_APPLE_PASSWORD'])
+    # Retrieve all apps  
+    apps = Spaceship::Portal.app.all
+    if apps.any?
+      UI.message("Found #{apps.count} apps:")
+      apps.each do |app|
+        UI.message("#{app.name} (#{app.app_id})")
+      end
+    else
+      UI.message("No apps found")
+    end
+  end
+
+  desc "Spaceship list latest build number"
+  lane :listBuildNumberViaSpaceship do
+    require 'spaceship'
+
+    # Authenticate with the Apple Developer Portal
+    Spaceship::Portal.login(ENV['APPFILE_APPLE_ID'], ENV['APPFILE_APPLE_PASSWORD'])
+    bundle_id = ENV['APPFILE_APP_IDENTIFIER']
+
+    unless bundle_id
+      UI.user_error!("You must provide a bundle_id")
+    end
+
+    # Find the app by bundle ID
+    app = Spaceship::ConnectAPI::App.find(bundle_id)
+
+    if app
+      # Fetch the latest build
+      builds = Spaceship::ConnectAPI::Build.all(app_id: app.id)
+      latest_build = builds.max_by { |build| build.version.to_i }
+
+      if latest_build
+        UI.success("Latest TestFlight build number: #{latest_build.version}")
+      else
+        UI.message("No TestFlight builds found for app with bundle ID #{bundle_id}")
+      end
+    else
+      UI.error("No app found with bundle ID #{bundle_id}")
+    end
+   
+  end
+
+  desc "Ensure the pre-release version exists for the App"
+  lane :ensure_pre_release_version do
+    require 'spaceship'
+    
+    # Login to App Store Connect
+    Spaceship::ConnectAPI.login(ENV['APPFILE_APPLE_ID'], ENV['APPFILE_APPLE_PASSWORD'])
+    app_identifier = ENV['APPFILE_APP_IDENTIFIER']
+    
+    if app_identifier.nil?
+      UI.error("APPFILE_APP_IDENTIFIER environment variable is not set.")
+      return
+    end
+    
+    app = Spaceship::ConnectAPI::App.find(app_identifier)
+    if app.nil?
+      UI.error("Could not find app with bundle ID #{app_identifier}")
+      return
+    end
+    
+    # Determine the new pre-release version number using fastlane: https://docs.fastlane.tools/actions/app_store_connect_api_key/
+    new_pre_release_version = "1.4.0"
+    # just trying to consume ensure version to create a new version in app store connect before uploading a build later
+    #https://www.rubydoc.info/gems/fastlane/2.162.0/Spaceship/ConnectAPI/App#ensure_version!-instance_method
+    begin
+      # Ensure the pre-release version exists
+      was_changed = Spaceship::ConnectAPI::App.ensure_version!(version_string: new_pre_release_version, platform: "IOS")
+      
+      if was_changed
+        UI.success("Successfully ensured the pre-release version #{new_pre_release_version} exists for app #{app_identifier}")
+      else
+        UI.important("The pre-release version #{new_pre_release_version} already exists or no changes were needed for app #{app_identifier}")
+      end
+    rescue => exception
+      UI.error("Failed to ensure the pre-release version for app #{app_identifier}: #{exception.message}")
+    end
+  end
+
+  desc "Create new version on iTunes connect"
+  lane :createNewVersion do
+      new_version = "1.3.0"
+      require 'spaceship'
+      # Login to App Store Connect
+      Spaceship::ConnectAPI.login # It will prompt for credentials if not provided
+      app_identifier = ENV['APPFILE_APP_IDENTIFIER']
+      if app_identifier.nil?
+          UI.error("APPFILE_APP_IDENTIFIER environment variable is not set.")
+          return
+      end
+      app = Spaceship::ConnectAPI::Application.find(app_identifier)
+    if app.nil?
+        UI.error("Could not find app with bundle ID #{app_identifier}")
+        return
+    end
+
+    begin
+      app.create_version!(new_version)
+      UI.success("Successfully created a new version #{new_version} for app #{app_identifier}")
+    rescue => exception
+      UI.error("Failed to create a new version for app #{app_identifier} #{exception.message}")
+    end
+  end
+
+  desc "Update app version number using current date"
+  lane :updateVersionNumber do
+
+
+    # Fetch the current date components
+    current_time = Time.now
+    year = current_time.strftime("%y")
+    month = current_time.strftime("%m")
+    day = current_time.strftime("%d")
+    new_version = "#{year}.#{month}.#{day}"
+    app_store_connect_api_key_setup
+    increment_version_number(version_number: new_version)
+    UI.message("Updated version number to #{new_version}")
+  end
+
   desc "Build for App Store distribution and upload to TestFlight"
   lane :beta do
     fetchDistributionCertificatesAndProfiles

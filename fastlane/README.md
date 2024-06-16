@@ -55,6 +55,46 @@ Setup App Store Connect connection
 
 Build prod App
 
+### ios listApps
+
+```sh
+[bundle exec] fastlane ios listApps
+```
+
+List all apps using Spaceship
+
+### ios listBuildNumberViaSpaceship
+
+```sh
+[bundle exec] fastlane ios listBuildNumberViaSpaceship
+```
+
+Spaceship list latest build number
+
+### ios ensure_pre_release_version
+
+```sh
+[bundle exec] fastlane ios ensure_pre_release_version
+```
+
+Ensure the pre-release version exists for the App
+
+### ios createNewVersion
+
+```sh
+[bundle exec] fastlane ios createNewVersion
+```
+
+Create new version on iTunes connect
+
+### ios updateVersionNumber
+
+```sh
+[bundle exec] fastlane ios updateVersionNumber
+```
+
+Update app version number using current date
+
 ### ios beta
 
 ```sh
