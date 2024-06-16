@@ -59,14 +59,14 @@ platform :ios do
       scheme: "SpellingAppOnline",
       workspace: "SpellingAppOnline.xcworkspace",
       configuration: "Release",
-      export_method: "app-store",
+      export_method: "app-store-connect",
       export_xcargs: "-allowProvisioningUpdates")
     
   end
 
   desc "Update app version number using current date"
   lane :updateVersionNumber do
-    
+
     # Fetch the current date components
     current_time = Time.now
     year = current_time.strftime("%y")
@@ -106,13 +106,18 @@ platform :ios do
     )
   end
 
+  desc "Increment build number dynamically and build for App Store distribution"
+  lane :incrementBuildNumber do
+    current_build_number = app_store_build_number(live: false) #//live false means Testflight, true would take the current production build
+    increment_build_number(xcodeproj: 'SpellingAppOnline.xcodeproj', build_number: current_build_number + 1)
+  end
+
   desc "Build for App Store distribution and upload to TestFlight"
   lane :beta do
     fetchDistributionCertificatesAndProfiles
     setup_xcode_version
     app_store_connect_api_key_setup
-    current_build_number = app_store_build_number(live: false) #//live false means Testflight, true would take the current production build
-    increment_build_number(xcodeproj: 'SpellingAppOnline.xcodeproj', build_number: current_build_number + 1)
+    incrementBuildNumber
     build_prod_app
     upload_to_testflight
     
