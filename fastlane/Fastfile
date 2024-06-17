@@ -73,13 +73,15 @@ platform :ios do
     month = current_time.strftime("%m")
     day = current_time.strftime("%d")
     new_version = "#{year}.#{month}.#{day}"
-    app_store_connect_api_key_setup
-    increment_version_number(version_number: new_version)
+    increment_version_number(
+      version_number: new_version,
+      xcodeproj: 'SpellingAppOnline.xcodeproj'
+    )
     UI.message("Updated version number to #{new_version}")
   end
 
   desc "Release latest testflight build"
-  lane :releaseLatestTestFlightBuild do
+  lane :releaseLatestTestFlightBuildToAppStore do
     deliver(
       skip_binary_upload: true,
       submit_for_review: true,
@@ -117,6 +119,7 @@ platform :ios do
     fetchDistributionCertificatesAndProfiles
     setup_xcode_version
     app_store_connect_api_key_setup
+    updateVersionNumber
     incrementBuildNumber
     build_prod_app
     upload_to_testflight
