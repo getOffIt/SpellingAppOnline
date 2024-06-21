@@ -63,10 +63,10 @@ Build prod App
 
 Update app version number using current date
 
-### ios releaseLatestTestFlightBuild
+### ios releaseLatestTestFlightBuildToAppStore
 
 ```sh
-[bundle exec] fastlane ios releaseLatestTestFlightBuild
+[bundle exec] fastlane ios releaseLatestTestFlightBuildToAppStore
 ```
 
 Release latest testflight build
