@@ -88,35 +88,4 @@ class RemoteConfigManager: ObservableObject {
         }
     }
     
-    func fetchAndApplyRemoteConfig() {
-        remoteConfig!.fetch {(status, error) in
-            switch status {
-            case .success:
-                self.remoteConfig!.activate { (changed, error) in
-                    if let error = error {
-                        print("An error occurred: \(error)")
-                    } else {
-                        print("Remote config successfully fetched and activated")
-                        DispatchQueue.main.async {
-                            self.firsttabItemText = self.remoteConfig!["firsttabItemText"].stringValue ?? "meh"
-                        }
-                    }
-                }
-            case .noFetchYet:
-                if let error = error {
-                    print("An error occurred: \(error)")
-                }
-            case .failure:
-                if let error = error {
-                    print("An error occurred: \(error)")
-                }
-            case .throttled:
-                if let error = error {
-                    print("An error occurred: \(error)")
-                }
-            @unknown default:
-                print("placeholder")
-            }
-        }
-    }
 }
