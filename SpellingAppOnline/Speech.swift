@@ -6,6 +6,10 @@ class Speech {
     private var previousWord: String = ""
     private var audioPlayer: AVAudioPlayer?
     
+    init() {
+        configureAudioSession()
+    }
+    
     func say(word: String) {
         
         previousWord = word
@@ -39,5 +43,15 @@ class Speech {
     func sayThatWordAgain() {
         say(word: previousWord)
     }
+    
+    private func configureAudioSession() {
+           let audioSession = AVAudioSession.sharedInstance()
+           do {
+               try audioSession.setCategory(.playback, mode: .default, options: [])
+               try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+           } catch {
+               print("Failed to set audio session category. Error: \(error)")
+           }
+       }
 }
 
