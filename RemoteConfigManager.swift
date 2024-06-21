@@ -20,6 +20,7 @@ class RemoteConfigManager: ObservableObject {
     @Published var secondTabItemWordList: [String] = WordsData().wordsNotMastered
     @Published var sharingResultsEnabled = false
     @Published var debugMode = false
+    @Published var elevenlabsvoices = false
     
     init() {
         FirebaseApp.configure()
@@ -49,6 +50,7 @@ class RemoteConfigManager: ObservableObject {
                     self.secondTabItemWordList = self.remoteConfig!["secondTabItemWordList"].jsonValue as? [String] ?? WordsData().wordsNotMastered
                     self.sharingResultsEnabled = self.remoteConfig!["sharingResultsEnabled"].boolValue
                     self.debugMode = self.remoteConfig!["debugMode"].boolValue
+                    self.elevenlabsvoices = self.remoteConfig!["elevenlabsvoices"].boolValue
                 }
             }
         }
