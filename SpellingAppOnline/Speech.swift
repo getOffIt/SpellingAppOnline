@@ -4,10 +4,31 @@ import AVFoundation
 class Speech {
     private var synthesizer = AVSpeechSynthesizer()
     private var previousWord: String = ""
+    private var audioPlayer: AVAudioPlayer?
     
     func say(word: String) {
         
         previousWord = word
+        
+        // Stop any current audio playback when users are typing faster than the word is uttered
+        if let player = audioPlayer, player.isPlaying {
+            player.stop()
+        }
+                
+        do { // AI Generated audio sounds nicer, always try to play first but as I have to generate them in advance they are not always available
+            let path = Bundle.main.path(forResource: "\(word).mp3", ofType:nil) ?? ""
+            let url = URL(fileURLWithPath: path)
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+            print("Playing mp3 for word: \(word)")
+        } catch { // Otherwise, use system synthetiser
+            print("Error loading mp3 file: \(error.localizedDescription)")
+            synthesizeSpeech(word: word)
+        }
+    }
+    
+    
+    func synthesizeSpeech(word: String) {
         let utterance = AVSpeechUtterance(string: word)
         utterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle.Junior-compact")
         print("\(word)")

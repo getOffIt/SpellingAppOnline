@@ -10,6 +10,60 @@
 		0790CE39E511D1D4FA6FF27F /* Pods_SpellingAppOnline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732A2D5DED08347E9AB3128B /* Pods_SpellingAppOnline.framework */; };
 		270427C7AC32CCCD579A43D8 /* Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CAB5A64AE5751BA1376A334 /* Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework */; };
 		8408249022F5E01176BE29CD /* Pods_SpellingAppOnlineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F6A3337B4F397DA5107159 /* Pods_SpellingAppOnlineTests.framework */; };
+		9B203BD02C2558FD00941665 /* conscious.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BC82C2558FD00941665 /* conscious.mp3 */; };
+		9B203BD12C2558FD00941665 /* convenience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BC92C2558FD00941665 /* convenience.mp3 */; };
+		9B203BD22C2558FD00941665 /* disastrous.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BCA2C2558FD00941665 /* disastrous.mp3 */; };
+		9B203BD32C2558FD00941665 /* existence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BCB2C2558FD00941665 /* existence.mp3 */; };
+		9B203BD42C2558FD00941665 /* hindrance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BCC2C2558FD00941665 /* hindrance.mp3 */; };
+		9B203BD52C2558FD00941665 /* prejudice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BCD2C2558FD00941665 /* prejudice.mp3 */; };
+		9B203BD62C2558FD00941665 /* sacrifice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BCE2C2558FD00941665 /* sacrifice.mp3 */; };
+		9B203C062C25AE3800941665 /* controversy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BD72C25AE3700941665 /* controversy.mp3 */; };
+		9B203C072C25AE3800941665 /* isle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BD82C25AE3700941665 /* isle.mp3 */; };
+		9B203C082C25AE3800941665 /* equipment.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BD92C25AE3700941665 /* equipment.mp3 */; };
+		9B203C092C25AE3800941665 /* compliment.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BDA2C25AE3700941665 /* compliment.mp3 */; };
+		9B203C0A2C25AE3800941665 /* ancient.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BDB2C25AE3700941665 /* ancient.mp3 */; };
+		9B203C0B2C25AE3800941665 /* dessert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BDC2C25AE3700941665 /* dessert.mp3 */; };
+		9B203C0C2C25AE3800941665 /* marvellous.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BDD2C25AE3700941665 /* marvellous.mp3 */; };
+		9B203C0D2C25AE3800941665 /* aisle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BDE2C25AE3700941665 /* aisle.mp3 */; };
+		9B203C0E2C25AE3800941665 /* bridle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BDF2C25AE3700941665 /* bridle.mp3 */; };
+		9B203C0F2C25AE3800941665 /* amateur.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE02C25AE3700941665 /* amateur.mp3 */; };
+		9B203C102C25AE3800941665 /* ascent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE12C25AE3700941665 /* ascent.mp3 */; };
+		9B203C112C25AE3800941665 /* complement.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE22C25AE3700941665 /* complement.mp3 */; };
+		9B203C122C25AE3800941665 /* bargain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE32C25AE3800941665 /* bargain.mp3 */; };
+		9B203C132C25AE3800941665 /* descent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE42C25AE3800941665 /* descent.mp3 */; };
+		9B203C142C25AE3800941665 /* allowed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE52C25AE3800941665 /* allowed.mp3 */; };
+		9B203C152C25AE3800941665 /* alter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE62C25AE3800941665 /* alter.mp3 */; };
+		9B203C162C25AE3800941665 /* hindrance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE72C25AE3800941665 /* hindrance.mp3 */; };
+		9B203C172C25AE3800941665 /* identity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE82C25AE3800941665 /* identity.mp3 */; };
+		9B203C182C25AE3800941665 /* cereal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE92C25AE3800941665 /* cereal.mp3 */; };
+		9B203C192C25AE3800941665 /* individual.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BEA2C25AE3800941665 /* individual.mp3 */; };
+		9B203C1A2C25AE3800941665 /* secretary.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BEB2C25AE3800941665 /* secretary.mp3 */; };
+		9B203C1B2C25AE3800941665 /* seldom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BEC2C25AE3800941665 /* seldom.mp3 */; };
+		9B203C1C2C25AE3800941665 /* serial.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BED2C25AE3800941665 /* serial.mp3 */; };
+		9B203C1D2C25AE3800941665 /* prejudice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BEE2C25AE3800941665 /* prejudice.mp3 */; };
+		9B203C1E2C25AE3800941665 /* awkward.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BEF2C25AE3800941665 /* awkward.mp3 */; };
+		9B203C1F2C25AE3800941665 /* bridal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF02C25AE3800941665 /* bridal.mp3 */; };
+		9B203C202C25AE3800941665 /* obstinate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF12C25AE3800941665 /* obstinate.mp3 */; };
+		9B203C212C25AE3800941665 /* available.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF22C25AE3800941665 /* available.mp3 */; };
+		9B203C222C25AE3800941665 /* existence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF32C25AE3800941665 /* existence.mp3 */; };
+		9B203C232C25AE3800941665 /* conscious.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF42C25AE3800941665 /* conscious.mp3 */; };
+		9B203C242C25AE3800941665 /* assent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF52C25AE3800941665 /* assent.mp3 */; };
+		9B203C252C25AE3800941665 /* effect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF62C25AE3800941665 /* effect.mp3 */; };
+		9B203C262C25AE3800941665 /* familiar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF72C25AE3800941665 /* familiar.mp3 */; };
+		9B203C272C25AE3800941665 /* curiosity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF82C25AE3800941665 /* curiosity.mp3 */; };
+		9B203C282C25AE3800941665 /* dissent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF92C25AE3800941665 /* dissent.mp3 */; };
+		9B203C292C25AE3800941665 /* forty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BFA2C25AE3800941665 /* forty.mp3 */; };
+		9B203C2A2C25AE3800941665 /* altar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BFB2C25AE3800941665 /* altar.mp3 */; };
+		9B203C2B2C25AE3800941665 /* instantaneous.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BFC2C25AE3800941665 /* instantaneous.mp3 */; };
+		9B203C2C2C25AE3800941665 /* sacrifice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BFD2C25AE3800941665 /* sacrifice.mp3 */; };
+		9B203C2D2C25AE3800941665 /* desert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BFE2C25AE3800941665 /* desert.mp3 */; };
+		9B203C2E2C25AE3800941665 /* disastrous.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BFF2C25AE3800941665 /* disastrous.mp3 */; };
+		9B203C2F2C25AE3800941665 /* draft.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203C002C25AE3800941665 /* draft.mp3 */; };
+		9B203C302C25AE3800941665 /* mischievous.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203C012C25AE3800941665 /* mischievous.mp3 */; };
+		9B203C312C25AE3800941665 /* affect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203C022C25AE3800941665 /* affect.mp3 */; };
+		9B203C322C25AE3800941665 /* aloud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203C032C25AE3800941665 /* aloud.mp3 */; };
+		9B203C332C25AE3800941665 /* convenience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203C042C25AE3800941665 /* convenience.mp3 */; };
+		9B203C342C25AE3800941665 /* draught.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203C052C25AE3800941665 /* draught.mp3 */; };
 		9B2324272C163B6700D16D6D /* ResultViewShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2324262C163B6700D16D6D /* ResultViewShare.swift */; };
 		9B9AEA8F2BCD7BE200D663FB /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AEA8E2BCD7BE200D663FB /* LearningView.swift */; };
 		9BA6C3812BDBC635000BB358 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6C3802BDBC635000BB358 /* RemoteConfigManager.swift */; };
@@ -55,6 +109,60 @@
 		730584CCFEA0DA883A37678A /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline-SpellingAppOnlineUITests/Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		732A2D5DED08347E9AB3128B /* Pods_SpellingAppOnline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpellingAppOnline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74AE62957447459F029B3FE1 /* Pods-SpellingAppOnline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline.release.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline/Pods-SpellingAppOnline.release.xcconfig"; sourceTree = "<group>"; };
+		9B203BC82C2558FD00941665 /* conscious.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = conscious.mp3; sourceTree = "<group>"; };
+		9B203BC92C2558FD00941665 /* convenience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = convenience.mp3; sourceTree = "<group>"; };
+		9B203BCA2C2558FD00941665 /* disastrous.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = disastrous.mp3; sourceTree = "<group>"; };
+		9B203BCB2C2558FD00941665 /* existence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = existence.mp3; sourceTree = "<group>"; };
+		9B203BCC2C2558FD00941665 /* hindrance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hindrance.mp3; sourceTree = "<group>"; };
+		9B203BCD2C2558FD00941665 /* prejudice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = prejudice.mp3; sourceTree = "<group>"; };
+		9B203BCE2C2558FD00941665 /* sacrifice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sacrifice.mp3; sourceTree = "<group>"; };
+		9B203BD72C25AE3700941665 /* controversy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = controversy.mp3; sourceTree = "<group>"; };
+		9B203BD82C25AE3700941665 /* isle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = isle.mp3; sourceTree = "<group>"; };
+		9B203BD92C25AE3700941665 /* equipment.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = equipment.mp3; sourceTree = "<group>"; };
+		9B203BDA2C25AE3700941665 /* compliment.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = compliment.mp3; sourceTree = "<group>"; };
+		9B203BDB2C25AE3700941665 /* ancient.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ancient.mp3; sourceTree = "<group>"; };
+		9B203BDC2C25AE3700941665 /* dessert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dessert.mp3; sourceTree = "<group>"; };
+		9B203BDD2C25AE3700941665 /* marvellous.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = marvellous.mp3; sourceTree = "<group>"; };
+		9B203BDE2C25AE3700941665 /* aisle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = aisle.mp3; sourceTree = "<group>"; };
+		9B203BDF2C25AE3700941665 /* bridle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bridle.mp3; sourceTree = "<group>"; };
+		9B203BE02C25AE3700941665 /* amateur.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = amateur.mp3; sourceTree = "<group>"; };
+		9B203BE12C25AE3700941665 /* ascent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ascent.mp3; sourceTree = "<group>"; };
+		9B203BE22C25AE3700941665 /* complement.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = complement.mp3; sourceTree = "<group>"; };
+		9B203BE32C25AE3800941665 /* bargain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bargain.mp3; sourceTree = "<group>"; };
+		9B203BE42C25AE3800941665 /* descent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = descent.mp3; sourceTree = "<group>"; };
+		9B203BE52C25AE3800941665 /* allowed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = allowed.mp3; sourceTree = "<group>"; };
+		9B203BE62C25AE3800941665 /* alter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alter.mp3; sourceTree = "<group>"; };
+		9B203BE72C25AE3800941665 /* hindrance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hindrance.mp3; sourceTree = "<group>"; };
+		9B203BE82C25AE3800941665 /* identity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = identity.mp3; sourceTree = "<group>"; };
+		9B203BE92C25AE3800941665 /* cereal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cereal.mp3; sourceTree = "<group>"; };
+		9B203BEA2C25AE3800941665 /* individual.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = individual.mp3; sourceTree = "<group>"; };
+		9B203BEB2C25AE3800941665 /* secretary.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = secretary.mp3; sourceTree = "<group>"; };
+		9B203BEC2C25AE3800941665 /* seldom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = seldom.mp3; sourceTree = "<group>"; };
+		9B203BED2C25AE3800941665 /* serial.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = serial.mp3; sourceTree = "<group>"; };
+		9B203BEE2C25AE3800941665 /* prejudice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = prejudice.mp3; sourceTree = "<group>"; };
+		9B203BEF2C25AE3800941665 /* awkward.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = awkward.mp3; sourceTree = "<group>"; };
+		9B203BF02C25AE3800941665 /* bridal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bridal.mp3; sourceTree = "<group>"; };
+		9B203BF12C25AE3800941665 /* obstinate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = obstinate.mp3; sourceTree = "<group>"; };
+		9B203BF22C25AE3800941665 /* available.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = available.mp3; sourceTree = "<group>"; };
+		9B203BF32C25AE3800941665 /* existence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = existence.mp3; sourceTree = "<group>"; };
+		9B203BF42C25AE3800941665 /* conscious.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = conscious.mp3; sourceTree = "<group>"; };
+		9B203BF52C25AE3800941665 /* assent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = assent.mp3; sourceTree = "<group>"; };
+		9B203BF62C25AE3800941665 /* effect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = effect.mp3; sourceTree = "<group>"; };
+		9B203BF72C25AE3800941665 /* familiar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = familiar.mp3; sourceTree = "<group>"; };
+		9B203BF82C25AE3800941665 /* curiosity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = curiosity.mp3; sourceTree = "<group>"; };
+		9B203BF92C25AE3800941665 /* dissent.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dissent.mp3; sourceTree = "<group>"; };
+		9B203BFA2C25AE3800941665 /* forty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = forty.mp3; sourceTree = "<group>"; };
+		9B203BFB2C25AE3800941665 /* altar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = altar.mp3; sourceTree = "<group>"; };
+		9B203BFC2C25AE3800941665 /* instantaneous.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instantaneous.mp3; sourceTree = "<group>"; };
+		9B203BFD2C25AE3800941665 /* sacrifice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sacrifice.mp3; sourceTree = "<group>"; };
+		9B203BFE2C25AE3800941665 /* desert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = desert.mp3; sourceTree = "<group>"; };
+		9B203BFF2C25AE3800941665 /* disastrous.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = disastrous.mp3; sourceTree = "<group>"; };
+		9B203C002C25AE3800941665 /* draft.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = draft.mp3; sourceTree = "<group>"; };
+		9B203C012C25AE3800941665 /* mischievous.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mischievous.mp3; sourceTree = "<group>"; };
+		9B203C022C25AE3800941665 /* affect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = affect.mp3; sourceTree = "<group>"; };
+		9B203C032C25AE3800941665 /* aloud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = aloud.mp3; sourceTree = "<group>"; };
+		9B203C042C25AE3800941665 /* convenience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = convenience.mp3; sourceTree = "<group>"; };
+		9B203C052C25AE3800941665 /* draught.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = draught.mp3; sourceTree = "<group>"; };
 		9B2324262C163B6700D16D6D /* ResultViewShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewShare.swift; sourceTree = "<group>"; };
 		9B9AEA8E2BCD7BE200D663FB /* LearningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 		9BA6C3802BDBC635000BB358 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = SOURCE_ROOT; };
@@ -135,9 +243,71 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9B203BCF2C2558FD00941665 /* elevenlabsutterances */ = {
+			isa = PBXGroup;
+			children = (
+				9B203C022C25AE3800941665 /* affect.mp3 */,
+				9B203BDE2C25AE3700941665 /* aisle.mp3 */,
+				9B203BE52C25AE3800941665 /* allowed.mp3 */,
+				9B203C032C25AE3800941665 /* aloud.mp3 */,
+				9B203BFB2C25AE3800941665 /* altar.mp3 */,
+				9B203BE62C25AE3800941665 /* alter.mp3 */,
+				9B203BE02C25AE3700941665 /* amateur.mp3 */,
+				9B203BDB2C25AE3700941665 /* ancient.mp3 */,
+				9B203BE12C25AE3700941665 /* ascent.mp3 */,
+				9B203BF52C25AE3800941665 /* assent.mp3 */,
+				9B203BF22C25AE3800941665 /* available.mp3 */,
+				9B203BEF2C25AE3800941665 /* awkward.mp3 */,
+				9B203BE32C25AE3800941665 /* bargain.mp3 */,
+				9B203BF02C25AE3800941665 /* bridal.mp3 */,
+				9B203BDF2C25AE3700941665 /* bridle.mp3 */,
+				9B203BE92C25AE3800941665 /* cereal.mp3 */,
+				9B203BE22C25AE3700941665 /* complement.mp3 */,
+				9B203BDA2C25AE3700941665 /* compliment.mp3 */,
+				9B203BF42C25AE3800941665 /* conscious.mp3 */,
+				9B203BD72C25AE3700941665 /* controversy.mp3 */,
+				9B203C042C25AE3800941665 /* convenience.mp3 */,
+				9B203BF82C25AE3800941665 /* curiosity.mp3 */,
+				9B203BE42C25AE3800941665 /* descent.mp3 */,
+				9B203BFE2C25AE3800941665 /* desert.mp3 */,
+				9B203BDC2C25AE3700941665 /* dessert.mp3 */,
+				9B203BFF2C25AE3800941665 /* disastrous.mp3 */,
+				9B203BF92C25AE3800941665 /* dissent.mp3 */,
+				9B203C002C25AE3800941665 /* draft.mp3 */,
+				9B203C052C25AE3800941665 /* draught.mp3 */,
+				9B203BF62C25AE3800941665 /* effect.mp3 */,
+				9B203BD92C25AE3700941665 /* equipment.mp3 */,
+				9B203BF32C25AE3800941665 /* existence.mp3 */,
+				9B203BF72C25AE3800941665 /* familiar.mp3 */,
+				9B203BFA2C25AE3800941665 /* forty.mp3 */,
+				9B203BE72C25AE3800941665 /* hindrance.mp3 */,
+				9B203BE82C25AE3800941665 /* identity.mp3 */,
+				9B203BEA2C25AE3800941665 /* individual.mp3 */,
+				9B203BFC2C25AE3800941665 /* instantaneous.mp3 */,
+				9B203BD82C25AE3700941665 /* isle.mp3 */,
+				9B203BDD2C25AE3700941665 /* marvellous.mp3 */,
+				9B203C012C25AE3800941665 /* mischievous.mp3 */,
+				9B203BF12C25AE3800941665 /* obstinate.mp3 */,
+				9B203BEE2C25AE3800941665 /* prejudice.mp3 */,
+				9B203BFD2C25AE3800941665 /* sacrifice.mp3 */,
+				9B203BEB2C25AE3800941665 /* secretary.mp3 */,
+				9B203BEC2C25AE3800941665 /* seldom.mp3 */,
+				9B203BED2C25AE3800941665 /* serial.mp3 */,
+				9B203BC82C2558FD00941665 /* conscious.mp3 */,
+				9B203BC92C2558FD00941665 /* convenience.mp3 */,
+				9B203BCA2C2558FD00941665 /* disastrous.mp3 */,
+				9B203BCB2C2558FD00941665 /* existence.mp3 */,
+				9B203BCC2C2558FD00941665 /* hindrance.mp3 */,
+				9B203BCD2C2558FD00941665 /* prejudice.mp3 */,
+				9B203BCE2C2558FD00941665 /* sacrifice.mp3 */,
+			);
+			path = elevenlabsutterances;
+			sourceTree = "<group>";
+		};
 		9BF514532B94F94500C75AFC = {
 			isa = PBXGroup;
 			children = (
+				9B203BCF2C2558FD00941665 /* elevenlabsutterances */,
 				9BF5145E2B94F94500C75AFC /* SpellingAppOnline */,
 				9BF5146F2B94F94700C75AFC /* SpellingAppOnlineTests */,
 				9BF514792B94F94700C75AFC /* SpellingAppOnlineUITests */,
@@ -315,10 +485,64 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B203C072C25AE3800941665 /* isle.mp3 in Resources */,
+				9B203C1B2C25AE3800941665 /* seldom.mp3 in Resources */,
+				9B203BD52C2558FD00941665 /* prejudice.mp3 in Resources */,
+				9B203BD02C2558FD00941665 /* conscious.mp3 in Resources */,
+				9B203BD42C2558FD00941665 /* hindrance.mp3 in Resources */,
+				9B203C062C25AE3800941665 /* controversy.mp3 in Resources */,
+				9B203C082C25AE3800941665 /* equipment.mp3 in Resources */,
+				9B203C0E2C25AE3800941665 /* bridle.mp3 in Resources */,
+				9B203C242C25AE3800941665 /* assent.mp3 in Resources */,
+				9B203C0C2C25AE3800941665 /* marvellous.mp3 in Resources */,
+				9B203C332C25AE3800941665 /* convenience.mp3 in Resources */,
 				9BF514982B95020800C75AFC /* README.md in Resources */,
+				9B203C2A2C25AE3800941665 /* altar.mp3 in Resources */,
+				9B203C262C25AE3800941665 /* familiar.mp3 in Resources */,
+				9B203C1C2C25AE3800941665 /* serial.mp3 in Resources */,
+				9B203C302C25AE3800941665 /* mischievous.mp3 in Resources */,
+				9B203C222C25AE3800941665 /* existence.mp3 in Resources */,
+				9B203C132C25AE3800941665 /* descent.mp3 in Resources */,
 				9BD67BDD2BD0281000330D70 /* GoogleService-Info.plist in Resources */,
+				9B203C102C25AE3800941665 /* ascent.mp3 in Resources */,
+				9B203C1F2C25AE3800941665 /* bridal.mp3 in Resources */,
+				9B203C292C25AE3800941665 /* forty.mp3 in Resources */,
+				9B203C2F2C25AE3800941665 /* draft.mp3 in Resources */,
+				9B203BD32C2558FD00941665 /* existence.mp3 in Resources */,
+				9B203C342C25AE3800941665 /* draught.mp3 in Resources */,
+				9B203C112C25AE3800941665 /* complement.mp3 in Resources */,
 				9BF514672B94F94700C75AFC /* Preview Assets.xcassets in Resources */,
+				9B203C142C25AE3800941665 /* allowed.mp3 in Resources */,
+				9B203C212C25AE3800941665 /* available.mp3 in Resources */,
+				9B203C282C25AE3800941665 /* dissent.mp3 in Resources */,
+				9B203C322C25AE3800941665 /* aloud.mp3 in Resources */,
+				9B203C092C25AE3800941665 /* compliment.mp3 in Resources */,
+				9B203C2B2C25AE3800941665 /* instantaneous.mp3 in Resources */,
+				9B203C0A2C25AE3800941665 /* ancient.mp3 in Resources */,
+				9B203C1D2C25AE3800941665 /* prejudice.mp3 in Resources */,
+				9B203C182C25AE3800941665 /* cereal.mp3 in Resources */,
+				9B203C272C25AE3800941665 /* curiosity.mp3 in Resources */,
+				9B203BD22C2558FD00941665 /* disastrous.mp3 in Resources */,
+				9B203C0D2C25AE3800941665 /* aisle.mp3 in Resources */,
+				9B203C152C25AE3800941665 /* alter.mp3 in Resources */,
+				9B203C0B2C25AE3800941665 /* dessert.mp3 in Resources */,
+				9B203C252C25AE3800941665 /* effect.mp3 in Resources */,
+				9B203BD62C2558FD00941665 /* sacrifice.mp3 in Resources */,
+				9B203BD12C2558FD00941665 /* convenience.mp3 in Resources */,
+				9B203C172C25AE3800941665 /* identity.mp3 in Resources */,
+				9B203C122C25AE3800941665 /* bargain.mp3 in Resources */,
+				9B203C312C25AE3800941665 /* affect.mp3 in Resources */,
+				9B203C232C25AE3800941665 /* conscious.mp3 in Resources */,
 				9BF514642B94F94700C75AFC /* Assets.xcassets in Resources */,
+				9B203C202C25AE3800941665 /* obstinate.mp3 in Resources */,
+				9B203C2C2C25AE3800941665 /* sacrifice.mp3 in Resources */,
+				9B203C0F2C25AE3800941665 /* amateur.mp3 in Resources */,
+				9B203C1A2C25AE3800941665 /* secretary.mp3 in Resources */,
+				9B203C192C25AE3800941665 /* individual.mp3 in Resources */,
+				9B203C2D2C25AE3800941665 /* desert.mp3 in Resources */,
+				9B203C2E2C25AE3800941665 /* disastrous.mp3 in Resources */,
+				9B203C1E2C25AE3800941665 /* awkward.mp3 in Resources */,
+				9B203C162C25AE3800941665 /* hindrance.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
