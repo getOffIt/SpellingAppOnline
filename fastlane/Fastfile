@@ -59,7 +59,7 @@ platform :ios do
       scheme: "SpellingAppOnline",
       workspace: "SpellingAppOnline.xcworkspace",
       configuration: "Release",
-      export_method: "app-store-connect",
+      export_method: "app-store",
       export_xcargs: "-allowProvisioningUpdates")
     
   end
@@ -103,7 +103,7 @@ platform :ios do
         export_compliance_available_on_french_store: false
       },
       release_notes: {
-        'en-GB' => "Fixes bugs"
+        'en-GB' => "Using a nicer smoother voice for the spelling words. Also fixed a bug"
       },
     )
   end
