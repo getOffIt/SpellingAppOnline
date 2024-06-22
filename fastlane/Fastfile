@@ -69,13 +69,17 @@ platform :ios do
 
     # Fetch the current date components
     current_time = Time.now
-    year = current_time.strftime("%y")
+    # keeping the major version so I can introduce time based versioning in a reversible way on the App store.
+    # If I want to go back to semantic versioning I can just change the major version number
+    major_version = "1"
+    year = current_time.strftime("%Y")
     month = current_time.strftime("%m")
     day = current_time.strftime("%d")
-    new_version = "#{year}.#{month}.#{day}"
-    increment_version_number(
-      version_number: new_version,
-      xcodeproj: 'SpellingAppOnline.xcodeproj'
+    new_version = "#{major_version}.#{year}#{month}#{day}.0"
+    update_xcconfig_value(
+      path: 'versionnumber.xcconfig',
+      name: 'VERSION_NUMBER',
+      value: new_version
     )
     UI.message("Updated version number to #{new_version}")
   end
