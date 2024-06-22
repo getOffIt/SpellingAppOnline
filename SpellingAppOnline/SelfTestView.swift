@@ -83,7 +83,11 @@ struct SelfTestView: View {
     }
     
     private func playButton() {
-        let homophones = WordsData().Homophones;
+        
+        var homophones = WordsData().Homophones;
+        if RemoteConfigManager.shared.enableRemoteHomophones {
+            homophones = RemoteConfigManager.shared.homophonesDescription
+        }
         let word = questions[index]
         
         if let description = homophones[questions[index]] {

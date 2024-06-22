@@ -21,6 +21,8 @@ class RemoteConfigManager: ObservableObject {
     @Published var sharingResultsEnabled = false
     @Published var debugMode = false
     @Published var elevenlabsvoices = false
+    @Published var homophonesDescription: [String: String] = WordsData().Homophones
+    @Published var enableRemoteHomophones = true
     
     init() {
         FirebaseApp.configure()
@@ -51,6 +53,8 @@ class RemoteConfigManager: ObservableObject {
                     self.sharingResultsEnabled = self.remoteConfig!["sharingResultsEnabled"].boolValue
                     self.debugMode = self.remoteConfig!["debugMode"].boolValue
                     self.elevenlabsvoices = self.remoteConfig!["elevenlabsvoices"].boolValue
+                    self.homophonesDescription = self.remoteConfig!["homophonesDescription"].jsonValue as? [String: String] ?? WordsData().Homophones
+                    self.enableRemoteHomophones = self.remoteConfig!["enableRemoteHomophones"].boolValue
                 }
             }
         }

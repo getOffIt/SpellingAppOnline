@@ -26,7 +26,7 @@ class Speech {
             audioPlayer?.play()
             print("Playing mp3 for word: \(word)")
         } catch { // Otherwise, use system synthetiser
-            print("Error loading mp3 file: \(error.localizedDescription)")
+            print("Error loading mp3 file for \(word): \(error.localizedDescription)")
             synthesizeSpeech(word: word)
         }
     }
