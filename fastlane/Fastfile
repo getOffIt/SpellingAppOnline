@@ -69,10 +69,13 @@ platform :ios do
 
     # Fetch the current date components
     current_time = Time.now
-    year = current_time.strftime("%y")
+    # keeping the major version so I can introduce time based versioning in a reversible way on the App store.
+    # If I want to go back to semantic versioning I can just change the major version number
+    major_version = "1"
+    year = current_time.strftime("%Y")
     month = current_time.strftime("%m")
     day = current_time.strftime("%d")
-    new_version = "1.#{year}#{month}#{day}.0"
+    new_version = "#{major_version}.#{year}#{month}#{day}.0"
     update_xcconfig_value(
       path: 'versionnumber.xcconfig',
       name: 'VERSION_NUMBER',
