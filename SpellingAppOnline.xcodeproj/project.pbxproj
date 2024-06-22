@@ -109,6 +109,7 @@
 		730584CCFEA0DA883A37678A /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline-SpellingAppOnlineUITests/Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		732A2D5DED08347E9AB3128B /* Pods_SpellingAppOnline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpellingAppOnline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74AE62957447459F029B3FE1 /* Pods-SpellingAppOnline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline.release.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline/Pods-SpellingAppOnline.release.xcconfig"; sourceTree = "<group>"; };
+		9B1D42E92C2722FE007BC7D7 /* versionnumber.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = versionnumber.xcconfig; sourceTree = "<group>"; };
 		9B203BC82C2558FD00941665 /* conscious.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = conscious.mp3; sourceTree = "<group>"; };
 		9B203BC92C2558FD00941665 /* convenience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = convenience.mp3; sourceTree = "<group>"; };
 		9B203BCA2C2558FD00941665 /* disastrous.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = disastrous.mp3; sourceTree = "<group>"; };
@@ -307,6 +308,7 @@
 		9BF514532B94F94500C75AFC = {
 			isa = PBXGroup;
 			children = (
+				9B1D42E92C2722FE007BC7D7 /* versionnumber.xcconfig */,
 				9B203BCF2C2558FD00941665 /* elevenlabsutterances */,
 				9BF5145E2B94F94500C75AFC /* SpellingAppOnline */,
 				9BF5146F2B94F94700C75AFC /* SpellingAppOnlineTests */,
@@ -721,6 +723,7 @@
 /* Begin XCBuildConfiguration section */
 		9BF5147E2B94F94700C75AFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B1D42E92C2722FE007BC7D7 /* versionnumber.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -784,6 +787,7 @@
 		};
 		9BF5147F2B94F94700C75AFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B1D42E92C2722FE007BC7D7 /* versionnumber.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -865,7 +869,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.1;
+				MARKETING_VERSION = "$(VERSION_NUMBER)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antoine.SpellingAppOnlinesomething;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -903,7 +907,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.1;
+				MARKETING_VERSION = "$(VERSION_NUMBER)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.antoine.SpellingAppOnlinesomething;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
