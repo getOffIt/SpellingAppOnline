@@ -72,10 +72,11 @@ platform :ios do
     year = current_time.strftime("%y")
     month = current_time.strftime("%m")
     day = current_time.strftime("%d")
-    new_version = "#{year}.#{month}.#{day}"
-    increment_version_number(
-      version_number: new_version,
-      xcodeproj: 'SpellingAppOnline.xcodeproj'
+    new_version = "1.#{year}#{month}#{day}.0"
+    update_xcconfig_value(
+      path: 'versionnumber.xcconfig',
+      name: 'VERSION_NUMBER',
+      value: new_version
     )
     UI.message("Updated version number to #{new_version}")
   end
