@@ -26,7 +26,7 @@ struct ContentView: View {
     var body: some View {
         if RemoteConfigManager.shared.debugMode && enableTabBarForDebug {
             TabView(selection: $selectedTab) {
-                UnoGameView()
+                UnoTestView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
                     .tabItem {
                         Text("Uno")
                     }
@@ -34,32 +34,16 @@ struct ContentView: View {
                     .tabItem {
                         Text("Results")
                     }
-                switch testStatusFull {
-                case .spelling:
-                    SelfTestView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
-                        .tabItem {
-                            Text(remoteConfigLocal.firsttabItemText)
-                        }
-                case .reviewing:
-                    ResultsView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
-                        .tabItem {
-                            Text(remoteConfigLocal.firsttabItemText)
-                        }
-                case .learning:
-                    Text("Spelling Test")
-                    LearningView(testStatus: $testStatusResultsDebug, questions: questionsFull, answers: $answersFull)
-                        .tabItem {
-                            Text(remoteConfigLocal.firsttabItemText)
-                        }
-                }
+                FullTestSequence(testStatus: $testStatusFull, answers: $answersFull, questions: questionsFull)
+                    .tabItem {
+                        Image(systemName: "1.circle")
+                        Text(remoteConfigLocal.firsttabItemText)
+                    }
             }
         }
         else {
             FullTestSequence(testStatus: $testStatusFull, answers: $answersFull, questions: questionsFull)
-                .tabItem {
-                    Image(systemName: "1.circle")
-                    Text(remoteConfigLocal.firsttabItemText)
-                }
+
         }
     }
 }
