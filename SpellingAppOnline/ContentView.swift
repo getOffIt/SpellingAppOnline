@@ -42,8 +42,19 @@ struct ContentView: View {
             }
         }
         else {
-            FullTestSequence(testStatus: $testStatusFull, answers: $answersFull, questions: questionsFull)
-
+            TabView(selection: $selectedTab) {
+                
+                FullTestSequence(testStatus: $testStatusFull, answers: $answersFull, questions: questionsFull)
+                    .tabItem {
+                        Image(systemName: "1.circle")
+                        Text(remoteConfigLocal.firsttabItemText)
+                    }
+                UnoTestView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
+                    .tabItem {
+                        Image(systemName: "2.circle")
+                        Text("Uno")
+                    }
+            }
         }
     }
 }
