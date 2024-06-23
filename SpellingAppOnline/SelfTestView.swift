@@ -21,64 +21,72 @@ struct SelfTestView: View {
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Spelling Test")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                Spacer()
-            }
+        ZStack {
+            // Invisible button to dismiss the keyboard
+                      Color.clear
+                          .contentShape(Rectangle())
+                          .onTapGesture {
+                              isInputActive = false
+                          }
             VStack {
                 HStack {
-                    Text("WORD \(index + 1) OF \(questions.count)")
+                    Text("Spelling Test")
+                        .font(.largeTitle)
                         .fontWeight(.bold)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                     Spacer()
                 }
-                
-                HStack(spacing: 20) {
-                    Button(action: {
-                        // action for play button
-                        playButton()
-                    }) {
-                        Image(systemName: "speaker.wave.2.fill")
-                            .font(.largeTitle)
-                            .foregroundColor(.purple)
+                VStack {
+                    HStack {
+                        Text("WORD \(index + 1) OF \(questions.count)")
+                            .fontWeight(.bold)
+                            .foregroundColor(.gray)
+                        Spacer()
                     }
+                    
+                    HStack(spacing: 20) {
+                        Button(action: {
+                            // action for play button
+                            playButton()
+                        }) {
+                            Image(systemName: "speaker.wave.2.fill")
+                                .font(.largeTitle)
+                                .foregroundColor(.purple)
+                        }
+                    }
+                    .padding()
+                    
+                    TextField("Type word", text: $typedWord)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                        .autocapitalization(.none)
+                        .keyboardType(.alphabet)
+                        .autocorrectionDisabled()
+                        .submitLabel(.next)
+                        .onSubmit {
+                            nextButton()
+                        }
+                        .focused($isInputActive)
+                    
+                    Button(action: {
+                        nextButton()
+                    }) {
+                        Text("Next")
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(typedWord.isEmpty ? Color.gray : Color.purple)
+                            .cornerRadius(10)
+                    }
+                    .disabled(typedWord.isEmpty)
                 }
                 .padding()
                 
-                TextField("Type word", text: $typedWord)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                    .autocapitalization(.none)
-                    .keyboardType(.alphabet)
-                    .autocorrectionDisabled()
-                    .submitLabel(.next)
-                    .onSubmit {
-                        nextButton()
-                    }
-                    .focused($isInputActive)
-                
-                Button(action: {
-                    nextButton()
-                }) {
-                    Text("Next")
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(typedWord.isEmpty ? Color.gray : Color.purple)
-                        .cornerRadius(10)
-                }
-                .disabled(typedWord.isEmpty)
+                Spacer()
             }
-            .padding()
-            
-            Spacer()
-        }
-        .onAppear {
-            isInputActive = true
+            .onAppear {
+                isInputActive = true
+            }
         }
     }
     
