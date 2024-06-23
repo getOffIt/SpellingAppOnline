@@ -16,7 +16,9 @@ struct ContentView: View {
     @State private var answersFull: [String] = []
         private var questionsFull: [String] {get {RemoteConfigManager.shared.firsttabItemWordList}}
 //    private var questionsFull = WordsData().testDataHomophones
-        
+    @State private var testStatusUno = TestStatus.spelling
+    @State private var answersUno: [String] = []
+//    private var questionsFull = WordsData().testDataHomophones
     
     private var enableTabBarForDebug = false
     @State private var testStatusResultsDebug = TestStatus.reviewing
@@ -49,7 +51,7 @@ struct ContentView: View {
                         Image(systemName: "1.circle")
                         Text(remoteConfigLocal.firsttabItemText)
                     }
-                UnoTestView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
+                UnoTestView(testStatus: $testStatusUno, questions: questionsFull, answers: $answersUno)
                     .tabItem {
                         Image(systemName: "2.circle")
                         Text("Uno")

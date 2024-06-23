@@ -22,7 +22,12 @@ struct SelfTestView: View {
     
     var body: some View {
         ZStack {
-            
+            // Invisible button to dismiss the keyboard
+                      Color.clear
+                          .contentShape(Rectangle())
+                          .onTapGesture {
+                              isInputActive = false
+                          }
             VStack {
                 HStack {
                     Text("Spelling Test")
@@ -83,13 +88,6 @@ struct SelfTestView: View {
                 isInputActive = true
             }
         }
-        .overlay(
-                 Button(action: {
-                     isInputActive = false
-                 }) {
-                     Color.clear
-                 }
-             )
     }
     
     private func playButton() {
