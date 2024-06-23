@@ -26,7 +26,6 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
-
   beta:
     macos:
       xcode: "15.3.0"
@@ -67,6 +66,26 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
+  release_to_app_store:
+    macos:
+      xcode: "15.3.0"
+    working_directory: /Users/distiller/project
+    environment:
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: release_to_app_store
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
+      - macos/switch-ruby:
+          version: "3.0"
+      - ruby/install-deps
+      - run:
+          name: fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: output
+      - store_test_results:
+          path: output/scan
 workflows:
   version: 2
   build_and_deploy:
@@ -76,3 +95,13 @@ workflows:
             branches:
               only:
                 - main
+  nightly_release:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      - release_to_app_store
