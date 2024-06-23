@@ -72,19 +72,15 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
-            Text("Detail View")
-                .font(.largeTitle)
-            
             // Dismiss button handled in the presenting view
             Button(action: {
                 isPresented = false
             }) {
-                Text("Close")
-                    .font(.title)
-                    .padding()
-                    .background(Color.red)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                Spacer()
+                Image(systemName: "xmark.circle.fill")
+                                         .font(.title)
+                                         .foregroundColor(.gray)
+                                         .padding()
             }
         }
         FullTestSequence(testStatus: $testStatus, answers: $answers, questions: questions)
