@@ -72,7 +72,7 @@ jobs:
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
-      FASTLANE_LANE: release_to_app_store
+      FASTLANE_LANE: releaseLatestTestFlightBuildToAppStore
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
@@ -98,7 +98,7 @@ workflows:
   nightly_release:
     triggers:
       - schedule:
-          cron: "0 0 * * *"
+          cron: "18 9 * * *"
           filters:
             branches:
               only:
