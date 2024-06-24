@@ -96,7 +96,6 @@ workflows:
               only:
                 - main
   nightly_release:
-  #when: << pipeline.parameters.run-schedule >>
     triggers:
       - schedule:
           cron: "*10 * * * *"
