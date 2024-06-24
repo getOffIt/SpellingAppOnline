@@ -86,6 +86,7 @@ platform :ios do
 
   desc "Release latest testflight build"
   lane :releaseLatestTestFlightBuildToAppStore do
+    app_store_connect_api_key_setup
     deliver(
       skip_binary_upload: true,
       submit_for_review: true,
