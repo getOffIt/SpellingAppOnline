@@ -98,7 +98,7 @@ workflows:
   nightly_release:
     triggers:
       - schedule:
-          cron: "*10 * * * *"
+          cron: "*/10 * * * *"
           filters:
             branches:
               only:
