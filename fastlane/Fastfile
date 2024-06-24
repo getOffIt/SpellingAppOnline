@@ -83,9 +83,19 @@ platform :ios do
     )
     UI.message("Updated version number to #{new_version}")
   end
+  
+  def has_commits_in_last_24_hours?
+    last_24_hours_commits = `git log --since="24 hours ago" --oneline main`.strip
+    !last_24_hours_commits.empty?
+  end
 
   desc "Release latest testflight build"
   lane :releaseLatestTestFlightBuildToAppStore do
+    unless has_commits_in_last_24_hours?
+      UI.important("No commits in the last 24 hours on the main branch. Skipping release.")
+      next
+    end
+
     app_store_connect_api_key_setup
     beta
     deliver(
