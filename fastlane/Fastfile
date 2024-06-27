@@ -120,7 +120,7 @@ platform :ios do
         export_compliance_available_on_french_store: false
       },
       release_notes: {
-        'en-GB' => "Using a nicer smoother voice for the spelling words. Also fixed a bug"
+        'en-GB' => "Resolving some nagivation issues around the bottom tab bar, now introduced the duration for tests in the result view"
       },
     )
   end
