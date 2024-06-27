@@ -3,22 +3,17 @@ import SwiftUI
 //againagain-- a space to trigger a build
 struct LearningView: View {
     
-    
-    @Binding var testStatus: TestStatus
-    @Binding var answers: [String]
-    var questions: [String]
-    
     // Updated to track the user input for each incorrect answer
     @State private var userInputs: [String: String] = [:]
     
-    init(testStatus: Binding<TestStatus>, questions: [String], answers: Binding<[String]>) {
-        _testStatus = testStatus
-        self.questions = questions
-        _answers = answers
+    @ObservedObject private var spellingTestMetadata: SpellingTestMetadata
+    
+    init(spellingTestMetadata: SpellingTestMetadata) {
+        self.spellingTestMetadata = spellingTestMetadata
     }
     
-    var incorrectAnswers: [String] {
-        questions.indices.filter { answers.indices.contains($0) && answers[$0] != questions[$0] }.map { questions[$0] }
+    var incorrectAnswers: [String] { //TODO: move this into the helper class maybe?
+        spellingTestMetadata.questions.indices.filter { spellingTestMetadata.answers.indices.contains($0) && spellingTestMetadata.answers[$0] != spellingTestMetadata.questions[$0] }.map { spellingTestMetadata.questions[$0] }
     }
     
     var body: some View {
@@ -38,8 +33,8 @@ struct LearningView: View {
                     .padding(.bottom, 20)
                 }
                 Button("I'm Done") {
-                    testStatus = .spelling
-                    answers = []
+                    spellingTestMetadata.testStatus = .spelling
+                    spellingTestMetadata.answers = []
                 }
             }
             .padding()

@@ -46,17 +46,19 @@ struct ResultsViewShare: View {
             
             LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(Array(zip(questions.indices, questions)), id: \.0) { index, question in
+                    let theAnswer = index < answers.count ? answers[index] : "" // getting around empty answers possible in debug mode
+
                     HStack {
                         Text("\(index + 1). \(question)")
                         Spacer()
                     }
                     HStack {
-                        Text(answers[index])
+                        Text(theAnswer)
                         Spacer()
                     }
                     HStack {
-                        Image(systemName: answers[index] == questions[index] ? "checkmark.circle.fill" : "xmark.circle.fill")
-                            .foregroundColor(answers[index] == questions[index] ? .green : .red)
+                        Image(systemName: theAnswer == questions[index] ? "checkmark.circle.fill" : "xmark.circle.fill")
+                            .foregroundColor(theAnswer == questions[index] ? .green : .red)
                     }
                 }
             }
