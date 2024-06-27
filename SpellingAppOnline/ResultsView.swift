@@ -6,7 +6,6 @@ struct ResultsView: View {
     @State private var currentTime = Date()
     
     @State var completionDate:String = "13 Feb 2024 at 10:34"
-    let duration = ""
         
     @State var correct = 0
     @State var pass = true
@@ -70,7 +69,7 @@ struct ResultsView: View {
                            VStack(alignment: .leading) {
                                Text("DURATION")
                                    .fontWeight(.bold)
-                               Text(duration)
+                               Text(spellingTestMetadata.duration)
                            }
                        }
                    }

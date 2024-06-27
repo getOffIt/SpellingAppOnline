@@ -67,6 +67,7 @@
 		9B2324272C163B6700D16D6D /* ResultViewShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2324262C163B6700D16D6D /* ResultViewShare.swift */; };
 		9B46F0E52C28B9A2009C41D4 /* UnoTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46F0E42C28B9A2009C41D4 /* UnoTestView.swift */; };
 		9B46F0E72C28BC6C009C41D4 /* FullTestSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46F0E62C28BC6C009C41D4 /* FullTestSequence.swift */; };
+		9B77AD6F2C2D94EB00E119B3 /* SpellingTestMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B77AD6E2C2D94EB00E119B3 /* SpellingTestMetadata.swift */; };
 		9B9AEA8F2BCD7BE200D663FB /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9AEA8E2BCD7BE200D663FB /* LearningView.swift */; };
 		9BA6C3812BDBC635000BB358 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6C3802BDBC635000BB358 /* RemoteConfigManager.swift */; };
 		9BA6C3832BDD34C4000BB358 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6C3822BDD34C4000BB358 /* SnapshotHelper.swift */; };
@@ -169,6 +170,7 @@
 		9B2324262C163B6700D16D6D /* ResultViewShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewShare.swift; sourceTree = "<group>"; };
 		9B46F0E42C28B9A2009C41D4 /* UnoTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnoTestView.swift; sourceTree = "<group>"; };
 		9B46F0E62C28BC6C009C41D4 /* FullTestSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullTestSequence.swift; sourceTree = "<group>"; };
+		9B77AD6E2C2D94EB00E119B3 /* SpellingTestMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingTestMetadata.swift; sourceTree = "<group>"; };
 		9B9AEA8E2BCD7BE200D663FB /* LearningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 		9BA6C3802BDBC635000BB358 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = SOURCE_ROOT; };
 		9BA6C3822BDD34C4000BB358 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
@@ -354,6 +356,7 @@
 				9BD7164B2C08BA5A005371B0 /* ImageManager.swift */,
 				9B46F0E42C28B9A2009C41D4 /* UnoTestView.swift */,
 				9B46F0E62C28BC6C009C41D4 /* FullTestSequence.swift */,
+				9B77AD6E2C2D94EB00E119B3 /* SpellingTestMetadata.swift */,
 			);
 			path = SpellingAppOnline;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B77AD6F2C2D94EB00E119B3 /* SpellingTestMetadata.swift in Sources */,
 				9BF514962B94FA8600C75AFC /* Speech.swift in Sources */,
 				9BF514622B94F94500C75AFC /* ContentView.swift in Sources */,
 				9B9AEA8F2BCD7BE200D663FB /* LearningView.swift in Sources */,

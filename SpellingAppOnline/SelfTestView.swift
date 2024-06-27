@@ -88,7 +88,9 @@ struct SelfTestView: View {
     }
     
     private func playButton() {
-//        time start here
+        if index == 0 {
+            spellingTestMetadata.startTest = Date()
+        }
         var homophones = WordsData().Homophones;
         if RemoteConfigManager.shared.enableRemoteHomophones {
             homophones = RemoteConfigManager.shared.homophonesDescription
@@ -108,8 +110,8 @@ struct SelfTestView: View {
         self.spellingTestMetadata.answers.append(trimmedWord)
 
         if index == self.spellingTestMetadata.questions.count - 1 {
+            spellingTestMetadata.finishTest = Date()
             self.spellingTestMetadata.testStatus = .reviewing
-            // time now here
             return
         }
         index += 1
