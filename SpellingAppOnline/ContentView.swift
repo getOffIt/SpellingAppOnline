@@ -22,6 +22,9 @@ struct ContentView: View {
     
     init() {
         resultsTest.answers = ["a", "b"]
+        resultsTest.startTest = Date()
+        sleep(1)
+        resultsTest.finishTest = Date()
         learningTest.answers = ["bla", "bla"]
     }
     
