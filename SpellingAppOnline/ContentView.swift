@@ -1,16 +1,6 @@
 import SwiftUI
 import AVFoundation
 
-class SpellingTestMetadata: ObservableObject {
-    @Published var testStatus: TestStatus = .spelling
-    let questions: [String]
-    @Published var answers: [String] = []
-    
-    init(questions: [String]) {
-        self.questions = questions
-    }
-}
-
 enum TestStatus {
     case spelling, reviewing, learning
 }

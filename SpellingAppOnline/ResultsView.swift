@@ -105,13 +105,8 @@ struct ResultsView: View {
                                 HStack {
                                     Image(systemName: spellingTestMetadata.answers[index] == spellingTestMetadata.questions[index] ? "checkmark.circle.fill" : "xmark.circle.fill")
                                         .foregroundColor(spellingTestMetadata.answers[index] == spellingTestMetadata.questions[index] ? .green : .red)
-                                    
                                 }
                             }
-//                                .padding(.vertical, 5)
-//                                .background(index % 2 == 0 ? Color(UIColor.systemGray6) : Color(UIColor.systemGray5)) // Alternating background colors
-//                                .cornerRadius(8) // Rounded corners for background
-                            
                         }
                     }
                     
