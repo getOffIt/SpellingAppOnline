@@ -24,7 +24,7 @@ struct ContentView: View {
     @State private var testUno = SpellingTestMetadata(questions:WordsData().testDataShort)
     @State private var resultsTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     @State private var learningTest = SpellingTestMetadata(questions: WordsData().testDataShort)
-
+    
     private var enableTabBarForDebug = false
     @State private var testStatusResultsDebug = TestStatus.reviewing
     @State private var testStatusResultsDebugQuestions: [String] = WordsData().allWordsYear6Part1
@@ -56,13 +56,9 @@ struct ContentView: View {
                     }
             }
         }
-
-        else {            
-            FullTestSequence(testStatus: $testStatusFull, answers: $answersFull, questions: questionsFull)
-                .tabItem {
-                    Image(systemName: "1.circle")
-                    Text(remoteConfigLocal.firsttabItemText)
-                }
+        
+        else {
+            FullTestSequence(spellingTestMetadata: testFull)
         }
     }
 }
