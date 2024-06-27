@@ -5,21 +5,18 @@ import AVFoundation
 import SwiftUI
 
 struct SelfTestView: View {
-    @Binding var testStatus: TestStatus
-    @Binding var answers: [String]
-    var questions: [String]
-
+    
     var speech: Speech = Speech()
     @State private var typedWord: String = ""
     @State private var index = 0
     @FocusState private var isInputActive: Bool
     
-    init(testStatus: Binding<TestStatus>, questions: [String], answers: Binding<[String]>) {
-        _testStatus = testStatus
-        self.questions = questions
-        _answers = answers
-    }
+    @ObservedObject private var spellingTestMetadata: SpellingTestMetadata
     
+    init(spellingTestMetadata: SpellingTestMetadata) {
+        self.spellingTestMetadata = spellingTestMetadata
+    }
+        
     var body: some View {
         ZStack {
             // Invisible button to dismiss the keyboard
@@ -38,7 +35,7 @@ struct SelfTestView: View {
                 }
                 VStack {
                     HStack {
-                        Text("WORD \(index + 1) OF \(questions.count)")
+                        Text("WORD \(index + 1) OF \(self.spellingTestMetadata.questions.count)")
                             .fontWeight(.bold)
                             .foregroundColor(.gray)
                         Spacer()
@@ -91,27 +88,28 @@ struct SelfTestView: View {
     }
     
     private func playButton() {
-        
+//        time start here
         var homophones = WordsData().Homophones;
         if RemoteConfigManager.shared.enableRemoteHomophones {
             homophones = RemoteConfigManager.shared.homophonesDescription
         }
-        let word = questions[index]
+        let word = self.spellingTestMetadata.questions[index]
         
-        if let description = homophones[questions[index]] {
+        if let description = homophones[self.spellingTestMetadata.questions[index]] {
             speech.say(word: "\(word) \(description)")
         }
         else {
-            speech.say(word: questions[index])
+            speech.say(word: self.spellingTestMetadata.questions[index])
         }
     }
     
     private func nextButton() {
         let trimmedWord = typedWord.trimmingCharacters(in: .whitespaces)
-        answers.append(trimmedWord)
+        self.spellingTestMetadata.answers.append(trimmedWord)
 
-        if index == questions.count - 1 {
-            testStatus = .reviewing
+        if index == self.spellingTestMetadata.questions.count - 1 {
+            self.spellingTestMetadata.testStatus = .reviewing
+            // time now here
             return
         }
         index += 1
@@ -120,3 +118,4 @@ struct SelfTestView: View {
         isInputActive = true
     }
 }
+

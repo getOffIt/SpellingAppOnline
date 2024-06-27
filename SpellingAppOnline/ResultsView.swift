@@ -7,23 +7,20 @@ struct ResultsView: View {
     
     @State var completionDate:String = "13 Feb 2024 at 10:34"
     let duration = ""
-    
-    @Binding var testStatus: TestStatus
-    @Binding var answers: [String]
-    var questions: [String]
-    
+        
     @State var correct = 0
     @State var pass = true
     var needsLearning: Bool = false
     @State var continueText = ""
     
-    init(testStatus: Binding<TestStatus>, questions: [String], answers: Binding<[String]>) {
-        _testStatus = testStatus
-        self.questions = questions
-        _answers = answers
+    @ObservedObject private var spellingTestMetadata: SpellingTestMetadata
+    
+    init(spellingTestMetadata: SpellingTestMetadata) {
+        self.spellingTestMetadata = spellingTestMetadata
     }
-    var incorrectAnswers: [String] {
-        questions.indices.filter { answers.indices.contains($0) && answers[$0] != questions[$0] }.map { questions[$0] }
+    
+    var incorrectAnswers: [String] { //TODO: Maybe move this to the testMedatada class as a helper
+        spellingTestMetadata.questions.indices.filter { spellingTestMetadata.answers.indices.contains($0) && spellingTestMetadata.answers[$0] != spellingTestMetadata.questions[$0] }.map { spellingTestMetadata.questions[$0] }
     }
     
     // Share related
@@ -57,7 +54,7 @@ struct ResultsView: View {
                                    .onAppear {
                                        score = calculateScore()
                                    }
-                               Text("\(correct)/\(questions.count)")
+                               Text("\(correct)/\(spellingTestMetadata.questions.count)")
                                    .foregroundColor(pass ? .green : .red)
                            }
                            Spacer()
@@ -92,22 +89,22 @@ struct ResultsView: View {
                     }
                     .padding(.horizontal)
                     
-                    if answers.count == questions.count {
+                   if spellingTestMetadata.answers.count == spellingTestMetadata.questions.count {
                         LazyVGrid(columns: columns, spacing: 10) {
-                            ForEach(Array(zip(questions.indices, questions)), id: \.0) { index, question in
+                            ForEach(Array(zip(spellingTestMetadata.questions.indices, spellingTestMetadata.questions)), id: \.0) { index, question in
                                 HStack {
                                     Text("\(index + 1). \(question)")
                                     Spacer()
                                 }
                                 HStack {
-                                    Text(answers[index])
+                                    Text(spellingTestMetadata.answers[index])
                                         .frame(width: 100, alignment: .center)
                                     Spacer()
                                     
                                 }
                                 HStack {
-                                    Image(systemName: answers[index] == questions[index] ? "checkmark.circle.fill" : "xmark.circle.fill")
-                                        .foregroundColor(answers[index] == questions[index] ? .green : .red)
+                                    Image(systemName: spellingTestMetadata.answers[index] == spellingTestMetadata.questions[index] ? "checkmark.circle.fill" : "xmark.circle.fill")
+                                        .foregroundColor(spellingTestMetadata.answers[index] == spellingTestMetadata.questions[index] ? .green : .red)
                                     
                                 }
                             }
@@ -121,10 +118,10 @@ struct ResultsView: View {
                     Button(action: {
                         // Play again action
                         if incorrectAnswers.isEmpty {
-                            testStatus = .spelling
-                            answers = []
+                            spellingTestMetadata.testStatus = .spelling
+                            spellingTestMetadata.answers = []
                         } else {
-                            testStatus = .learning
+                            spellingTestMetadata.testStatus = .learning
                         }
                     }) {
                         Text(continueText)
@@ -162,7 +159,7 @@ struct ResultsView: View {
                     continueText = "Continue to Learn words page"
                 }
                 if RemoteConfigManager.shared.sharingResultsEnabled {
-                    imageShareTransferable = imageManager.getTransferable(ResultsViewShare(score: calculateScore(), pass: pass, correctAnswers: correct, questions: questions, answers: answers, completionDate: completionDate), scale: displayScale, caption: "My Results")
+                    imageShareTransferable = imageManager.getTransferable(ResultsViewShare(score: calculateScore(), pass: pass, correctAnswers: correct, questions: spellingTestMetadata.questions.reversed().reversed(), answers: spellingTestMetadata.answers.reversed().reversed(), completionDate: completionDate), scale: displayScale, caption: "My Results")
                 }
             }
         
@@ -174,12 +171,12 @@ struct ResultsView: View {
         return formatter
     }
     
-    private func calculateScore() -> Double {
-        let total = questions.count
+    private func calculateScore() -> Double { //TODO: maybe move this into the SpellingTest metadata class as a helper?
+        let total = spellingTestMetadata.questions.count
         correct = 0
-        if !answers.isEmpty {
-            for (index, question) in questions.enumerated() {
-                if answers[index] == question {
+        if !spellingTestMetadata.answers.isEmpty {
+            for (index, question) in spellingTestMetadata.questions.enumerated() {
+                if spellingTestMetadata.answers[index] == question {
                     correct += 1
                 }
             }

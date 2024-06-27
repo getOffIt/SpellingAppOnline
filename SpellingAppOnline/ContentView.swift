@@ -1,6 +1,15 @@
 import SwiftUI
 import AVFoundation
 
+class SpellingTestMetadata: ObservableObject {
+    @Published var testStatus: TestStatus = .spelling
+    let questions: [String]
+    @Published var answers: [String] = []
+    
+    init(questions: [String]) {
+        self.questions = questions
+    }
+}
 
 enum TestStatus {
     case spelling, reviewing, learning
@@ -11,44 +20,45 @@ struct ContentView: View {
     
     @ObservedObject var remoteConfigLocal = RemoteConfigManager.shared
     
-    // Main test for Chloe
-    @State private var testStatusFull = TestStatus.spelling
-    @State private var answersFull: [String] = []
-    private var questionsFull: [String] {get {RemoteConfigManager.shared.firsttabItemWordList}}
-    //    private var questionsFull = WordsData().testDataHomophones
-    @State private var testStatusUno = TestStatus.spelling
-    @State private var answersUno: [String] = []
-    //    private var questionsFull = WordsData().testDataHomophones
+    @State private var testFull = SpellingTestMetadata(questions:RemoteConfigManager.shared.firsttabItemWordList)
+    @State private var testUno = SpellingTestMetadata(questions:WordsData().testDataShort)
+    @State private var resultsTest = SpellingTestMetadata(questions: WordsData().testDataShort)
+    @State private var learningTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     
     private var enableTabBarForDebug = false
     @State private var testStatusResultsDebug = TestStatus.reviewing
     @State private var testStatusResultsDebugQuestions: [String] = WordsData().allWordsYear6Part1
     @State private var testStatusResultsDebugAnswers: [String] = WordsData().allWordsYear6Part1DebugResponses
     
+    init() {
+        resultsTest.answers = ["a", "b"]
+        learningTest.answers = ["bla", "bla"]
+    }
+    
     var body: some View {
         if RemoteConfigManager.shared.debugMode && enableTabBarForDebug {
             TabView(selection: $selectedTab) {
-                UnoTestView(testStatus: $testStatusFull, questions: questionsFull, answers: $answersFull)
+                FullTestSequence(spellingTestMetadata: testFull)
+                    .tabItem {
+                        Text(remoteConfigLocal.firsttabItemText)
+                    }
+                UnoTestView(spellingTestMetadata: testUno)
                     .tabItem {
                         Text("Uno")
                     }
-                ResultsView(testStatus: $testStatusFull, questions: testStatusResultsDebugQuestions, answers: $testStatusResultsDebugAnswers)
+                ResultsView(spellingTestMetadata: resultsTest)
                     .tabItem {
                         Text("Results")
                     }
-                FullTestSequence(testStatus: $testStatusFull, answers: $answersFull, questions: questionsFull)
+                LearningView(spellingTestMetadata: learningTest)
                     .tabItem {
-                        Image(systemName: "1.circle")
-                        Text(remoteConfigLocal.firsttabItemText)
+                        Text("Learning")
                     }
             }
         }
-        else {            
-            FullTestSequence(testStatus: $testStatusFull, answers: $answersFull, questions: questionsFull)
-                .tabItem {
-                    Image(systemName: "1.circle")
-                    Text(remoteConfigLocal.firsttabItemText)
-                }
+        
+        else {
+            FullTestSequence(spellingTestMetadata: testFull)
         }
     }
 }

@@ -8,22 +8,23 @@ import Foundation
 import SwiftUI
 
 struct FullTestSequence: View {
-
-    @Binding var testStatus: TestStatus
-    @Binding var answers: [String]
-    var questions: [String]
+    
+    @ObservedObject private var spellingTestMetadata: SpellingTestMetadata
+    
+    init(spellingTestMetadata: SpellingTestMetadata) {
+        self.spellingTestMetadata = spellingTestMetadata
+    }
     
     var body: some View {
-        switch testStatus {
+        switch spellingTestMetadata.testStatus {
         case .spelling:
-            SelfTestView(testStatus: $testStatus, questions: questions, answers: $answers)
-
+            SelfTestView(spellingTestMetadata: spellingTestMetadata)
+            
         case .reviewing:
-                ResultsView(testStatus: $testStatus, questions: questions, answers: $answers)
-
+            ResultsView(spellingTestMetadata: spellingTestMetadata)
+            
         case .learning:
-            Text("Spelling Test")
-            LearningView(testStatus: $testStatus, questions: questions, answers: $answers)
+            LearningView(spellingTestMetadata: spellingTestMetadata)
         }
     }
     
