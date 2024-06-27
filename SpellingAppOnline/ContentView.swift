@@ -14,11 +14,11 @@ struct ContentView: View {
     // Main test for Chloe
     @State private var testStatusFull = TestStatus.spelling
     @State private var answersFull: [String] = []
-        private var questionsFull: [String] {get {RemoteConfigManager.shared.firsttabItemWordList}}
-//    private var questionsFull = WordsData().testDataHomophones
+    private var questionsFull: [String] {get {RemoteConfigManager.shared.firsttabItemWordList}}
+    //    private var questionsFull = WordsData().testDataHomophones
     @State private var testStatusUno = TestStatus.spelling
     @State private var answersUno: [String] = []
-//    private var questionsFull = WordsData().testDataHomophones
+    //    private var questionsFull = WordsData().testDataHomophones
     
     private var enableTabBarForDebug = false
     @State private var testStatusResultsDebug = TestStatus.reviewing
@@ -43,20 +43,12 @@ struct ContentView: View {
                     }
             }
         }
-        else {
-            TabView(selection: $selectedTab) {
-                
-                FullTestSequence(testStatus: $testStatusFull, answers: $answersFull, questions: questionsFull)
-                    .tabItem {
-                        Image(systemName: "1.circle")
-                        Text(remoteConfigLocal.firsttabItemText)
-                    }
-                UnoTestView(testStatus: $testStatusUno, questions: questionsFull, answers: $answersUno)
-                    .tabItem {
-                        Image(systemName: "2.circle")
-                        Text("Uno")
-                    }
-            }
+        else {            
+            FullTestSequence(testStatus: $testStatusFull, answers: $answersFull, questions: questionsFull)
+                .tabItem {
+                    Image(systemName: "1.circle")
+                    Text(remoteConfigLocal.firsttabItemText)
+                }
         }
     }
 }
