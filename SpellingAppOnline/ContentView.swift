@@ -21,7 +21,6 @@ struct ContentView: View {
     @ObservedObject var remoteConfigLocal = RemoteConfigManager.shared
     
     @State private var testFull = SpellingTestMetadata(questions:RemoteConfigManager.shared.firsttabItemWordList)
-
     @State private var testUno = SpellingTestMetadata(questions:WordsData().testDataShort)
     @State private var resultsTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     @State private var learningTest = SpellingTestMetadata(questions: WordsData().testDataShort)
@@ -57,20 +56,13 @@ struct ContentView: View {
                     }
             }
         }
-        else {
-            TabView(selection: $selectedTab) {
-                
-                FullTestSequence(spellingTestMetadata: testFull)
-                    .tabItem {
-                        Image(systemName: "1.circle")
-                        Text(remoteConfigLocal.firsttabItemText)
-                    }
-                UnoTestView(spellingTestMetadata: testUno)
-                    .tabItem {
-                        Image(systemName: "2.circle")
-                        Text("Uno")
-                    }
-            }
+
+        else {            
+            FullTestSequence(testStatus: $testStatusFull, answers: $answersFull, questions: questionsFull)
+                .tabItem {
+                    Image(systemName: "1.circle")
+                    Text(remoteConfigLocal.firsttabItemText)
+                }
         }
     }
 }
