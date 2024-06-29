@@ -399,6 +399,7 @@
 				9BF514592B94F94500C75AFC /* Frameworks */,
 				9BF5145A2B94F94500C75AFC /* Resources */,
 				99849B601F5CB61180D8201D /* [CP] Embed Pods Frameworks */,
+				9BC279342C309869005E0382 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -651,6 +652,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpellingAppOnline/Pods-SpellingAppOnline-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		9BC279342C309869005E0382 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\n${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}\n${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\n$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist\n$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)\n";
 		};
 		DC77C8C9584AFF40AAB65293 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
