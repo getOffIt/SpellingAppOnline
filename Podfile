@@ -18,6 +18,7 @@ target 'SpellingAppOnline' do
   # Pods for SpellingAppOnline
   pod 'Firebase/AnalyticsWithoutAdIdSupport'
   pod 'Firebase/RemoteConfig'
+  pod 'FirebaseCrashlytics'
 
   target 'SpellingAppOnlineTests' do
     inherit! :search_paths
