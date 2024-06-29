@@ -296,7 +296,7 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods (~> 1.15.2)
-  fastlane (= 2.221.1)
+  fastlane
   fastlane-plugin-xcconfig
   pry
   xcode-install
