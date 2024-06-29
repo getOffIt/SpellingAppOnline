@@ -30,23 +30,30 @@ struct ContentView: View {
     
     var body: some View {
         if RemoteConfigManager.shared.debugMode && enableTabBarForDebug {
-            TabView(selection: $selectedTab) {
-                FullTestSequence(spellingTestMetadata: testFull)
-                    .tabItem {
-                        Text(remoteConfigLocal.firsttabItemText)
-                    }
-                UnoTestView(spellingTestMetadata: testUno)
-                    .tabItem {
-                        Text("Uno")
-                    }
-                ResultsView(spellingTestMetadata: resultsTest)
-                    .tabItem {
-                        Text("Results")
-                    }
-                LearningView(spellingTestMetadata: learningTest)
-                    .tabItem {
-                        Text("Learning")
-                    }
+            if RemoteConfigManager.shared.testCrash {
+                Button("Crash") {
+                    fatalError("Crash was triggered")
+                }
+            }
+            else {
+                TabView(selection: $selectedTab) {
+                    FullTestSequence(spellingTestMetadata: testFull)
+                        .tabItem {
+                            Text(remoteConfigLocal.firsttabItemText)
+                        }
+                    UnoTestView(spellingTestMetadata: testUno)
+                        .tabItem {
+                            Text("Uno")
+                        }
+                    ResultsView(spellingTestMetadata: resultsTest)
+                        .tabItem {
+                            Text("Results")
+                        }
+                    LearningView(spellingTestMetadata: learningTest)
+                        .tabItem {
+                            Text("Learning")
+                        }
+                }
             }
         }
         

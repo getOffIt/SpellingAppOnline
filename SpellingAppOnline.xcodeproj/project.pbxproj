@@ -11,9 +11,7 @@
 		270427C7AC32CCCD579A43D8 /* Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CAB5A64AE5751BA1376A334 /* Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework */; };
 		8408249022F5E01176BE29CD /* Pods_SpellingAppOnlineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F6A3337B4F397DA5107159 /* Pods_SpellingAppOnlineTests.framework */; };
 		9B203BD02C2558FD00941665 /* conscious.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BC82C2558FD00941665 /* conscious.mp3 */; };
-		9B203BD12C2558FD00941665 /* convenience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BC92C2558FD00941665 /* convenience.mp3 */; };
 		9B203BD22C2558FD00941665 /* disastrous.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BCA2C2558FD00941665 /* disastrous.mp3 */; };
-		9B203BD32C2558FD00941665 /* existence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BCB2C2558FD00941665 /* existence.mp3 */; };
 		9B203BD42C2558FD00941665 /* hindrance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BCC2C2558FD00941665 /* hindrance.mp3 */; };
 		9B203BD52C2558FD00941665 /* prejudice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BCD2C2558FD00941665 /* prejudice.mp3 */; };
 		9B203BD62C2558FD00941665 /* sacrifice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BCE2C2558FD00941665 /* sacrifice.mp3 */; };
@@ -33,20 +31,17 @@
 		9B203C132C25AE3800941665 /* descent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE42C25AE3800941665 /* descent.mp3 */; };
 		9B203C142C25AE3800941665 /* allowed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE52C25AE3800941665 /* allowed.mp3 */; };
 		9B203C152C25AE3800941665 /* alter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE62C25AE3800941665 /* alter.mp3 */; };
-		9B203C162C25AE3800941665 /* hindrance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE72C25AE3800941665 /* hindrance.mp3 */; };
 		9B203C172C25AE3800941665 /* identity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE82C25AE3800941665 /* identity.mp3 */; };
 		9B203C182C25AE3800941665 /* cereal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BE92C25AE3800941665 /* cereal.mp3 */; };
 		9B203C192C25AE3800941665 /* individual.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BEA2C25AE3800941665 /* individual.mp3 */; };
 		9B203C1A2C25AE3800941665 /* secretary.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BEB2C25AE3800941665 /* secretary.mp3 */; };
 		9B203C1B2C25AE3800941665 /* seldom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BEC2C25AE3800941665 /* seldom.mp3 */; };
 		9B203C1C2C25AE3800941665 /* serial.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BED2C25AE3800941665 /* serial.mp3 */; };
-		9B203C1D2C25AE3800941665 /* prejudice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BEE2C25AE3800941665 /* prejudice.mp3 */; };
 		9B203C1E2C25AE3800941665 /* awkward.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BEF2C25AE3800941665 /* awkward.mp3 */; };
 		9B203C1F2C25AE3800941665 /* bridal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF02C25AE3800941665 /* bridal.mp3 */; };
 		9B203C202C25AE3800941665 /* obstinate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF12C25AE3800941665 /* obstinate.mp3 */; };
 		9B203C212C25AE3800941665 /* available.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF22C25AE3800941665 /* available.mp3 */; };
 		9B203C222C25AE3800941665 /* existence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF32C25AE3800941665 /* existence.mp3 */; };
-		9B203C232C25AE3800941665 /* conscious.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF42C25AE3800941665 /* conscious.mp3 */; };
 		9B203C242C25AE3800941665 /* assent.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF52C25AE3800941665 /* assent.mp3 */; };
 		9B203C252C25AE3800941665 /* effect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF62C25AE3800941665 /* effect.mp3 */; };
 		9B203C262C25AE3800941665 /* familiar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BF72C25AE3800941665 /* familiar.mp3 */; };
@@ -55,9 +50,7 @@
 		9B203C292C25AE3800941665 /* forty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BFA2C25AE3800941665 /* forty.mp3 */; };
 		9B203C2A2C25AE3800941665 /* altar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BFB2C25AE3800941665 /* altar.mp3 */; };
 		9B203C2B2C25AE3800941665 /* instantaneous.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BFC2C25AE3800941665 /* instantaneous.mp3 */; };
-		9B203C2C2C25AE3800941665 /* sacrifice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BFD2C25AE3800941665 /* sacrifice.mp3 */; };
 		9B203C2D2C25AE3800941665 /* desert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BFE2C25AE3800941665 /* desert.mp3 */; };
-		9B203C2E2C25AE3800941665 /* disastrous.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203BFF2C25AE3800941665 /* disastrous.mp3 */; };
 		9B203C2F2C25AE3800941665 /* draft.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203C002C25AE3800941665 /* draft.mp3 */; };
 		9B203C302C25AE3800941665 /* mischievous.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203C012C25AE3800941665 /* mischievous.mp3 */; };
 		9B203C312C25AE3800941665 /* affect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203C022C25AE3800941665 /* affect.mp3 */; };
@@ -457,7 +450,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					9BF5145B2B94F94500C75AFC = {
 						CreatedOnToolsVersion = 15.2;
@@ -520,7 +513,6 @@
 				9B203C1F2C25AE3800941665 /* bridal.mp3 in Resources */,
 				9B203C292C25AE3800941665 /* forty.mp3 in Resources */,
 				9B203C2F2C25AE3800941665 /* draft.mp3 in Resources */,
-				9B203BD32C2558FD00941665 /* existence.mp3 in Resources */,
 				9B203C342C25AE3800941665 /* draught.mp3 in Resources */,
 				9B203C112C25AE3800941665 /* complement.mp3 in Resources */,
 				9BF514672B94F94700C75AFC /* Preview Assets.xcassets in Resources */,
@@ -531,7 +523,6 @@
 				9B203C092C25AE3800941665 /* compliment.mp3 in Resources */,
 				9B203C2B2C25AE3800941665 /* instantaneous.mp3 in Resources */,
 				9B203C0A2C25AE3800941665 /* ancient.mp3 in Resources */,
-				9B203C1D2C25AE3800941665 /* prejudice.mp3 in Resources */,
 				9B203C182C25AE3800941665 /* cereal.mp3 in Resources */,
 				9B203C272C25AE3800941665 /* curiosity.mp3 in Resources */,
 				9B203BD22C2558FD00941665 /* disastrous.mp3 in Resources */,
@@ -540,21 +531,16 @@
 				9B203C0B2C25AE3800941665 /* dessert.mp3 in Resources */,
 				9B203C252C25AE3800941665 /* effect.mp3 in Resources */,
 				9B203BD62C2558FD00941665 /* sacrifice.mp3 in Resources */,
-				9B203BD12C2558FD00941665 /* convenience.mp3 in Resources */,
 				9B203C172C25AE3800941665 /* identity.mp3 in Resources */,
 				9B203C122C25AE3800941665 /* bargain.mp3 in Resources */,
 				9B203C312C25AE3800941665 /* affect.mp3 in Resources */,
-				9B203C232C25AE3800941665 /* conscious.mp3 in Resources */,
 				9BF514642B94F94700C75AFC /* Assets.xcassets in Resources */,
 				9B203C202C25AE3800941665 /* obstinate.mp3 in Resources */,
-				9B203C2C2C25AE3800941665 /* sacrifice.mp3 in Resources */,
 				9B203C0F2C25AE3800941665 /* amateur.mp3 in Resources */,
 				9B203C1A2C25AE3800941665 /* secretary.mp3 in Resources */,
 				9B203C192C25AE3800941665 /* individual.mp3 in Resources */,
 				9B203C2D2C25AE3800941665 /* desert.mp3 in Resources */,
-				9B203C2E2C25AE3800941665 /* disastrous.mp3 in Resources */,
 				9B203C1E2C25AE3800941665 /* awkward.mp3 in Resources */,
-				9B203C162C25AE3800941665 /* hindrance.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,7 +654,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\n${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}\n${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\n$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist\n$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)\n";
+			shellScript = "#\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n#${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\n#${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}\n#${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\n#$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist\n#$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)\n";
 		};
 		DC77C8C9584AFF40AAB65293 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
