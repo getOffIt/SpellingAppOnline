@@ -14,7 +14,9 @@ end
 target 'SpellingAppOnline' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  # hide build warnings for Pods
+  inhibit_all_warnings!
+  
   # Pods for SpellingAppOnline
   pod 'Firebase/AnalyticsWithoutAdIdSupport'
   pod 'Firebase/RemoteConfig'

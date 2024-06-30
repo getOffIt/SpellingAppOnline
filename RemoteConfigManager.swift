@@ -24,6 +24,7 @@ class RemoteConfigManager: ObservableObject {
     @Published var homophonesDescription: [String: String] = WordsData().Homophones
     @Published var enableRemoteHomophones = true
     @Published var testCrash = false
+    @Published var introduceTabBar = true
     
     init() {
         FirebaseApp.configure()
@@ -57,6 +58,8 @@ class RemoteConfigManager: ObservableObject {
                     self.homophonesDescription = self.remoteConfig!["homophonesDescription"].jsonValue as? [String: String] ?? WordsData().Homophones
                     self.enableRemoteHomophones = self.remoteConfig!["enableRemoteHomophones"].boolValue
                     self.testCrash = self.remoteConfig!["testCrash"].boolValue
+                    self.introduceTabBar = self.remoteConfig!["introduceTabBar"].boolValue
+
 
                 }
             }

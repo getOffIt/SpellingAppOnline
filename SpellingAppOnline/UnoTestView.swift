@@ -21,7 +21,7 @@ struct UnoTestView: View {
     var body: some View {
         
         VStack {
-            Text("Uno mode")
+            Text("Uno Game")
                 .font(.largeTitle)
             Picker("Word Count", selection: $selectedWordCount) {
                 ForEach(1...spellingTestMetadata.questions.count, id: \.self) { count in
