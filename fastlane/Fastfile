@@ -55,6 +55,7 @@ platform :ios do
 
   desc "Build prod App"
   lane :build_prod_app do
+    fetchDistributionCertificatesAndProfiles
     build_app(
       scheme: "SpellingAppOnline",
       workspace: "SpellingAppOnline.xcworkspace",
