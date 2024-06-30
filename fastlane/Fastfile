@@ -121,7 +121,7 @@ platform :ios do
         export_compliance_available_on_french_store: false
       },
       release_notes: {
-        'en-GB' => "Resolving some nagivation issues around the bottom tab bar, now introduced the duration for tests in the result view"
+        'en-GB' => "Introducing the latest version of the app with Uno Game mode for more family fun!"
       },
     )
   end
