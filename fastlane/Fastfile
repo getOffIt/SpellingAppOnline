@@ -141,6 +141,7 @@ platform :ios do
     incrementBuildNumber
     build_prod_app
     upload_to_testflight
+    upload_symbols_to_crashlytics(dsym_path: "/Users/distiller/project/output/gym/SpellingAppOnline.app.dSYM.zip")
     
   end
   
