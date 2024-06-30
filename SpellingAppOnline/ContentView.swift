@@ -15,7 +15,7 @@ struct ContentView: View {
     @State private var resultsTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     @State private var learningTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     
-    private var enableTabBarForDebug = true
+    private var enableTabBarForDebug = false
     @State private var testStatusResultsDebug = TestStatus.reviewing
     @State private var testStatusResultsDebugQuestions: [String] = WordsData().allWordsYear6Part1
     @State private var testStatusResultsDebugAnswers: [String] = WordsData().allWordsYear6Part1DebugResponses
@@ -58,7 +58,12 @@ struct ContentView: View {
         }
         
         else {
-            FullTestSequence(spellingTestMetadata: testFull)
+            if RemoteConfigManager.shared.introduceTabBar {
+                
+            }
+            else {
+                FullTestSequence(spellingTestMetadata: testFull)
+            }
         }
     }
 }
