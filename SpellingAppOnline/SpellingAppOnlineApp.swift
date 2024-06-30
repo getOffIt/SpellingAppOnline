@@ -7,6 +7,8 @@
 import SwiftUI
 import FirebaseCore
 import FirebaseRemoteConfig
+import FirebaseCrashlytics
+import FirebaseAnalytics
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     var remoteConfigManager = RemoteConfigManager.shared
