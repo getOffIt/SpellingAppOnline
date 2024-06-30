@@ -9,6 +9,7 @@ import FirebaseCore
 import FirebaseRemoteConfig
 import FirebaseCrashlytics
 import FirebaseAnalytics
+import FirebasePerformance
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     var remoteConfigManager = RemoteConfigManager.shared

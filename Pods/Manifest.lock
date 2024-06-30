@@ -40,6 +40,17 @@ PODS:
     - GoogleUtilities/Environment (~> 7.8)
     - GoogleUtilities/UserDefaults (~> 7.8)
     - PromisesObjC (~> 2.1)
+  - FirebasePerformance (10.28.0):
+    - FirebaseCore (~> 10.5)
+    - FirebaseInstallations (~> 10.0)
+    - FirebaseRemoteConfig (~> 10.0)
+    - FirebaseSessions (~> 10.5)
+    - GoogleDataTransport (~> 9.2)
+    - GoogleUtilities/Environment (~> 7.13)
+    - GoogleUtilities/ISASwizzler (~> 7.13)
+    - GoogleUtilities/MethodSwizzler (~> 7.13)
+    - GoogleUtilities/UserDefaults (~> 7.13)
+    - nanopb (< 2.30911.0, >= 2.30908.0)
   - FirebaseRemoteConfig (10.28.0):
     - FirebaseABTesting (~> 10.0)
     - FirebaseCore (~> 10.0)
@@ -77,6 +88,8 @@ PODS:
   - GoogleUtilities/Environment (7.13.3):
     - GoogleUtilities/Privacy
     - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/ISASwizzler (7.13.3):
+    - GoogleUtilities/Privacy
   - GoogleUtilities/Logger (7.13.3):
     - GoogleUtilities/Environment
     - GoogleUtilities/Privacy
@@ -110,6 +123,7 @@ DEPENDENCIES:
   - Firebase/AnalyticsWithoutAdIdSupport
   - Firebase/RemoteConfig
   - FirebaseCrashlytics
+  - FirebasePerformance
 
 SPEC REPOS:
   trunk:
@@ -121,6 +135,7 @@ SPEC REPOS:
     - FirebaseCoreInternal
     - FirebaseCrashlytics
     - FirebaseInstallations
+    - FirebasePerformance
     - FirebaseRemoteConfig
     - FirebaseRemoteConfigInterop
     - FirebaseSessions
@@ -141,6 +156,7 @@ SPEC CHECKSUMS:
   FirebaseCoreInternal: 58d07f1362fddeb0feb6a857d1d1d1c5e558e698
   FirebaseCrashlytics: f51e12b93f8e1134bbed602ed22df33804d55ccf
   FirebaseInstallations: 60c1d3bc1beef809fd1ad1189a8057a040c59f2e
+  FirebasePerformance: a4077b92b1d5e338dbbfac136ce2c4021a14f055
   FirebaseRemoteConfig: f0879a8dccf4e8905716ed849569130efaeab3e2
   FirebaseRemoteConfigInterop: 70d200c6956ef3b5c3592a95e824c1210682d785
   FirebaseSessions: 20da8500ad66bb12622743e170459bf62a0768e8
@@ -152,6 +168,6 @@ SPEC CHECKSUMS:
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
 
-PODFILE CHECKSUM: e3ecc0e8a42ed2961ccf63a3990606f1624c8892
+PODFILE CHECKSUM: 80345c7d551ec133de73a4f6009e0c3a7c1ae099
 
 COCOAPODS: 1.15.2
