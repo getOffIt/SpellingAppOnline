@@ -64,9 +64,9 @@ struct ContentView: View {
             if RemoteConfigManager.shared.introduceTabBar {
                 TabView(selection: $tabSelection.selectedTab) {
                     FullTestSequence(spellingTestMetadata: testFull)
-                        .tabItem { Image(systemName: "1.circle"); Text("Test") }.tag(0)
+                        .tabItem { Image(systemName: "1.circle"); Text(RemoteConfigManager.shared.firsttabItemText) }.tag(0)
                     UnoTestView(spellingTestMetadata: testUnoProd)
-                        .tabItem { Image(systemName: "2.circle"); Text("Uno") }.tag(1)
+                        .tabItem { Image(systemName: "2.circle"); Text(RemoteConfigManager.shared.secondTabItemText) }.tag(1)
                 }
             }
             else {
