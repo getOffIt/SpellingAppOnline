@@ -18,7 +18,7 @@ struct ContentView: View {
     @State private var resultsTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     @State private var learningTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     
-    private var enableTabBarForDebug = true
+    private var enableTabBarForDebug = false
     @State private var testStatusResultsDebug = TestStatus.reviewing
     @State private var testStatusResultsDebugQuestions: [String] = WordsData().allWordsYear6Part1
     @State private var testStatusResultsDebugAnswers: [String] = WordsData().allWordsYear6Part1DebugResponses
@@ -33,12 +33,6 @@ struct ContentView: View {
     
     var body: some View {
         if RemoteConfigManager.shared.debugMode && enableTabBarForDebug {
-            if RemoteConfigManager.shared.testCrash {
-                Button("Crash") {
-                    fatalError("Crash was triggered")
-                }
-            }
-            else {
                 TabView(selection: $selectedTabDebug) {
                     FullTestSequence(spellingTestMetadata: testFull)
                         .tabItem {
@@ -56,10 +50,11 @@ struct ContentView: View {
                         .tabItem {
                             Text("Learning")
                         }
+                    Button("Crash") {
+                        fatalError("Crash was triggered")
+                    }.tabItem { Text("Crash") }
                 }
             }
-        }
-        
         else {
             if RemoteConfigManager.shared.introduceTabBar {
                 TabView(selection: $tabSelection.selectedTab) {
