@@ -20,16 +20,21 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
 }
 
+class TabSelection: ObservableObject {
+    @Published var selectedTab: Int = 0
+}
+
 @main
 struct SpellingAppOnlineApp: App {
     //    register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @Environment(\.scenePhase) var scenePhase
-    
+    @StateObject private var tabSelection = TabSelection()
+
     var body: some Scene {
         WindowGroup {
-            ContentView().onChange(of: scenePhase) {oldPhase, newPhase in
-                
+            ContentView().environmentObject(tabSelection)
+                .onChange(of: scenePhase) {oldPhase, newPhase in
                 switch newPhase {
                 case .active:
                     print("active")

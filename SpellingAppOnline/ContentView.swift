@@ -6,11 +6,14 @@ enum TestStatus {
 }
 
 struct ContentView: View {
-    @State private var selectedTab = 0
+    @State private var selectedTabDebug = 0
+    @EnvironmentObject var tabSelection: TabSelection
+
     
     @ObservedObject var remoteConfigLocal = RemoteConfigManager.shared
     
     @State private var testFull = SpellingTestMetadata(questions:RemoteConfigManager.shared.firsttabItemWordList)
+    @State private var testUnoProd = SpellingTestMetadata(questions:RemoteConfigManager.shared.firsttabItemWordList)
     @State private var testUno = SpellingTestMetadata(questions:WordsData().testDataShort)
     @State private var resultsTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     @State private var learningTest = SpellingTestMetadata(questions: WordsData().testDataShort)
@@ -36,7 +39,7 @@ struct ContentView: View {
                 }
             }
             else {
-                TabView(selection: $selectedTab) {
+                TabView(selection: $selectedTabDebug) {
                     FullTestSequence(spellingTestMetadata: testFull)
                         .tabItem {
                             Text(remoteConfigLocal.firsttabItemText)
@@ -59,7 +62,12 @@ struct ContentView: View {
         
         else {
             if RemoteConfigManager.shared.introduceTabBar {
-                
+                TabView(selection: $tabSelection.selectedTab) {
+                    FullTestSequence(spellingTestMetadata: testFull)
+                        .tabItem { Image(systemName: "1.circle"); Text("Test") }.tag(0)
+                    UnoTestView(spellingTestMetadata: testUnoProd)
+                        .tabItem { Image(systemName: "2.circle"); Text("Uno") }.tag(1)
+                }
             }
             else {
                 FullTestSequence(spellingTestMetadata: testFull)
