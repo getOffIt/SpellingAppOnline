@@ -3,3 +3,4 @@
 # Ensure this file is checked in to source control!
 # https://github.com/sovcharenko/fastlane-plugin-xcconfig
 gem 'fastlane-plugin-xcconfig'
+gem 'fastlane-plugin-firebase_app_distribution'
