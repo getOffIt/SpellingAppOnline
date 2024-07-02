@@ -8,7 +8,7 @@ enum TestStatus {
 struct ContentView: View {
     @State private var selectedTabDebug = 0
     @EnvironmentObject var tabSelection: TabSelection
-
+    
     
     @ObservedObject var remoteConfigLocal = RemoteConfigManager.shared
     
@@ -24,37 +24,39 @@ struct ContentView: View {
     @State private var testStatusResultsDebugAnswers: [String] = WordsData().allWordsYear6Part1DebugResponses
     
     init() {
-        resultsTest.answers = ["a", "b"]
-        resultsTest.startTest = Date()
-        sleep(1)
-        resultsTest.finishTest = Date()
-        learningTest.answers = ["bla", "bla"]
+        if RemoteConfigManager.shared.debugMode {
+            resultsTest.answers = ["a", "b"]
+            resultsTest.startTest = Date()
+            sleep(1)
+            resultsTest.finishTest = Date()
+            learningTest.answers = ["bla", "bla"]
+        }
     }
     
     var body: some View {
         if RemoteConfigManager.shared.debugMode && enableTabBarForDebug {
-                TabView(selection: $selectedTabDebug) {
-                    FullTestSequence(spellingTestMetadata: testFull)
-                        .tabItem {
-                            Text(remoteConfigLocal.firsttabItemText)
-                        }
-                    UnoTestView(spellingTestMetadata: testUno)
-                        .tabItem {
-                            Text("Uno")
-                        }
-                    ResultsView(spellingTestMetadata: resultsTest)
-                        .tabItem {
-                            Text("Results")
-                        }
-                    LearningView(spellingTestMetadata: learningTest)
-                        .tabItem {
-                            Text("Learning")
-                        }
-                    Button("Crash") {
-                        fatalError("Crash was triggered")
-                    }.tabItem { Text("Crash") }
-                }
+            TabView(selection: $selectedTabDebug) {
+                FullTestSequence(spellingTestMetadata: testFull)
+                    .tabItem {
+                        Text(remoteConfigLocal.firsttabItemText)
+                    }
+                UnoTestView(spellingTestMetadata: testUno)
+                    .tabItem {
+                        Text("Uno")
+                    }
+                ResultsView(spellingTestMetadata: resultsTest)
+                    .tabItem {
+                        Text("Results")
+                    }
+                LearningView(spellingTestMetadata: learningTest)
+                    .tabItem {
+                        Text("Learning")
+                    }
+                Button("Crash") {
+                    fatalError("Crash was triggered")
+                }.tabItem { Text("Crash") }
             }
+        }
         else {
             if RemoteConfigManager.shared.introduceTabBar {
                 TabView(selection: $tabSelection.selectedTab) {
