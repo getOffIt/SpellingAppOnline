@@ -27,8 +27,7 @@ struct ContentView: View {
         if RemoteConfigManager.shared.debugMode {
             resultsTest.answers = ["a", "b"]
             resultsTest.startTest = Date()
-            sleep(1)
-            resultsTest.finishTest = Date()
+            resultsTest.finishTest = Date().addingTimeInterval(60)
             learningTest.answers = ["bla", "bla"]
         }
     }
