@@ -272,6 +272,19 @@ public struct WordsData {
           "conscious",
           "disastrous"
     ]
+
+    public let words8July2024 = [
+        "instantaneous",
+        "marvellous",
+        "mischievous",
+        "amateur", // Other words
+        "ancient",
+        "available",
+        "awkward",
+        "bargain",
+        "controversy",
+        "brought"
+    ]
     
    public let allWordsYear6Part2 = [
         "foreign", // Unstressed consonants
