@@ -32,7 +32,7 @@ public struct WordsData {
         return cpt
     }
     
-   public init() {
+    public init() {
         var tempSections: [YearWordSection] = []
         theYear5WordsInFunnyFormat.forEach { (key: String, value: [String]) in
             let yearWordSection:YearWordSection = YearWordSection(title: key, words: value.map { Word(isDone: false, word: $0) })
@@ -211,7 +211,7 @@ public struct WordsData {
         "sincerely",
         "determined"
     ]
-
+    
     
     let wordsFrench = [
         "je",
@@ -234,17 +234,7 @@ public struct WordsData {
         "elles ont"
     ]
     
-    let allWordsYear6Part1 = [
-        "bruise", // Unstressed vowels
-        "cemetery",
-        "desperate",
-        "guarantee",
-        "nuisance",
-        "privilege",
-        "queue",
-        "restaurant",
-        "shoulder"
-        ]
+    
     
     let allWordsYear6Part1DebugResponses = [
         "bruise", // Unstressed vowels
@@ -256,37 +246,26 @@ public struct WordsData {
         "queue",
         "restaurant",
         "shoulderr"
-        ]
-
+    ]
+    
     public let screenshots = [
         "accommodate", // Double consonants
         "apparent"
-         ]
-    
-    public let latest15June2024 = [
-          "convenience",
-          "existence",
-          "hindrance",
-          "prejudice",
-          "sacrifice",
-          "conscious",
-          "disastrous"
     ]
 
-    public let words8July2024 = [
-        "instantaneous",
-        "marvellous",
-        "mischievous",
-        "amateur", // Other words
-        "ancient",
-        "available",
-        "awkward",
-        "bargain",
-        "controversy",
-        "brought"
+    let allWordsYear6Part1 = [
+        "bruise", // Unstressed vowels
+        "cemetery",
+        "desperate",
+        "guarantee",
+        "nuisance",
+        "privilege",
+        "queue",
+        "restaurant",
+        "shoulder"
     ]
     
-   public let allWordsYear6Part2 = [
+    public let allWordsYear6Part2 = [
         "foreign", // Unstressed consonants
         "government",
         "yacht",
@@ -299,6 +278,80 @@ public struct WordsData {
         "harass",
         "immediate",
         "profession"
+    ]
+    
+    public let allWordsYear6Part3 = [
+        "instantaneous",
+        "marvellous",
+        "mischievous",
+        "amateur", // Other words
+        "ancient",
+        "available",
+        "awkward",
+        "bargain",
+        "controversy",
+        "brought"
+    ]
+    
+    public let allWordsYear6Part4 = [
+        "convenience",
+        "existence",
+        "hindrance",
+        "prejudice",
+        "sacrifice",
+        "conscious",
+        "disastrous"
+    ]
+    
+    public let allWordsYear6Part5 = [
+        "instantaneous",
+        "marvellous",
+        "mischievous",
+        "amateur", // Other words
+        "ancient",
+        "available",
+        "awkward",
+        "bargain",
+        "controversy",
+        "curiosity"
+    ]
+    public let allWordsYear6Part6 = [
+        "equipment",
+        "familiar",
+        "forty",
+        "identity",
+        "individual",
+        "interfere",
+        "obstinate",
+        "secretary",
+        "seldom"
+    ]
+    
+    public let allWordsYear6Part7 = [
+        "aisle", // homophones
+        "isle",
+        "aloud",
+        "allowed",
+        "affect",
+        "effect",
+        "altar",
+        "alter",
+        "ascent",
+        "assent"
+    ]
+    public let allWordsYear6Part8 = [
+        "bridal",
+        "bridle",
+        "cereal",
+        "serial",
+        "complement",
+        "compliment",
+        "descent",
+        "dissent",
+        "desert",
+        "dessert",
+        "draft",
+        "draught"
     ]
     
     let allWordsYear6 = [
