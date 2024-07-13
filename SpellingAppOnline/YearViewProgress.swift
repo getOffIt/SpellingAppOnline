@@ -46,5 +46,5 @@ struct CalculateProgress {
     
 }
 
-// currently in party 4
+// currently in part 4
 // all words

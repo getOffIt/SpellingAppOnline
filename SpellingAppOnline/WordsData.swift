@@ -41,165 +41,6 @@ public struct WordsData {
         self.yearWordSection = tempSections
     }
     
-    let testDataShort = [
-        "a",
-        "b"
-    ]
-    let testDataWho = [
-        "who’s"
-    ]
-    
-    let testDataMid = [
-        "environment",
-        "rhythm",
-        "conscience",
-        "thorough",
-        "appreciate",
-        "necessary",
-        "muscle",
-        "recognise"
-    ]
-    
-    let testDataMidWrong = [
-        "exxxnvironment",
-        "rhxxxxythm",
-        "cxxxonscience",
-        "xxxthorough",
-        "xxxappreciate",
-        "xxxnecessary",
-        "xxxmuscle",
-        "xxxrecognise"
-    ]
-    
-    let testDataMidMixWrong = [
-        "environment",
-        "rhythm",
-        "conscience",
-        "thorough",
-        "xxxappreciate",
-        "xxxnecessary",
-        "xxxmuscle",
-        "xxxrecognise"
-    ]
-    
-    let testDataMidMix25Wrong = [
-        "environment",
-        "rhythm",
-        "conscience",
-        "thorough",
-        "appreciate",
-        "necessary",
-        "xxxmuscle",
-        "xxxrecognise"
-    ]
-    
-    let testDataHomophones = [
-        "prophet",
-        "prophecy",
-        "prophesy",
-        "stationary",
-        "stationery",
-        "steal",
-        "steel",
-        "antoine"
-    ]
-    
-    let highFrequencyWords: [String] = [
-        "the", "that", "not", "look", "put", "and", "with", "then", "don't", "could",
-        "a", "all", "were", "come", "house", "to", "we", "go", "will", "old",
-        "said", "can", "little", "into", "too", "in", "are", "as", "back", "by",
-        "he", "up", "no", "from", "day", "I", "had", "mum", "children", "made",
-        "of", "my", "one", "him", "time", "it", "her", "them", "Mr", "I'm",
-        "was", "what", "do", "get", "if", "you", "there", "me", "just", "help",
-        "they", "out", "down", "now", "Mrs", "on", "this", "dad", "came", "called",
-        "she", "have", "big", "oh", "here", "is", "went", "when", "about", "off",
-        "for", "be", "it's", "got", "asked", "at", "like", "see", "their", "saw",
-        "his", "some", "looked", "people", "make", "but", "so", "very", "your", "an"
-    ]
-    let yearOnewords10: [String] = [
-        "vet",
-        "jog",
-        "week",
-        "exit",
-        "zebra",
-        "queen",
-        "check",
-        "rush",
-        "quiz",
-        "quick",
-        "rich"
-    ]
-    let yearOnewords: [String] = [
-        "vet",
-        "jog",
-        "week",
-        "exit",
-        "zebra",
-        "queen",
-        "check",
-        "rush",
-        "quiz",
-        "quick",
-        "rich",
-        "shock",
-        "mix",
-        "will",
-        "jam",
-        "wood",
-        "cork",
-        "cow",
-        "dear",
-        "cure",
-        "night",
-        "moon",
-        "with",
-        "night",
-        "feel",
-        "turn",
-        "boil",
-        "fair",
-        "her",
-        "hard",
-        "this",
-        "hang",
-        "pain",
-        "light",
-        "zoom",
-        "term",
-        "pair",
-        "bark",
-        "burp",
-        "foil",
-        "cook",
-        "song",
-        "wait",
-        "high",
-        "load",
-        "church",
-        "cash",
-        "teeth",
-        "yes",
-        "buzz",
-        "wax",
-        "van",
-        "sharp",
-        "jazz",
-        "much",
-        "rocker",
-        "win",
-        "yell",
-        "them",
-        "waiter",
-        "deep",
-        "soap",
-        "root",
-        "book",
-        "born",
-        "town",
-        "fear",
-        "sure",
-        "farm"
-    ]
     
     let wordsNotMastered = [
         "communicate",
@@ -211,31 +52,7 @@ public struct WordsData {
         "sincerely",
         "determined"
     ]
-    
-    
-    let wordsFrench = [
-        "je",
-        "tu",
-        "il",
-        "elle",
-        "on",
-        "nous",
-        "vous",
-        "ils",
-        "elles",
-        "j'ai",
-        "tu as",
-        "il a",
-        "elle a",
-        "on a",
-        "nous avons",
-        "vous avez",
-        "ils ont",
-        "elles ont"
-    ]
-    
-    
-    
+
     let allWordsYear6Part1DebugResponses = [
         "bruise", // Unstressed vowels
         "cemetery",
@@ -252,7 +69,7 @@ public struct WordsData {
         "accommodate", // Double consonants
         "apparent"
     ]
-
+    
     let allWordsYear6Part1 = [
         "bruise", // Unstressed vowels
         "cemetery",
@@ -284,7 +101,7 @@ public struct WordsData {
         "instantaneous",
         "marvellous",
         "mischievous",
-        "amateur", // Other words
+        "amateur", // Other words 1
         "ancient",
         "available",
         "awkward",
@@ -294,7 +111,7 @@ public struct WordsData {
     ]
     
     public let allWordsYear6Part4 = [
-        "convenience",
+        "convenience", // Other words 2
         "existence",
         "hindrance",
         "prejudice",
@@ -307,7 +124,7 @@ public struct WordsData {
         "instantaneous",
         "marvellous",
         "mischievous",
-        "amateur", // Other words
+        "amateur", // Other words 3
         "ancient",
         "available",
         "awkward",
@@ -316,7 +133,7 @@ public struct WordsData {
         "curiosity"
     ]
     public let allWordsYear6Part6 = [
-        "equipment",
+        "equipment", // Other words 4
         "familiar",
         "forty",
         "identity",
@@ -340,7 +157,7 @@ public struct WordsData {
         "assent"
     ]
     public let allWordsYear6Part8 = [
-        "bridal",
+        "bridal", // more homophones
         "bridle",
         "cereal",
         "serial",
@@ -692,6 +509,193 @@ public struct WordsData {
             "symbol",
             "system"
         ]
+    ]
+    
+    // test data
+    
+    let testDataShort = [
+        "a",
+        "b"
+    ]
+    let testDataWho = [
+        "who’s"
+    ]
+    
+    let testDataMid = [
+        "environment",
+        "rhythm",
+        "conscience",
+        "thorough",
+        "appreciate",
+        "necessary",
+        "muscle",
+        "recognise"
+    ]
+    
+    let testDataMidWrong = [
+        "exxxnvironment",
+        "rhxxxxythm",
+        "cxxxonscience",
+        "xxxthorough",
+        "xxxappreciate",
+        "xxxnecessary",
+        "xxxmuscle",
+        "xxxrecognise"
+    ]
+    
+    let testDataMidMixWrong = [
+        "environment",
+        "rhythm",
+        "conscience",
+        "thorough",
+        "xxxappreciate",
+        "xxxnecessary",
+        "xxxmuscle",
+        "xxxrecognise"
+    ]
+    
+    let testDataMidMix25Wrong = [
+        "environment",
+        "rhythm",
+        "conscience",
+        "thorough",
+        "appreciate",
+        "necessary",
+        "xxxmuscle",
+        "xxxrecognise"
+    ]
+    
+    let testDataHomophones = [
+        "prophet",
+        "prophecy",
+        "prophesy",
+        "stationary",
+        "stationery",
+        "steal",
+        "steel",
+        "antoine"
+    ]
+    
+// year 1 words
+    
+    let highFrequencyWords: [String] = [
+        "the", "that", "not", "look", "put", "and", "with", "then", "don't", "could",
+        "a", "all", "were", "come", "house", "to", "we", "go", "will", "old",
+        "said", "can", "little", "into", "too", "in", "are", "as", "back", "by",
+        "he", "up", "no", "from", "day", "I", "had", "mum", "children", "made",
+        "of", "my", "one", "him", "time", "it", "her", "them", "Mr", "I'm",
+        "was", "what", "do", "get", "if", "you", "there", "me", "just", "help",
+        "they", "out", "down", "now", "Mrs", "on", "this", "dad", "came", "called",
+        "she", "have", "big", "oh", "here", "is", "went", "when", "about", "off",
+        "for", "be", "it's", "got", "asked", "at", "like", "see", "their", "saw",
+        "his", "some", "looked", "people", "make", "but", "so", "very", "your", "an"
+    ]
+    let yearOnewords10: [String] = [
+        "vet",
+        "jog",
+        "week",
+        "exit",
+        "zebra",
+        "queen",
+        "check",
+        "rush",
+        "quiz",
+        "quick",
+        "rich"
+    ]
+    let yearOnewords: [String] = [
+        "vet",
+        "jog",
+        "week",
+        "exit",
+        "zebra",
+        "queen",
+        "check",
+        "rush",
+        "quiz",
+        "quick",
+        "rich",
+        "shock",
+        "mix",
+        "will",
+        "jam",
+        "wood",
+        "cork",
+        "cow",
+        "dear",
+        "cure",
+        "night",
+        "moon",
+        "with",
+        "night",
+        "feel",
+        "turn",
+        "boil",
+        "fair",
+        "her",
+        "hard",
+        "this",
+        "hang",
+        "pain",
+        "light",
+        "zoom",
+        "term",
+        "pair",
+        "bark",
+        "burp",
+        "foil",
+        "cook",
+        "song",
+        "wait",
+        "high",
+        "load",
+        "church",
+        "cash",
+        "teeth",
+        "yes",
+        "buzz",
+        "wax",
+        "van",
+        "sharp",
+        "jazz",
+        "much",
+        "rocker",
+        "win",
+        "yell",
+        "them",
+        "waiter",
+        "deep",
+        "soap",
+        "root",
+        "book",
+        "born",
+        "town",
+        "fear",
+        "sure",
+        "farm"
+    ]
+
+    // french words
+    
+    let wordsFrench = [
+        "je",
+        "tu",
+        "il",
+        "elle",
+        "on",
+        "nous",
+        "vous",
+        "ils",
+        "elles",
+        "j'ai",
+        "tu as",
+        "il a",
+        "elle a",
+        "on a",
+        "nous avons",
+        "vous avez",
+        "ils ont",
+        "elles ont"
     ]
     
 }
