@@ -63,6 +63,11 @@ struct ContentView: View {
                         .tabItem { Image(systemName: "1.circle"); Text(RemoteConfigManager.shared.firsttabItemText) }.tag(0)
                     UnoTestView(spellingTestMetadata: testUnoProd)
                         .tabItem { Image(systemName: "2.circle"); Text(RemoteConfigManager.shared.secondTabItemText) }.tag(1)
+                    if RemoteConfigManager.shared.yearViewToggle {
+                        YearViewProgress()
+                        .tabItem { Image(systemName: "3.circle"); Text("Progress") }.tag(2)
+
+                    }
                 }
             }
             else {

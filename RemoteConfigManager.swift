@@ -25,6 +25,7 @@ class RemoteConfigManager: ObservableObject {
     @Published var enableRemoteHomophones = true
     @Published var testCrash = false
     @Published var introduceTabBar = true
+    @Published var yearViewToggle = false
     
     init() {
         FirebaseApp.configure()
@@ -59,6 +60,7 @@ class RemoteConfigManager: ObservableObject {
                     self.enableRemoteHomophones = self.remoteConfig!["enableRemoteHomophones"].boolValue
                     self.testCrash = self.remoteConfig!["testCrash"].boolValue
                     self.introduceTabBar = self.remoteConfig!["introduceTabBar"].boolValue
+                    self.yearViewToggle = self.remoteConfig!["yearViewToggle"].boolValue
 
 
                 }

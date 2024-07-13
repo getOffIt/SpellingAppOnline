@@ -58,6 +58,7 @@
 		9B203C332C25AE3800941665 /* convenience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203C042C25AE3800941665 /* convenience.mp3 */; };
 		9B203C342C25AE3800941665 /* draught.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B203C052C25AE3800941665 /* draught.mp3 */; };
 		9B2324272C163B6700D16D6D /* ResultViewShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2324262C163B6700D16D6D /* ResultViewShare.swift */; };
+		9B24B3572C427B4300EA249F /* YearViewProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B24B3562C427B4300EA249F /* YearViewProgress.swift */; };
 		9B46F0E52C28B9A2009C41D4 /* UnoTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46F0E42C28B9A2009C41D4 /* UnoTestView.swift */; };
 		9B46F0E72C28BC6C009C41D4 /* FullTestSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46F0E62C28BC6C009C41D4 /* FullTestSequence.swift */; };
 		9B77AD6F2C2D94EB00E119B3 /* SpellingTestMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B77AD6E2C2D94EB00E119B3 /* SpellingTestMetadata.swift */; };
@@ -161,6 +162,7 @@
 		9B203C042C25AE3800941665 /* convenience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = convenience.mp3; sourceTree = "<group>"; };
 		9B203C052C25AE3800941665 /* draught.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = draught.mp3; sourceTree = "<group>"; };
 		9B2324262C163B6700D16D6D /* ResultViewShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewShare.swift; sourceTree = "<group>"; };
+		9B24B3562C427B4300EA249F /* YearViewProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearViewProgress.swift; sourceTree = "<group>"; };
 		9B46F0E42C28B9A2009C41D4 /* UnoTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnoTestView.swift; sourceTree = "<group>"; };
 		9B46F0E62C28BC6C009C41D4 /* FullTestSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullTestSequence.swift; sourceTree = "<group>"; };
 		9B77AD6E2C2D94EB00E119B3 /* SpellingTestMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingTestMetadata.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				9B46F0E42C28B9A2009C41D4 /* UnoTestView.swift */,
 				9B46F0E62C28BC6C009C41D4 /* FullTestSequence.swift */,
 				9B77AD6E2C2D94EB00E119B3 /* SpellingTestMetadata.swift */,
+				9B24B3562C427B4300EA249F /* YearViewProgress.swift */,
 			);
 			path = SpellingAppOnline;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 			files = (
 				9B77AD6F2C2D94EB00E119B3 /* SpellingTestMetadata.swift in Sources */,
 				9BF514962B94FA8600C75AFC /* Speech.swift in Sources */,
+				9B24B3572C427B4300EA249F /* YearViewProgress.swift in Sources */,
 				9BF514622B94F94500C75AFC /* ContentView.swift in Sources */,
 				9B9AEA8F2BCD7BE200D663FB /* LearningView.swift in Sources */,
 				9BF514952B94FA8600C75AFC /* ResultsView.swift in Sources */,
