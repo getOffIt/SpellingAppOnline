@@ -18,7 +18,7 @@ struct ContentView: View {
     @State private var resultsTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     @State private var learningTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     
-    private var enableTabBarForDebug = false
+    private var enableTabBarForDebug = true
     @State private var testStatusResultsDebug = TestStatus.reviewing
     @State private var testStatusResultsDebugQuestions: [String] = WordsData().allWordsYear6Part1
     @State private var testStatusResultsDebugAnswers: [String] = WordsData().allWordsYear6Part1DebugResponses
@@ -35,6 +35,10 @@ struct ContentView: View {
     var body: some View {
         if RemoteConfigManager.shared.debugMode && enableTabBarForDebug {
             TabView(selection: $selectedTabDebug) {
+                YearViewProgress()
+                    .tabItem {
+                        Text("Progress")
+                    }
                 FullTestSequence(spellingTestMetadata: testFull)
                     .tabItem {
                         Text(remoteConfigLocal.firsttabItemText)
@@ -66,7 +70,6 @@ struct ContentView: View {
                     if RemoteConfigManager.shared.yearViewToggle {
                         YearViewProgress()
                         .tabItem { Image(systemName: "3.circle"); Text("Progress") }.tag(2)
-
                     }
                 }
             }
