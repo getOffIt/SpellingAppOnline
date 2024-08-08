@@ -17,6 +17,7 @@ class Speech {
         // Stop any current audio playback when users are typing faster than the word is uttered
         if let player = audioPlayer, player.isPlaying {
             player.stop()
+            print("Stopping mp3 for word: \(word)")
         }
                 
         do { // AI Generated audio sounds nicer, always try to play first but as I have to generate them in advance they are not always available

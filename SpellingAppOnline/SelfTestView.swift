@@ -52,6 +52,9 @@ struct SelfTestView: View {
                         }
                     }
                     .padding()
+                    .onAppear {
+                        playButton()
+                    }
                     
                     TextField("Type word", text: $typedWord)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
