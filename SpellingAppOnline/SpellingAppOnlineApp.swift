@@ -13,7 +13,8 @@ import FirebasePerformance
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     var remoteConfigManager = RemoteConfigManager.shared
-    
+    var speech: Speech = Speech.shared
+
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {

@@ -2,6 +2,8 @@ import Foundation
 import AVFoundation
 
 class Speech {
+    static let shared = Speech()
+    
     private var synthesizer = AVSpeechSynthesizer()
     private var previousWord: String = ""
     private var audioPlayer: AVAudioPlayer?
@@ -19,16 +21,18 @@ class Speech {
             player.stop()
             print("Stopping mp3 for word: \(word)")
         }
-                
-        do { // AI Generated audio sounds nicer, always try to play first but as I have to generate them in advance they are not always available
-            let path = Bundle.main.path(forResource: "\(word).mp3", ofType:nil) ?? ""
-            let url = URL(fileURLWithPath: path)
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.play()
-            print("Playing mp3 for word: \(word)")
-        } catch { // Otherwise, use system synthetiser
-            print("Error loading mp3 file for \(word): \(error.localizedDescription)")
-            synthesizeSpeech(word: word)
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            do { // AI Generated audio sounds nicer, always try to play first but as I have to generate them in advance they are not always available
+                let path = Bundle.main.path(forResource: "\(word).mp3", ofType:nil) ?? ""
+                let url = URL(fileURLWithPath: path)
+                self.audioPlayer = try AVAudioPlayer(contentsOf: url)
+                self.audioPlayer?.play()
+                print("Playing mp3 for word: \(word)")
+            } catch { // Otherwise, use system synthetiser
+                print("Error loading mp3 file for \(word): \(error.localizedDescription)")
+                self.synthesizeSpeech(word: word)
+            }
         }
     }
     
@@ -37,8 +41,10 @@ class Speech {
         let utterance = AVSpeechUtterance(string: word)
         utterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle.Junior-compact")
         print("\(word)")
-        synthesizer.stopSpeaking(at: .immediate)
-        synthesizer.speak(utterance)
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.synthesizer.stopSpeaking(at: .immediate)
+            self.synthesizer.speak(utterance)
+        }
     }
     
     func sayThatWordAgain() {

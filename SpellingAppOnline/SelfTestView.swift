@@ -6,7 +6,8 @@ import SwiftUI
 
 struct SelfTestView: View {
     
-    var speech: Speech = Speech()
+
+    var speech: Speech = Speech.shared
     @State private var typedWord: String = ""
     @State private var index = 0
     @FocusState private var isInputActive: Bool
@@ -100,11 +101,11 @@ struct SelfTestView: View {
         }
         let word = self.spellingTestMetadata.questions[index]
         
-        if let description = homophones[self.spellingTestMetadata.questions[index]] {
+        if let description = homophones[word] {
             speech.say(word: "\(word) \(description)")
         }
         else {
-            speech.say(word: self.spellingTestMetadata.questions[index])
+            speech.say(word: word)
         }
     }
     

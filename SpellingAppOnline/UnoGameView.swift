@@ -3,7 +3,7 @@ import SwiftUI
 import AVFoundation
 
 struct UnoGameView: View {
-    var speech: Speech = Speech()
+    var speech: Speech = Speech.shared
     @State private var currentWordIndex = 0
     @State private var buttonLabel = "Start"
     @State private var selectedWordCount = 1
