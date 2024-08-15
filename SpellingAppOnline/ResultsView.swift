@@ -6,7 +6,7 @@ struct ResultsView: View {
     @State private var currentTime = Date()
     
     @State var completionDate:String = "13 Feb 2024 at 10:34"
-        
+    
     @State var correct = 0
     @State var pass = true
     var needsLearning: Bool = false
@@ -37,14 +37,41 @@ struct ResultsView: View {
     
     var body: some View {
         ZStack {
-
+            
             ScrollView {
                 VStack(spacing: 20) {
-                    Text("Results")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(.top)
+                    HStack(alignment: .center) {
+                        Spacer()
+                        Spacer()
+                        Spacer()
+                        Spacer()
+                        Text("Results")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding(.top)
+                        
+                        if let imageShareTransferable = imageShareTransferable {
+                            Spacer()
+                            Spacer()
+                            ShareLink(
+                                item: imageShareTransferable,
+                                preview: SharePreview(
+                                    imageShareTransferable.caption,
+                                    image: imageShareTransferable.image
+                                )
+                            ) {
+                                Image(systemName: "square.and.arrow.up")
+                                    .font(.largeTitle)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .padding(.leading)
+                            }
+                            Spacer()
+                        }
+                    }
+                    .padding(.top)
+                    .frame(maxWidth: .infinity, alignment: .center) // Ensure alignment across the width
 
                     VStack(alignment: .leading, spacing: 20) {
                         HStack(alignment: .top) {
@@ -93,7 +120,7 @@ struct ResultsView: View {
                     .padding()
                     .background(Color.white.opacity(0.1))
                     .cornerRadius(10)
-
+                    
                     LazyVGrid(columns: columns, spacing: 10) {
                         Text("QUESTION")
                             .font(.subheadline)
@@ -110,7 +137,7 @@ struct ResultsView: View {
                     }
                     .padding(.horizontal)
                     .padding(.top)
-
+                    
                     if spellingTestMetadata.answers.count == spellingTestMetadata.questions.count {
                         LazyVGrid(columns: columns, spacing: 10) {
                             ForEach(Array(zip(spellingTestMetadata.questions.indices, spellingTestMetadata.questions)), id: \.0) { index, question in
@@ -133,7 +160,7 @@ struct ResultsView: View {
                         }
                         .padding(.horizontal)
                     }
-
+                    
                     Button(action: {
                         // Play again action
                         if incorrectAnswers.isEmpty {
@@ -153,29 +180,6 @@ struct ResultsView: View {
                             .shadow(radius: 5)
                     }
                     .padding()
-
-                    if RemoteConfigManager.shared.sharingResultsEnabled {
-                        if let imageShareTransferable = imageShareTransferable {
-                            ShareLink(
-                                item: imageShareTransferable,
-                                preview: SharePreview(
-                                    imageShareTransferable.caption,
-                                    image: imageShareTransferable.image
-                                )
-                            ) {
-                                HStack {
-                                    Image(systemName: "square.and.arrow.up")
-                                    Text("Share my Results")
-                                        .font(.headline)
-                                        .foregroundColor(.white)
-                                }
-                                .padding()
-                                .background(Color.secondary)
-                                .cornerRadius(10)
-                            }
-                            .padding(.horizontal)
-                        }
-                    }
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
@@ -193,7 +197,7 @@ struct ResultsView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.blue]), startPoint: .top, endPoint: .bottom))
-
+        
     }
     
     private var dateFormatter: DateFormatter {
