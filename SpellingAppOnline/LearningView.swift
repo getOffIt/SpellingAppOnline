@@ -27,15 +27,28 @@ struct LearningView: View {
                         set: { self.userInputs[question] = $0 }
                     ))
                     .frame(minHeight: 80)
-                    .border(Color.gray, width: 1)
+                    .background(Color.white)
+                    .foregroundColor(Color.black)
+                    .shadow(radius: 5)
+                    .cornerRadius(10)
                     .keyboardType(.alphabet)
                     .autocorrectionDisabled()
                     .padding(.bottom, 20)
+
+                    
+                    .autocapitalization(.none)
                 }
                 Button("I'm Done") {
                     spellingTestMetadata.testStatus = .spelling
                     spellingTestMetadata.answers = []
                 }
+                .padding()  // Add padding inside the button for better touch area
+                .background(Color.secondary)  // Set a background color
+                .foregroundColor(.white)  // Set the text color
+                .font(.headline)  // Use a larger font size for better readability
+                .cornerRadius(10)  // Round the corners of the button
+                .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)  // Add a shadow for depth
+                .buttonStyle(PlainButtonStyle())  // Use a plain button style to avoid default button styling
             }
             .padding()
             .onAppear {
@@ -47,5 +60,7 @@ struct LearningView: View {
                 }
             }
         }
+        .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.blue]), startPoint: .top, endPoint: .bottom))
+
     }
 }
