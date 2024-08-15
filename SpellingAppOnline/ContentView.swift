@@ -72,6 +72,29 @@ struct ContentView: View {
                         .tabItem { Image(systemName: "3.circle"); Text("Progress") }.tag(2)
                     }
                 }
+                .font(.subheadline.weight(.heavy))
+                .accentColor(Color.white)
+                .onAppear {
+
+                    let tabBarAppearance = UITabBarAppearance()
+                    
+                    // Set unselected item appearance with higher contrast
+                    tabBarAppearance.stackedLayoutAppearance.normal.iconColor = UIColor.lightGray // Use a light gray or off-white color
+                    tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [
+                        .foregroundColor: UIColor.lightGray, // Use a light gray color
+                        .font: UIFont.systemFont(ofSize: 14, weight: .medium) // Ensure the font is readable
+                    ]
+                    
+                    // Set selected item appearance to stand out more
+                    tabBarAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.white // Brighter color for the selected item
+                    tabBarAppearance.stackedLayoutAppearance.selected.titleTextAttributes = [
+                        .foregroundColor: UIColor.white, // Brighter color for the selected item
+                        .font: UIFont.systemFont(ofSize: 14, weight: .bold) // Make the selected tab item bold
+                    ]
+                    
+                    UITabBar.appearance().standardAppearance = tabBarAppearance
+                }
+                
             }
             else {
                 FullTestSequence(spellingTestMetadata: testFull)
