@@ -6,7 +6,7 @@ import SwiftUI
 
 struct SelfTestView: View {
     
-
+    
     var speech: Speech = Speech.shared
     @State private var typedWord: String = ""
     @State private var index = 0
@@ -17,78 +17,93 @@ struct SelfTestView: View {
     init(spellingTestMetadata: SpellingTestMetadata) {
         self.spellingTestMetadata = spellingTestMetadata
     }
-        
+    
     var body: some View {
         ZStack {
+            
+            
             // Invisible button to dismiss the keyboard
-                      Color.clear
-                          .contentShape(Rectangle())
-                          .onTapGesture {
-                              isInputActive = false
-                          }
-            VStack {
+            Color.clear
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    isInputActive = false
+                }
+            VStack(spacing: 20) {
                 HStack {
                     Text("Spelling Test")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
+                        .font(.system(size: 36, weight: .bold, design: .default)) // Increased font size
                         .foregroundColor(.white)
-                    Spacer()
                 }
                 VStack {
-                    HStack {
-                        Text("WORD \(index + 1) OF \(self.spellingTestMetadata.questions.count)")
-                            .fontWeight(.bold)
-                            .foregroundColor(.gray)
-                        Spacer()
-                    }
-                    
-                    HStack(spacing: 20) {
-                        Button(action: {
-                            // action for play button
-                            playButton()
-                        }) {
-                            Image(systemName: "speaker.wave.2.fill")
-                                .font(.largeTitle)
-                                .foregroundColor(.purple)
+                    VStack {
+                        HStack {
+                            Text("WORD \(index + 1) OF \(self.spellingTestMetadata.questions.count)")
+                                .foregroundColor(Color.white.opacity(0.7)) // Lighter shade for secondary text
+                                .font(.subheadline.weight(.heavy))
+                            Spacer()
                         }
-                    }
-                    .padding()
-                    .onAppear {
-                        playButton()
-                    }
-                    
-                    TextField("Type word", text: $typedWord)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
-                        .autocapitalization(.none)
-                        .keyboardType(.alphabet)
-                        .autocorrectionDisabled()
-                        .submitLabel(.next)
-                        .onSubmit {
-                            nextButton()
+                        HStack(spacing: 20) {
+                            Button(action: {
+                                // action for play button
+                                playButton()
+                            }) {
+                                Image(systemName: "speaker.wave.2.fill")
+                                    .font(.title)
+                                    .foregroundColor(.white)
+                                    .shadow(radius: 5)
+                            }
+                            
                         }
-                        .focused($isInputActive)
-                    
-                    Button(action: {
-                        nextButton()
-                    }) {
-                        Text("Next")
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
+                        .padding()
+                        .onAppear {
+                            playButton()
+                        }
+                        
+                        TextField("Type word", text: $typedWord)
+                            .foregroundColor(.black)
                             .padding()
-                            .background(typedWord.isEmpty ? Color.gray : Color.purple)
+                            .background(Color.white)
                             .cornerRadius(10)
+                            .shadow(radius: 5) // Add a slight shadow
+                            .autocapitalization(.none)
+                            .keyboardType(.alphabet)
+                            .autocorrectionDisabled()
+                            .submitLabel(.next)
+                            .onSubmit {
+                                nextButton()
+                            }
+                            .focused($isInputActive)
+                        
+                        Button(action: {
+                            nextButton()
+                        }) {
+                            Text("Next")
+                                .foregroundColor(typedWord.isEmpty ? Color.white.opacity(0.5) : .blue) // Contrasting color for the button text
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(typedWord.isEmpty ? Color.secondary : Color.white)
+                                .cornerRadius(10)
+                        }
+                        .disabled(typedWord.isEmpty)
+                        .padding()
+                        
                     }
-                    .disabled(typedWord.isEmpty)
+                }
+                .onAppear {
+                    isInputActive = true
                 }
                 .padding()
-                
-                Spacer()
             }
-            .onAppear {
-                isInputActive = true
-            }
+            .padding(.horizontal, 20)
+            Spacer()
+            Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .foregroundStyle(.white)
+        .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.blue]), startPoint: .top, endPoint: .bottom))
+        
+        
     }
     
     private func playButton() {
@@ -112,7 +127,7 @@ struct SelfTestView: View {
     private func nextButton() {
         let trimmedWord = typedWord.trimmingCharacters(in: .whitespaces)
         self.spellingTestMetadata.answers.append(trimmedWord)
-
+        
         if index == self.spellingTestMetadata.questions.count - 1 {
             spellingTestMetadata.finishTest = Date()
             self.spellingTestMetadata.testStatus = .reviewing
