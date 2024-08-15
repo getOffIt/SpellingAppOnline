@@ -36,70 +36,94 @@ struct ResultsView: View {
     ]
     
     var body: some View {
-        
+        ZStack {
+
             ScrollView {
-               VStack() {
-                   Text("Results")
-                       .font(.largeTitle)
-                       .fontWeight(.bold)
-                   
-                   VStack(alignment: .leading, spacing: 10) { // Adjusted spacing
-                       HStack {
-                           VStack(alignment: .leading) {
-                               Text("SCORE")
-                                   .fontWeight(.bold)
-                               Text("\(Int(score))%")
-                                   .foregroundColor(pass ? .green : .red)
-                                   .onAppear {
-                                       score = calculateScore()
-                                   }
-                               Text("\(correct)/\(spellingTestMetadata.questions.count)")
-                                   .foregroundColor(pass ? .green : .red)
-                           }
-                           Spacer()
-                           VStack(alignment: .leading) {
-                               Text("COMPLETED")
-                                   .fontWeight(.bold)
-                               Text(completionDate)
-                                   .onAppear {
-                                       completionDate = dateFormatter.string(from: currentTime)
-                                   }
-                           }
-                           Spacer()
-                           VStack(alignment: .leading) {
-                               Text("DURATION")
-                                   .fontWeight(.bold)
-                               Text(spellingTestMetadata.duration)
-                           }
-                       }
-                   }
-                   .padding()
-                   
+                VStack(spacing: 20) {
+                    Text("Results")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(.top)
+
+                    VStack(alignment: .leading, spacing: 20) {
+                        HStack(alignment: .top) {
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text("SCORE")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                Text("\(Int(score))%")
+                                    .font(.title)
+                                    .font(.subheadline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(pass ? .green : .red)
+                                    .onAppear {
+                                        score = calculateScore()
+                                    }
+                                Text("\(correct)/\(spellingTestMetadata.questions.count)")
+                                    .font(.subheadline)
+                                    .foregroundColor(pass ? .green : .red)
+                            }
+                            Spacer()
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text("COMPLETED")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                Text(completionDate)
+                                    .font(.subheadline)
+                                    .foregroundColor(.white.opacity(0.8))
+                                    .onAppear {
+                                        completionDate = dateFormatter.string(from: currentTime)
+                                    }
+                            }
+                            Spacer()
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text("DURATION")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                Text(spellingTestMetadata.duration)
+                                    .font(.subheadline)
+                                    .foregroundColor(.white.opacity(0.8))
+                            }
+                        }
+                    }
+                    .padding()
+                    .background(Color.white.opacity(0.1))
+                    .cornerRadius(10)
+
                     LazyVGrid(columns: columns, spacing: 10) {
                         Text("QUESTION")
                             .font(.subheadline)
                             .fontWeight(.bold)
+                            .foregroundColor(.white)
                         Text("RESPONSE")
                             .font(.subheadline)
                             .fontWeight(.bold)
+                            .foregroundColor(.white)
                         Text("-")
                             .font(.subheadline)
                             .fontWeight(.bold)
+                            .foregroundColor(.white)
                     }
                     .padding(.horizontal)
-                    
-                   if spellingTestMetadata.answers.count == spellingTestMetadata.questions.count {
+                    .padding(.top)
+
+                    if spellingTestMetadata.answers.count == spellingTestMetadata.questions.count {
                         LazyVGrid(columns: columns, spacing: 10) {
                             ForEach(Array(zip(spellingTestMetadata.questions.indices, spellingTestMetadata.questions)), id: \.0) { index, question in
                                 HStack {
                                     Text("\(index + 1). \(question)")
+                                        .foregroundColor(.white)
                                     Spacer()
                                 }
                                 HStack {
                                     Text(spellingTestMetadata.answers[index])
                                         .frame(width: 100, alignment: .center)
+                                        .foregroundColor(.white)
                                     Spacer()
-                                    
                                 }
                                 HStack {
                                     Image(systemName: spellingTestMetadata.answers[index] == spellingTestMetadata.questions[index] ? "checkmark.circle.fill" : "xmark.circle.fill")
@@ -107,8 +131,9 @@ struct ResultsView: View {
                                 }
                             }
                         }
+                        .padding(.horizontal)
                     }
-                    
+
                     Button(action: {
                         // Play again action
                         if incorrectAnswers.isEmpty {
@@ -119,32 +144,41 @@ struct ResultsView: View {
                         }
                     }) {
                         Text(continueText)
+                            .font(.headline)
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
                             .padding()
-                            .background(Color.purple)
-                            .cornerRadius(10) // Enhanced button appearance
+                            .background(Color.secondary)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
                     }
                     .padding()
-                    
+
                     if RemoteConfigManager.shared.sharingResultsEnabled {
                         if let imageShareTransferable = imageShareTransferable {
                             ShareLink(
                                 item: imageShareTransferable,
                                 preview: SharePreview(
                                     imageShareTransferable.caption,
-                                    image: imageShareTransferable.image)) {
-                                        HStack {
-                                            Image(systemName: "square.and.arrow.up")
-                                            Text("Share my Results")
-                                        }
+                                    image: imageShareTransferable.image
+                                )
+                            ) {
+                                HStack {
+                                    Image(systemName: "square.and.arrow.up")
+                                    Text("Share my Results")
+                                        .font(.headline)
+                                        .foregroundColor(.white)
                                 }
-                                  .padding()
+                                .padding()
+                                .background(Color.secondary)
+                                .cornerRadius(10)
+                            }
+                            .padding(.horizontal)
+                        }
                     }
                 }
-              }
-              .padding()
-              .frame(maxWidth: .infinity)
+                .padding()
+                .frame(maxWidth: .infinity)
             }
             .onAppear {
                 if incorrectAnswers.isEmpty {
@@ -156,7 +190,10 @@ struct ResultsView: View {
                     imageShareTransferable = imageManager.getTransferable(ResultsViewShare(score: calculateScore(), pass: pass, correctAnswers: correct, questions: spellingTestMetadata.questions.reversed().reversed(), answers: spellingTestMetadata.answers.reversed().reversed(), completionDate: completionDate), scale: displayScale, caption: "My Results")
                 }
             }
-        
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.blue]), startPoint: .top, endPoint: .bottom))
+
     }
     
     private var dateFormatter: DateFormatter {
