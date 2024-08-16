@@ -77,7 +77,6 @@
 		9BF5148A2B94FA5B00C75AFC /* WordsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF514892B94FA5B00C75AFC /* WordsData.swift */; };
 		9BF514912B94FA8600C75AFC /* OralTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF5148B2B94FA8600C75AFC /* OralTestView.swift */; };
 		9BF514922B94FA8600C75AFC /* SelfTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF5148C2B94FA8600C75AFC /* SelfTestView.swift */; };
-		9BF514932B94FA8600C75AFC /* UnoGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF5148D2B94FA8600C75AFC /* UnoGameView.swift */; };
 		9BF514952B94FA8600C75AFC /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF5148F2B94FA8600C75AFC /* ResultsView.swift */; };
 		9BF514962B94FA8600C75AFC /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF514902B94FA8600C75AFC /* Speech.swift */; };
 		9BF514982B95020800C75AFC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9BF514972B95020700C75AFC /* README.md */; };
@@ -184,7 +183,6 @@
 		9BF514892B94FA5B00C75AFC /* WordsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsData.swift; sourceTree = "<group>"; };
 		9BF5148B2B94FA8600C75AFC /* OralTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OralTestView.swift; sourceTree = "<group>"; };
 		9BF5148C2B94FA8600C75AFC /* SelfTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfTestView.swift; sourceTree = "<group>"; };
-		9BF5148D2B94FA8600C75AFC /* UnoGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnoGameView.swift; sourceTree = "<group>"; };
 		9BF5148F2B94FA8600C75AFC /* ResultsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		9BF514902B94FA8600C75AFC /* Speech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		9BF514972B95020700C75AFC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -344,7 +342,6 @@
 				9BF514892B94FA5B00C75AFC /* WordsData.swift */,
 				9BF5148B2B94FA8600C75AFC /* OralTestView.swift */,
 				9BF514902B94FA8600C75AFC /* Speech.swift */,
-				9BF5148D2B94FA8600C75AFC /* UnoGameView.swift */,
 				9BD67BDC2BD0281000330D70 /* GoogleService-Info.plist */,
 				9BF514632B94F94700C75AFC /* Assets.xcassets */,
 				9BF514652B94F94700C75AFC /* Preview Content */,
@@ -694,7 +691,6 @@
 				9BF514622B94F94500C75AFC /* ContentView.swift in Sources */,
 				9B9AEA8F2BCD7BE200D663FB /* LearningView.swift in Sources */,
 				9BF514952B94FA8600C75AFC /* ResultsView.swift in Sources */,
-				9BF514932B94FA8600C75AFC /* UnoGameView.swift in Sources */,
 				9B2324272C163B6700D16D6D /* ResultViewShare.swift in Sources */,
 				9BF5148A2B94FA5B00C75AFC /* WordsData.swift in Sources */,
 				9B46F0E72C28BC6C009C41D4 /* FullTestSequence.swift in Sources */,
