@@ -8,7 +8,7 @@ orbs:
 jobs:
   build:
     macos:
-      xcode: "15.3.0"
+      xcode: "15.4.0"
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
@@ -28,7 +28,7 @@ jobs:
           path: output/scan
   beta:
     macos:
-      xcode: "15.3.0"
+      xcode: "15.4.0"
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
@@ -48,7 +48,7 @@ jobs:
           path: output/scan
   snapshotlane:
     macos:
-      xcode: "15.3.0"
+      xcode: "15.4.0"
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
@@ -68,7 +68,7 @@ jobs:
           path: output/scan
   release_to_app_store:
     macos:
-      xcode: "15.3.0"
+      xcode: "15.4.0"
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
