@@ -23,6 +23,7 @@ platform :ios do
   desc "Just build a dev build, no signing or upload"
   lane :justbuildDevelopmentbuild do
     xcversion(version: "15.4")
+    fetchDistributionCertificatesAndProfiles
     match(type: "development")
     increment_build_number(xcodeproj: "SpellingAppOnline.xcodeproj")
     build_app(scheme: "SpellingAppOnline",
