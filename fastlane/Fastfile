@@ -25,11 +25,23 @@ platform :ios do
     xcversion(version: "15.4")
     fetchDistributionCertificatesAndProfiles
     match(type: "development")
-    increment_build_number(xcodeproj: "SpellingAppOnline.xcodeproj")
     build_app(scheme: "SpellingAppOnline",
       configuration: "Debug",
       export_method: "development",
       export_xcargs: "-allowProvisioningUpdates")
+  end
+
+  desc "Build AdHoc App"
+  lane :build_adhoc_app do
+    setup_xcode_version
+    fetchDistributionCertificatesAndProfiles
+    build_app(
+      scheme: "SpellingAppOnline",
+      workspace: "SpellingAppOnline.xcworkspace",
+      configuration: "Release",
+      export_method: "ad-hoc",
+      export_xcargs: "-allowProvisioningUpdates")
+    
   end
 
   desc "Fetch distribution certificates and profiles"

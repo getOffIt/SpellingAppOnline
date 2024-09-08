@@ -43,7 +43,7 @@ jobs:
         run: bundle install
 
       - name: Run Fastlane build
-        run: bundle exec fastlane justbuildDevelopmentbuild
+        run: bundle exec fastlane build_adhoc_app
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           APPFILE_APP_IDENTIFIER: ${{ secrets.APPFILE_APP_IDENTIFIER }}
