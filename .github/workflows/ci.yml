@@ -32,5 +32,12 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
+      - name: Set up MATCH_PASSWORD
+        run: echo "::add-mask::${{ secrets.MATCH_PASSWORD }}"
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+
       - name: Run Fastlane build
         run: bundle exec fastlane justbuildDevelopmentbuild
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
