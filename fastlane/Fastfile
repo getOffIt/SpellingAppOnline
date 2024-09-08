@@ -49,7 +49,7 @@ platform :ios do
       export_method: "ad-hoc",
       export_options: {
       provisioningProfiles: {
-        ENV['APPFILE_APP_IDENTIFIER'] => "match AdHoc " + ENV['APPFILE_APP_IDENTIFIER']"
+        ENV['APPFILE_APP_IDENTIFIER'] => "match AdHoc #{ENV['APPFILE_APP_IDENTIFIER']}"
       }
     },
       export_xcargs: "-allowProvisioningUpdates")
