@@ -35,6 +35,12 @@ platform :ios do
   lane :build_adhoc_app do
     setup_xcode_version
     fetchDistributionCertificatesAndProfiles
+      # Fetch AdHoc provisioning profiles and certificates using match
+    match(
+      type: "adhoc",                          # Make sure this is 'adhoc' for AdHoc distribution
+      app_identifier: "com.yourcompany.SpellingAppOnline",  # Your app's bundle identifier
+      readonly: true,)
+      
     build_app(
       scheme: "SpellingAppOnline",
       workspace: "SpellingAppOnline.xcworkspace",
