@@ -36,7 +36,6 @@ platform :ios do
     setup_xcode_version
     match(
       type: "adhoc",                          # Make sure this is 'adhoc' for AdHoc distribution
-      app_identifier: "com.yourcompany.SpellingAppOnline",
       verbose: true,
       readonly: false)
 
