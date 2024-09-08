@@ -23,6 +23,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Just build a dev build, no signing or upload
 
+### ios build_adhoc_app
+
+```sh
+[bundle exec] fastlane ios build_adhoc_app
+```
+
+Build AdHoc App
+
 ### ios fetchDistributionCertificatesAndProfiles
 
 ```sh
