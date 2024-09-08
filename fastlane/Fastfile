@@ -37,7 +37,8 @@ platform :ios do
     setup_xcode_version
     app_store_connect_api_key_setup
     match(
-      type: "adhoc",                          # Make sure this is 'adhoc' for AdHoc distribution
+      type: "adhoc",  
+      app_identifier: ENV['APPFILE_APP_IDENTIFIER'],                        # Make sure this is 'adhoc' for AdHoc distribution
       verbose: true,
       readonly: false)
 
@@ -46,6 +47,11 @@ platform :ios do
       workspace: "SpellingAppOnline.xcworkspace",
       configuration: "Release",
       export_method: "ad-hoc",
+      export_options: {
+      provisioningProfiles: {
+        ENV['APPFILE_APP_IDENTIFIER'] => "match AdHoc " + ENV['APPFILE_APP_IDENTIFIER']"
+      }
+    },
       export_xcargs: "-allowProvisioningUpdates")
     
   end
