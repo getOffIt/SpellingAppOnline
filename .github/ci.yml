@@ -3,7 +3,7 @@ name: iOS Development Build
 on:
   push:
     branches:
-      - main  # Triggers when you push to the main branch
+      - githubactions  # Triggers when you push to the main branch
   pull_request:
     branches:
       - main  # Also triggers on pull requests to the main branch
