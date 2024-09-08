@@ -37,7 +37,8 @@ platform :ios do
     match(
       type: "adhoc",                          # Make sure this is 'adhoc' for AdHoc distribution
       app_identifier: "com.yourcompany.SpellingAppOnline",
-      verbose: true)
+      verbose: true,
+      readonly: false)
 
     build_app(
       scheme: "SpellingAppOnline",
