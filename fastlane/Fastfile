@@ -54,18 +54,18 @@ platform :ios do
       app_identifier: ENV['APPFILE_APP_IDENTIFIER'],                        # Make sure this is 'adhoc' for AdHoc distribution
       readonly: false,
       verbose: true
-      )
-      sh("security find-identity -v -p codesigning")
+    )
+    sh("security find-identity -v -p codesigning")
     build_app(
       scheme: "SpellingAppOnline",
       workspace: "SpellingAppOnline.xcworkspace",
       configuration: "Release",
       export_method: "ad-hoc",
       export_options: {
-      provisioningProfiles: {
-        ENV['APPFILE_APP_IDENTIFIER'] => "match AdHoc #{ENV['APPFILE_APP_IDENTIFIER']}"
-      }
-    },
+        provisioningProfiles: {
+          ENV['APPFILE_APP_IDENTIFIER'] => "match AdHoc #{ENV['APPFILE_APP_IDENTIFIER']}"
+        }
+      },
       export_xcargs: "-allowProvisioningUpdates"
     )
     
