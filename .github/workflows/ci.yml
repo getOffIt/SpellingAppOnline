@@ -57,7 +57,17 @@ jobs:
           bundle exec fastlane match adhoc
           security find-identity -v -p codesigning
         env:
-          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }} # Set in GitHub Secrets
+          MATCH_TYPE: 'adhoc'
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          APPFILE_APP_IDENTIFIER: ${{ secrets.APPFILE_APP_IDENTIFIER }}
+          APPFILE_APPLE_ID: ${{ secrets.APPFILE_APPLE_ID }}
+          APPFILE_TEAM_ID: ${{ secrets.APPFILE_TEAM_ID }}
+          APPFILE_ITC_TEAM_ID: ${{ secrets.APPFILE_ITC_TEAM_ID }}
+          APP_STORE_CONNECT_API_KEY_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY_ID }}
+          APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY_FILE_BASE64: ${{ secrets.APP_STORE_CONNECT_API_KEY_FILE_BASE64 }}
+          APP_STORE_CONNECT_API_KEY_IN_HOUSE: ${{ secrets.APP_STORE_CONNECT_API_KEY_IN_HOUSE }}
+          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
 
       - name: Run Fastlane build
         run: bundle exec fastlane build_adhoc_app
