@@ -42,6 +42,23 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
+      # Create and configure a persistent keychain
+      - name: Create Keychain
+        run: |
+          security create-keychain -p "$KEYCHAIN_PASSWORD" $RUNNER_TEMP/my.keychain-db
+          security list-keychains -s $RUNNER_TEMP/my.keychain-db
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $RUNNER_TEMP/my.keychain-db
+          security set-keychain-settings $RUNNER_TEMP/my.keychain-db
+        env:
+          KEYCHAIN_PASSWORD: ${{ secrets.MATCH_PASSWORD }} # Set in GitHub Secrets
+
+      - name: Setup match and import certificates
+        run: |
+          bundle exec fastlane match adhoc
+          security find-identity -v -p codesigning
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }} # Set in GitHub Secrets
+
       - name: Run Fastlane build
         run: bundle exec fastlane build_adhoc_app
         env:
@@ -55,4 +72,8 @@ jobs:
           APP_STORE_CONNECT_API_KEY_FILE_BASE64: ${{ secrets.APP_STORE_CONNECT_API_KEY_FILE_BASE64 }}
           APP_STORE_CONNECT_API_KEY_IN_HOUSE: ${{ secrets.APP_STORE_CONNECT_API_KEY_IN_HOUSE }}
           FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+      
+      - name: Remove Keychain
+        run: |
+          security delete-keychain $RUNNER_TEMP/my.keychain-db
 
