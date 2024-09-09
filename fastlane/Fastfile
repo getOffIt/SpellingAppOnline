@@ -57,7 +57,7 @@ platform :ios do
     )
     sh("security find-identity -v -p codesigning")
     build_app(
-      scheme: "SpellingAppOnlineAdhoc",
+      scheme: "SpellingAppOnline",
       configuration: "Adhoc",
       workspace: "SpellingAppOnline.xcworkspace",
       export_method: "ad-hoc",
