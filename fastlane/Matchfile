@@ -2,9 +2,9 @@ git_url("git@github.com:getOffIt/match.git")
 
 storage_mode("git")
 app_identifier(ENV['APPFILE_APP_IDENTIFIER'])
-type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
+
 # if environmenet variable is specified, used this otherwise default value is appstore.
-match(type: ENV["MATCH_TYPE"] || "appstore", app_identifier: ENV['APP_IDENTIFIER'])
+type(ENV["MATCH_TYPE"] || "appstore")
 
 # app_identifier(["tools.fastlane.app", "tools.fastlane.app2"])
 # username("user@fastlane.tools") # Your Apple Developer Portal username
