@@ -52,7 +52,7 @@ platform :ios do
     match(
       type: "adhoc",  
       app_identifier: ENV['APPFILE_APP_IDENTIFIER'],                        # Make sure this is 'adhoc' for AdHoc distribution
-      readonly: false),
+      readonly: false,
       verbose: true
       )
       sh("security find-identity -v -p codesigning")
