@@ -67,7 +67,7 @@ jobs:
           APP_STORE_CONNECT_API_KEY_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ISSUER_ID }}
           APP_STORE_CONNECT_API_KEY_FILE_BASE64: ${{ secrets.APP_STORE_CONNECT_API_KEY_FILE_BASE64 }}
           APP_STORE_CONNECT_API_KEY_IN_HOUSE: ${{ secrets.APP_STORE_CONNECT_API_KEY_IN_HOUSE }}
-          FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+
 
       - name: Run Fastlane build
         run: bundle exec fastlane build_adhoc_app
