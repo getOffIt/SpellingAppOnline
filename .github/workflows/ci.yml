@@ -42,16 +42,6 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
-      # Create and configure a persistent keychain
-      - name: Create Keychain
-        run: |
-          security create-keychain -p "$KEYCHAIN_PASSWORD" $RUNNER_TEMP/my.keychain-db
-          security list-keychains -s $RUNNER_TEMP/my.keychain-db
-          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $RUNNER_TEMP/my.keychain-db
-          security set-keychain-settings $RUNNER_TEMP/my.keychain-db
-        env:
-          KEYCHAIN_PASSWORD: ${{ secrets.MATCH_PASSWORD }} # Set in GitHub Secrets
-
       - name: Run Fastlane build
         run: bundle exec fastlane build_adhoc_app
         env:
