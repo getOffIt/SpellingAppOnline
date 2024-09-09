@@ -15,7 +15,7 @@ class RemoteConfigManager: ObservableObject {
     
     
     @Published var firsttabItemText = "Year 6"
-    @Published var firsttabItemWordList: [String] = WordsData().allWordsYear6Part6
+    @Published var firsttabItemWordList: [String] = WordsData().allWordsYear6Part7
     @Published var secondTabItemText = "Words to master"
     @Published var secondTabItemWordList: [String] = WordsData().wordsNotMastered
     @Published var sharingResultsEnabled = false
