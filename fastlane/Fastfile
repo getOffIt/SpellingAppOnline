@@ -39,10 +39,9 @@ platform :ios do
     match(
       type: "adhoc",  
       app_identifier: ENV['APPFILE_APP_IDENTIFIER'],
-      readonly: false),
+      readonly: false,
       verbose: true
     )
-
   end
 
   desc "Build AdHoc App"
