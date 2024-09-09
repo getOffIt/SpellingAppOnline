@@ -57,7 +57,4 @@ jobs:
           FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
           MATCH_TYPE: 'adhoc'
       
-      - name: Remove Keychain
-        run: |
-          security delete-keychain $RUNNER_TEMP/my.keychain-db
 
