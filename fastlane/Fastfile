@@ -36,6 +36,7 @@ platform :ios do
   lane :build_adhoc_app do
     setup_xcode_version
     app_store_connect_api_key_setup
+    sigh(adhoc: true, app_identifier: ENV['APPFILE_APP_IDENTIFIER'])
     match(
       type: "adhoc",  
       app_identifier: ENV['APPFILE_APP_IDENTIFIER'],                        # Make sure this is 'adhoc' for AdHoc distribution
@@ -52,7 +53,8 @@ platform :ios do
         ENV['APPFILE_APP_IDENTIFIER'] => "match AdHoc #{ENV['APPFILE_APP_IDENTIFIER']}"
       }
     },
-      export_xcargs: "-allowProvisioningUpdates")
+      export_xcargs: "-allowProvisioningUpdates"
+    )
     
   end
 
