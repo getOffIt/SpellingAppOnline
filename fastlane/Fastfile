@@ -31,19 +31,6 @@ platform :ios do
       export_xcargs: "-allowProvisioningUpdates")
   end
 
-
-  desc "adhoc Certificates"
-  lane :setup_ad_hoc_certificates_and_provisioning do
-    setup_xcode_version
-    app_store_connect_api_key_setup
-    match(
-      type: "adhoc",  
-      app_identifier: ENV['APPFILE_APP_IDENTIFIER'],
-      readonly: false,
-      verbose: true
-    )
-  end
-
   desc "Build AdHoc App"
   lane :build_adhoc_app do
     setup_xcode_version
