@@ -41,7 +41,7 @@ platform :ios do
       app_identifier: ENV['APPFILE_APP_IDENTIFIER'],                        # Make sure this is 'adhoc' for AdHoc distribution
       verbose: true,
       readonly: false)
-
+      sh("security find-identity -v -p codesigning")
     build_app(
       scheme: "SpellingAppOnline",
       workspace: "SpellingAppOnline.xcworkspace",
