@@ -101,6 +101,8 @@
 
 /* Begin PBXFileReference section */
 		071CFB8B22D6F8F0A8E8BEC7 /* Pods-SpellingAppOnline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline.debug.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline/Pods-SpellingAppOnline.debug.xcconfig"; sourceTree = "<group>"; };
+		098AA47C503F68131F398A1F /* Pods-SpellingAppOnlineTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnlineTests.adhoc.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnlineTests/Pods-SpellingAppOnlineTests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		27CF1D0CAAD5AB30BB397DC3 /* Pods-SpellingAppOnline.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline.adhoc.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline/Pods-SpellingAppOnline.adhoc.xcconfig"; sourceTree = "<group>"; };
 		3FD2F7BB2DB69C1BE8375804 /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline-SpellingAppOnlineUITests.release.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline-SpellingAppOnlineUITests/Pods-SpellingAppOnline-SpellingAppOnlineUITests.release.xcconfig"; sourceTree = "<group>"; };
 		730584CCFEA0DA883A37678A /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline-SpellingAppOnlineUITests/Pods-SpellingAppOnline-SpellingAppOnlineUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		732A2D5DED08347E9AB3128B /* Pods_SpellingAppOnline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpellingAppOnline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +189,7 @@
 		9BF514902B94FA8600C75AFC /* Speech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		9BF514972B95020700C75AFC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		9CAB5A64AE5751BA1376A334 /* Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpellingAppOnline_SpellingAppOnlineUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B462FD9882F9BBDBE6048138 /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnline-SpellingAppOnlineUITests.adhoc.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnline-SpellingAppOnlineUITests/Pods-SpellingAppOnline-SpellingAppOnlineUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		E2F6A3337B4F397DA5107159 /* Pods_SpellingAppOnlineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpellingAppOnlineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFED965180CA3EC4EDF81FB0 /* Pods-SpellingAppOnlineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnlineTests.release.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnlineTests/Pods-SpellingAppOnlineTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3A3DDD55B956C86D6E4EF43 /* Pods-SpellingAppOnlineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpellingAppOnlineTests.debug.xcconfig"; path = "Target Support Files/Pods-SpellingAppOnlineTests/Pods-SpellingAppOnlineTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -239,6 +242,9 @@
 				3FD2F7BB2DB69C1BE8375804 /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.release.xcconfig */,
 				F3A3DDD55B956C86D6E4EF43 /* Pods-SpellingAppOnlineTests.debug.xcconfig */,
 				EFED965180CA3EC4EDF81FB0 /* Pods-SpellingAppOnlineTests.release.xcconfig */,
+				27CF1D0CAAD5AB30BB397DC3 /* Pods-SpellingAppOnline.adhoc.xcconfig */,
+				B462FD9882F9BBDBE6048138 /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.adhoc.xcconfig */,
+				098AA47C503F68131F398A1F /* Pods-SpellingAppOnlineTests.adhoc.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -796,7 +802,7 @@
 		};
 		9BC5A41B2C8F143500948E2F /* Adhoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74AE62957447459F029B3FE1 /* Pods-SpellingAppOnline.release.xcconfig */;
+			baseConfigurationReference = 27CF1D0CAAD5AB30BB397DC3 /* Pods-SpellingAppOnline.adhoc.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -834,7 +840,7 @@
 		};
 		9BC5A41C2C8F143500948E2F /* Adhoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFED965180CA3EC4EDF81FB0 /* Pods-SpellingAppOnlineTests.release.xcconfig */;
+			baseConfigurationReference = 098AA47C503F68131F398A1F /* Pods-SpellingAppOnlineTests.adhoc.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Manual;
@@ -857,7 +863,7 @@
 		};
 		9BC5A41D2C8F143500948E2F /* Adhoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FD2F7BB2DB69C1BE8375804 /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.release.xcconfig */;
+			baseConfigurationReference = B462FD9882F9BBDBE6048138 /* Pods-SpellingAppOnline-SpellingAppOnlineUITests.adhoc.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 57;
