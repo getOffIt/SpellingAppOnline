@@ -83,6 +83,7 @@ jobs:
           APP_STORE_CONNECT_API_KEY_FILE_BASE64: ${{ secrets.APP_STORE_CONNECT_API_KEY_FILE_BASE64 }}
           APP_STORE_CONNECT_API_KEY_IN_HOUSE: ${{ secrets.APP_STORE_CONNECT_API_KEY_IN_HOUSE }}
           FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+          MATCH_TYPE: 'adhoc'
       
       - name: Remove Keychain
         run: |
