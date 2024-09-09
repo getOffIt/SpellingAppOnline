@@ -50,7 +50,7 @@ platform :ios do
     app_store_connect_api_key_setup
     sigh(adhoc: true, app_identifier: ENV['APPFILE_APP_IDENTIFIER'])
     match(
-      type: "adhoc",  
+      type: "adhoc",
       app_identifier: ENV['APPFILE_APP_IDENTIFIER'],                        # Make sure this is 'adhoc' for AdHoc distribution
       readonly: false,
       verbose: true
@@ -60,7 +60,6 @@ platform :ios do
       scheme: "SpellingAppOnlineAdhoc",
       configuration: "Adhoc",
       workspace: "SpellingAppOnline.xcworkspace",
-      configuration: "Release",
       export_method: "ad-hoc",
       export_options: {
         provisioningProfiles: {
