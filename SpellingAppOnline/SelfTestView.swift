@@ -56,6 +56,9 @@ struct SelfTestView: View {
                         .onAppear {
                             playButton()
                         }
+                        .onDisappear {
+                            speech.stop()
+                        }
                         Spacer() // To align the button to the center
                     }
                     
