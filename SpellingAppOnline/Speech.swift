@@ -19,6 +19,7 @@ class Speech {
         // Stop any current audio playback when users are typing faster than the word is uttered
         if let player = audioPlayer, player.isPlaying {
             player.stop()
+            self.synthesizer.stopSpeaking(at: .immediate)
             print("Stopping mp3 for word: \(word)")
         }
         DispatchQueue.global(qos: .userInitiated).async {
@@ -42,6 +43,9 @@ class Speech {
         utterance.voice = AVSpeechSynthesisVoice(identifier: "com.apple.ttsbundle.Junior-compact")
         print("\(word)")
         DispatchQueue.global(qos: .userInitiated).async {
+            if let player = self.audioPlayer, player.isPlaying {
+                player.stop()
+            }
             self.synthesizer.stopSpeaking(at: .immediate)
             self.synthesizer.speak(utterance)
         }
@@ -49,6 +53,13 @@ class Speech {
     
     func sayThatWordAgain() {
         say(word: previousWord)
+    }
+    
+    func stop() {
+        if let player = self.audioPlayer, player.isPlaying {
+            player.stop()
+        }
+        self.synthesizer.stopSpeaking(at: .immediate)
     }
     
     private func configureAudioSession() {
