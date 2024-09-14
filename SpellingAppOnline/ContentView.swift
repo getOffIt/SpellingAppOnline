@@ -13,6 +13,7 @@ struct ContentView: View {
     @ObservedObject var remoteConfigLocal = RemoteConfigManager.shared
     
     @State private var testFull = SpellingTestMetadata(questions:RemoteConfigManager.shared.firsttabItemWordList)
+    @State private var testLeo = SpellingTestMetadata(questions:RemoteConfigManager.shared.leoTabItemWordList)
     @State private var testUnoProd = SpellingTestMetadata(questions:RemoteConfigManager.shared.firsttabItemWordList)
     @State private var testUno = SpellingTestMetadata(questions:WordsData().testDataShort)
     @State private var resultsTest = SpellingTestMetadata(questions: WordsData().testDataShort)
@@ -76,6 +77,8 @@ struct ContentView: View {
                     
                     UnoTestView(spellingTestMetadata: testUnoProd)
                         .tabItem { Image(systemName: "2.circle"); Text(RemoteConfigManager.shared.secondTabItemText) }.tag(1)
+                    FullTestSequence(spellingTestMetadata: testLeo)
+                        .tabItem { Image(systemName: "1.circle"); Text(RemoteConfigManager.shared.leoTabItemText) }.tag(2)
                     if RemoteConfigManager.shared.yearViewToggle {
                         YearViewProgress()
                             .tabItem { Image(systemName: "3.circle"); Text("Progress") }.tag(2)

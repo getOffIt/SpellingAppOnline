@@ -15,7 +15,9 @@ class RemoteConfigManager: ObservableObject {
     
     
     @Published var firsttabItemText = "Year 6"
+    @Published var leoTabItemText = "Year 2"
     @Published var firsttabItemWordList: [String] = WordsData().allWordsYear6Part7
+    @Published var leoTabItemWordList: [String] = WordsData().allWordsYear2Part1
     @Published var secondTabItemText = "Words to master"
     @Published var secondTabItemWordList: [String] = WordsData().wordsNotMastered
     @Published var sharingResultsEnabled = false
@@ -51,6 +53,7 @@ class RemoteConfigManager: ObservableObject {
                 DispatchQueue.main.async {
                     self.firsttabItemText = self.remoteConfig!["firsttabItemText"].stringValue ?? "Year 6"
                     self.firsttabItemWordList = self.remoteConfig!["firsttabItemWordList"].jsonValue as? [String] ?? WordsData().allWordsYear6Part2
+                    self.leoTabItemWordList = self.remoteConfig!["leoTabItemWordList"].jsonValue as? [String] ?? WordsData().allWordsYear2Part1
                     self.secondTabItemText = self.remoteConfig!["secondTabItemText"].stringValue ?? "Words to master"
                     self.secondTabItemWordList = self.remoteConfig!["secondTabItemWordList"].jsonValue as? [String] ?? WordsData().wordsNotMastered
                     self.sharingResultsEnabled = self.remoteConfig!["sharingResultsEnabled"].boolValue

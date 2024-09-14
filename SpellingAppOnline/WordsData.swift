@@ -698,4 +698,16 @@ public struct WordsData {
         "elles ont"
     ]
     
+    public let allWordsYear2Part1 = [
+        "behind",
+        "children",
+        "door",
+        "find",
+        "floor",
+        "kind",
+        "mind",
+        "money",
+        "poor",
+        "wild"
+    ]
 }
