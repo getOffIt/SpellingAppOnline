@@ -67,6 +67,16 @@
 		9BA6C3832BDD34C4000BB358 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA6C3822BDD34C4000BB358 /* SnapshotHelper.swift */; };
 		9BD67BDD2BD0281000330D70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BD67BDC2BD0281000330D70 /* GoogleService-Info.plist */; };
 		9BD7164C2C08BA5A005371B0 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7164B2C08BA5A005371B0 /* ImageManager.swift */; };
+		9BECE7282C95B25200F44E31 /* behind.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BECE7272C95B25200F44E31 /* behind.mp3 */; };
+		9BECE72A2C95B27600F44E31 /* children.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BECE7292C95B27600F44E31 /* children.mp3 */; };
+		9BECE72C2C95B32F00F44E31 /* door.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BECE72B2C95B32F00F44E31 /* door.mp3 */; };
+		9BECE72E2C95B35400F44E31 /* find.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BECE72D2C95B35400F44E31 /* find.mp3 */; };
+		9BECE7302C95B36B00F44E31 /* floor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BECE72F2C95B36B00F44E31 /* floor.mp3 */; };
+		9BECE7322C95B3B000F44E31 /* kind.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BECE7312C95B3B000F44E31 /* kind.mp3 */; };
+		9BECE7342C95B3CE00F44E31 /* mind.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BECE7332C95B3CE00F44E31 /* mind.mp3 */; };
+		9BECE7362C95B3E800F44E31 /* money.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BECE7352C95B3E800F44E31 /* money.mp3 */; };
+		9BECE7382C95B43D00F44E31 /* poor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BECE7372C95B43D00F44E31 /* poor.mp3 */; };
+		9BECE73A2C95B46D00F44E31 /* wild.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BECE7392C95B46D00F44E31 /* wild.mp3 */; };
 		9BF514602B94F94500C75AFC /* SpellingAppOnlineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF5145F2B94F94500C75AFC /* SpellingAppOnlineApp.swift */; };
 		9BF514622B94F94500C75AFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF514612B94F94500C75AFC /* ContentView.swift */; };
 		9BF514642B94F94700C75AFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF514632B94F94700C75AFC /* Assets.xcassets */; };
@@ -172,6 +182,16 @@
 		9BA6C3822BDD34C4000BB358 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		9BD67BDC2BD0281000330D70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BD7164B2C08BA5A005371B0 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		9BECE7272C95B25200F44E31 /* behind.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = behind.mp3; sourceTree = "<group>"; };
+		9BECE7292C95B27600F44E31 /* children.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = children.mp3; sourceTree = "<group>"; };
+		9BECE72B2C95B32F00F44E31 /* door.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = door.mp3; sourceTree = "<group>"; };
+		9BECE72D2C95B35400F44E31 /* find.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = find.mp3; sourceTree = "<group>"; };
+		9BECE72F2C95B36B00F44E31 /* floor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = floor.mp3; sourceTree = "<group>"; };
+		9BECE7312C95B3B000F44E31 /* kind.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kind.mp3; sourceTree = "<group>"; };
+		9BECE7332C95B3CE00F44E31 /* mind.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mind.mp3; sourceTree = "<group>"; };
+		9BECE7352C95B3E800F44E31 /* money.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = money.mp3; sourceTree = "<group>"; };
+		9BECE7372C95B43D00F44E31 /* poor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = poor.mp3; sourceTree = "<group>"; };
+		9BECE7392C95B46D00F44E31 /* wild.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wild.mp3; sourceTree = "<group>"; };
 		9BF5145C2B94F94500C75AFC /* SpellingAppOnline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpellingAppOnline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF5145F2B94F94500C75AFC /* SpellingAppOnlineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingAppOnlineApp.swift; sourceTree = "<group>"; };
 		9BF514612B94F94500C75AFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -265,9 +285,11 @@
 				9B203BF22C25AE3800941665 /* available.mp3 */,
 				9B203BEF2C25AE3800941665 /* awkward.mp3 */,
 				9B203BE32C25AE3800941665 /* bargain.mp3 */,
+				9BECE7272C95B25200F44E31 /* behind.mp3 */,
 				9B203BF02C25AE3800941665 /* bridal.mp3 */,
 				9B203BDF2C25AE3700941665 /* bridle.mp3 */,
 				9B203BE92C25AE3800941665 /* cereal.mp3 */,
+				9BECE7292C95B27600F44E31 /* children.mp3 */,
 				9B203BE22C25AE3700941665 /* complement.mp3 */,
 				9B203BDA2C25AE3700941665 /* compliment.mp3 */,
 				9B203BF42C25AE3800941665 /* conscious.mp3 */,
@@ -279,6 +301,7 @@
 				9B203BDC2C25AE3700941665 /* dessert.mp3 */,
 				9B203BFF2C25AE3800941665 /* disastrous.mp3 */,
 				9B203BF92C25AE3800941665 /* dissent.mp3 */,
+				9BECE72B2C95B32F00F44E31 /* door.mp3 */,
 				9B203C002C25AE3800941665 /* draft.mp3 */,
 				9B203C052C25AE3800941665 /* draught.mp3 */,
 				9B203BF62C25AE3800941665 /* effect.mp3 */,
@@ -286,16 +309,23 @@
 				9B203BF32C25AE3800941665 /* existence.mp3 */,
 				9B203BF72C25AE3800941665 /* familiar.mp3 */,
 				9B203BFA2C25AE3800941665 /* forty.mp3 */,
+				9BECE72F2C95B36B00F44E31 /* floor.mp3 */,
+				9BECE72D2C95B35400F44E31 /* find.mp3 */,
 				9B203BE72C25AE3800941665 /* hindrance.mp3 */,
+				9BECE7312C95B3B000F44E31 /* kind.mp3 */,
 				9B203BE82C25AE3800941665 /* identity.mp3 */,
 				9B203BEA2C25AE3800941665 /* individual.mp3 */,
 				9B203BFC2C25AE3800941665 /* instantaneous.mp3 */,
 				9B203BD82C25AE3700941665 /* isle.mp3 */,
 				9B203BDD2C25AE3700941665 /* marvellous.mp3 */,
+				9BECE7332C95B3CE00F44E31 /* mind.mp3 */,
 				9B203C012C25AE3800941665 /* mischievous.mp3 */,
+				9BECE7352C95B3E800F44E31 /* money.mp3 */,
 				9B203BF12C25AE3800941665 /* obstinate.mp3 */,
+				9BECE7372C95B43D00F44E31 /* poor.mp3 */,
 				9B203BEE2C25AE3800941665 /* prejudice.mp3 */,
 				9B203BFD2C25AE3800941665 /* sacrifice.mp3 */,
+				9BECE7392C95B46D00F44E31 /* wild.mp3 */,
 				9B203BEB2C25AE3800941665 /* secretary.mp3 */,
 				9B203BEC2C25AE3800941665 /* seldom.mp3 */,
 				9B203BED2C25AE3800941665 /* serial.mp3 */,
@@ -497,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B203C072C25AE3800941665 /* isle.mp3 in Resources */,
+				9BECE72E2C95B35400F44E31 /* find.mp3 in Resources */,
 				9B203C1B2C25AE3800941665 /* seldom.mp3 in Resources */,
 				9B203BD52C2558FD00941665 /* prejudice.mp3 in Resources */,
 				9B203BD02C2558FD00941665 /* conscious.mp3 in Resources */,
@@ -511,22 +542,28 @@
 				9B203C2A2C25AE3800941665 /* altar.mp3 in Resources */,
 				9B203C262C25AE3800941665 /* familiar.mp3 in Resources */,
 				9B203C1C2C25AE3800941665 /* serial.mp3 in Resources */,
+				9BECE73A2C95B46D00F44E31 /* wild.mp3 in Resources */,
 				9B203C302C25AE3800941665 /* mischievous.mp3 in Resources */,
+				9BECE7322C95B3B000F44E31 /* kind.mp3 in Resources */,
 				9B203C222C25AE3800941665 /* existence.mp3 in Resources */,
 				9B203C132C25AE3800941665 /* descent.mp3 in Resources */,
 				9BD67BDD2BD0281000330D70 /* GoogleService-Info.plist in Resources */,
 				9B203C102C25AE3800941665 /* ascent.mp3 in Resources */,
+				9BECE72C2C95B32F00F44E31 /* door.mp3 in Resources */,
 				9B203C1F2C25AE3800941665 /* bridal.mp3 in Resources */,
 				9B203C292C25AE3800941665 /* forty.mp3 in Resources */,
 				9B203C2F2C25AE3800941665 /* draft.mp3 in Resources */,
+				9BECE7382C95B43D00F44E31 /* poor.mp3 in Resources */,
 				9B203C342C25AE3800941665 /* draught.mp3 in Resources */,
 				9B203C112C25AE3800941665 /* complement.mp3 in Resources */,
 				9BF514672B94F94700C75AFC /* Preview Assets.xcassets in Resources */,
 				9B203C142C25AE3800941665 /* allowed.mp3 in Resources */,
+				9BECE7342C95B3CE00F44E31 /* mind.mp3 in Resources */,
 				9B203C212C25AE3800941665 /* available.mp3 in Resources */,
 				9B203C282C25AE3800941665 /* dissent.mp3 in Resources */,
 				9B203C322C25AE3800941665 /* aloud.mp3 in Resources */,
 				9B203C092C25AE3800941665 /* compliment.mp3 in Resources */,
+				9BECE7302C95B36B00F44E31 /* floor.mp3 in Resources */,
 				9B203C2B2C25AE3800941665 /* instantaneous.mp3 in Resources */,
 				9B203C0A2C25AE3800941665 /* ancient.mp3 in Resources */,
 				9B203C182C25AE3800941665 /* cereal.mp3 in Resources */,
@@ -538,15 +575,18 @@
 				9B203C252C25AE3800941665 /* effect.mp3 in Resources */,
 				9B203BD62C2558FD00941665 /* sacrifice.mp3 in Resources */,
 				9B203C172C25AE3800941665 /* identity.mp3 in Resources */,
+				9BECE7282C95B25200F44E31 /* behind.mp3 in Resources */,
 				9B203C122C25AE3800941665 /* bargain.mp3 in Resources */,
 				9B203C312C25AE3800941665 /* affect.mp3 in Resources */,
 				9BF514642B94F94700C75AFC /* Assets.xcassets in Resources */,
 				9B203C202C25AE3800941665 /* obstinate.mp3 in Resources */,
 				9B203C0F2C25AE3800941665 /* amateur.mp3 in Resources */,
+				9BECE7362C95B3E800F44E31 /* money.mp3 in Resources */,
 				9B203C1A2C25AE3800941665 /* secretary.mp3 in Resources */,
 				9B203C192C25AE3800941665 /* individual.mp3 in Resources */,
 				9B203C2D2C25AE3800941665 /* desert.mp3 in Resources */,
 				9B203C1E2C25AE3800941665 /* awkward.mp3 in Resources */,
+				9BECE72A2C95B27600F44E31 /* children.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
