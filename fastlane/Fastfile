@@ -51,16 +51,16 @@ platform :ios do
           ENV['APPFILE_APP_IDENTIFIER'] => "match AdHoc #{ENV['APPFILE_APP_IDENTIFIER']}"
         }
       },
-      export_xcargs: "-allowProvisioningUpdates"
+      export_xcargs: "-allowProvisioningUpdates",
+      output_directory: "./gh-pages",
+      output_name: "SpellingAppOnline-AdHoc.ipa"
     )
     
   end
 
   desc "Generate .plist and HTML for distribution"
   lane :generate_plist_and_html do |options|
-    ipa_path = options[:ipa_path]
-    ipa_filename = File.basename(ipa_path)
-    ipa_destination_path = "gh-pages/#{ipa_filename}"
+    ipa_path = ""./gh-pages/SpellingAppOnline-AdHoc.ipa"
     ipa_url = "https://yourusername.github.io/your-repo-name/#{File.basename(ipa_path)}"
     plist_path = "gh-pages/manifest.plist"
     html_path = "gh-pages/index.html"
@@ -69,7 +69,7 @@ platform :ios do
   FileUtils.mkdir_p('gh-pages')
 
   # Copy the .ipa file to the gh-pages directory
-  FileUtils.cp(ipa_path, ipa_destination_path)
+  # FileUtils.cp(ipa_path, ipa_destination_path)
 
     # Generate the .plist file
     plist_content = <<-XML
