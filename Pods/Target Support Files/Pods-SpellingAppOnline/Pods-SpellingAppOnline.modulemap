@@ -1,6 +1,0 @@
-framework module Pods_SpellingAppOnline {
-  umbrella header "Pods-SpellingAppOnline-umbrella.h"
-
-  export *
-  module * { export * }
-}
