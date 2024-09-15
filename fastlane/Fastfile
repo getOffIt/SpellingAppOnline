@@ -60,13 +60,13 @@ platform :ios do
 
   desc "Generate .plist and HTML for distribution"
   lane :generate_plist_and_html do |options|
-    ipa_path = ""./gh-pages/SpellingAppOnline-AdHoc.ipa"
+    ipa_path = "../gh-pages/SpellingAppOnline-AdHoc.ipa"
     ipa_url = "https://yourusername.github.io/your-repo-name/#{File.basename(ipa_path)}"
-    plist_path = "gh-pages/manifest.plist"
-    html_path = "gh-pages/index.html"
+    plist_path = "../gh-pages/manifest.plist"
+    html_path = "../gh-pages/index.html"
 
   # Ensure the output directory exists
-  FileUtils.mkdir_p('gh-pages')
+  FileUtils.mkdir_p('../gh-pages')
 
   # Copy the .ipa file to the gh-pages directory
   # FileUtils.cp(ipa_path, ipa_destination_path)
