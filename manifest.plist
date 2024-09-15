@@ -17,13 +17,13 @@
             <key>metadata</key>
             <dict>
                 <key>bundle-identifier</key>
-                <string>com.yourcompany.yourapp</string> <!-- Adjust your bundle ID -->
+                <string>com.antoine.SpellingAppOnlinesomething</string> <!-- Adjust your bundle ID -->
                 <key>bundle-version</key>
-                <string>1.0.0</string> <!-- Replace with your app's version -->
+                <string>3.0.0</string> <!-- Replace with your app's version -->
                 <key>kind</key>
                 <string>software</string>
                 <key>title</key>
-                <string>Your App Name</string> <!-- Replace with your app's name -->
+                <string>Spell Mate</string> <!-- Replace with your app's name -->
             </dict>
         </dict>
     </array>
