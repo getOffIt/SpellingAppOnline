@@ -1,6 +1,0 @@
-framework module Pods_SpellingAppOnlineTests {
-  umbrella header "Pods-SpellingAppOnlineTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
