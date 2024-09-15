@@ -56,6 +56,72 @@ platform :ios do
     
   end
 
+  desc "Generate .plist and HTML for distribution"
+  lane :generate_plist_and_html do |options|
+    ipa_path = options[:ipa_path]
+    ipa_url = "https://yourusername.github.io/your-repo-name/#{File.basename(ipa_path)}"
+    plist_path = "output/manifest.plist"
+    html_path = "output/index.html"
+
+    # Generate the .plist file
+    plist_content = <<-XML
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+        <key>items</key>
+        <array>
+            <dict>
+                <key>assets</key>
+                <array>
+                    <dict>
+                        <key>kind</key>
+                        <string>software-package</string>
+                        <key>url</key>
+                        <string>#{ipa_url}</string>
+                    </dict>
+                </array>
+                <key>metadata</key>
+                <dict>
+                    <key>bundle-identifier</key>
+                    <string>com.yourcompany.yourapp</string> <!-- Adjust your bundle ID -->
+                    <key>bundle-version</key>
+                    <string>1.0.0</string> <!-- Replace with your app's version -->
+                    <key>kind</key>
+                    <string>software</string>
+                    <key>title</key>
+                    <string>Your App Name</string> <!-- Replace with your app's name -->
+                </dict>
+            </dict>
+        </array>
+    </dict>
+    </plist>
+    XML
+
+    File.write(plist_path, plist_content)
+
+    # Generate the HTML file
+    html_content = <<-HTML
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your App</title>
+    </head>
+    <body>
+        <h1>Download Your App</h1>
+        <p>Click the link below to download and install the app:</p>
+        <a href="itms-services://?action=download-manifest&url=https://yourusername.github.io/your-repo-name/manifest.plist">Install Your App</a>
+    </body>
+    </html>
+    HTML
+
+    File.write(html_path, html_content)
+
+    UI.message "Generated .plist and HTML for distribution!"
+  end
+
   desc "Fetch distribution certificates and profiles"
   lane :fetchDistributionCertificatesAndProfiles do
     match(
