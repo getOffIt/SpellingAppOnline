@@ -59,7 +59,7 @@ jobs:
       
       - name: Generate .plist and HTML for AdHoc
         run: |
-          bundle exec fastlane generate_plist_and_html"
+          bundle exec fastlane generate_plist_and_html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
