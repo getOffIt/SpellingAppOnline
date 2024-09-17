@@ -75,7 +75,8 @@ class RemoteConfigManager: ObservableObject {
         let defaultValues = [
             "buttonText": "Default text!" as NSObject,
             "buttonConstraintConstant": 50 as NSObject,
-            "firsttabItemText": "Year 6" as NSObject
+            "firsttabItemText": "Year 6" as NSObject,
+            "introduceTabBar": true as NSObject
         ]
         
         RemoteConfig.remoteConfig().setDefaults(defaultValues)
