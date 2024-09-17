@@ -8,8 +8,6 @@ enum TestStatus {
 struct ContentView: View {
     @State private var selectedTabDebug = 0
     @EnvironmentObject var tabSelection: TabSelection
-    
-    
     @ObservedObject var remoteConfigLocal = RemoteConfigManager.shared
     
     @State private var testFull = SpellingTestMetadata(questions:RemoteConfigManager.shared.firsttabItemWordList)
@@ -87,26 +85,30 @@ struct ContentView: View {
                 .font(.subheadline.weight(.heavy))
                 .accentColor(Color.white)
                 .onAppear {
-                    
+         
+             
                     let tabBarAppearance = UITabBarAppearance()
-                    
-                    // Set unselected item appearance with higher contrast
-                    tabBarAppearance.stackedLayoutAppearance.normal.iconColor = UIColor.lightGray // Use a light gray or off-white color
+
+                    tabBarAppearance.stackedLayoutAppearance.normal.iconColor = UIColor.darkGray
                     tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [
-                        .foregroundColor: UIColor.lightGray, // Use a light gray color
-                        .font: UIFont.systemFont(ofSize: 14, weight: .medium) // Ensure the font is readable
+                        .foregroundColor: UIColor.lightGray,
+                        .font: UIFont.systemFont(ofSize: 14, weight: .medium)
                     ]
                     
-                    // Set selected item appearance to stand out more
-                    tabBarAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.white // Brighter color for the selected item
+                    tabBarAppearance.stackedLayoutAppearance.selected.iconColor = UIColor.white
                     tabBarAppearance.stackedLayoutAppearance.selected.titleTextAttributes = [
-                        .foregroundColor: UIColor.white, // Brighter color for the selected item
-                        .font: UIFont.systemFont(ofSize: 14, weight: .bold) // Make the selected tab item bold
+                        .foregroundColor: UIColor.white,
+                        .font: UIFont.systemFont(ofSize: 14, weight: .bold)
                     ]
                     
-                    UITabBar.appearance().standardAppearance = tabBarAppearance
+                    tabBarAppearance.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+                    let tabBar = UITabBar.appearance()
+                    tabBar.standardAppearance = tabBarAppearance
+
+                    if #available(iOS 15.0, *) {
+                        tabBar.scrollEdgeAppearance = tabBarAppearance
+                    }
                 }
-                
             }
             else {
                 FullTestSequence(spellingTestMetadata: testFull)
