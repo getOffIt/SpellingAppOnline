@@ -2,7 +2,8 @@ import Foundation
 import SwiftUI
 
 struct LearningView: View {
-    
+    @Environment(\.colorScheme) var colorScheme  // Access current color scheme (light/dark)
+
     // Updated to track the user input for each incorrect answer
     @State private var userInputs: [String: String] = [:]
     
@@ -22,7 +23,7 @@ struct LearningView: View {
                 ForEach(incorrectAnswers, id: \.self) { question in
                     VStack(alignment: .leading, spacing: 10) {
                         Text(question)
-                            .font(.headline)
+                            .font(.title2)
                             .foregroundStyle(.primary)
                             .foregroundColor(.white)
                         // Use the question to access or update the corresponding user input.
@@ -31,8 +32,13 @@ struct LearningView: View {
                             set: { self.userInputs[question] = $0 }
                         ))
                         .frame(minHeight: 80)
-                        .background(Color.white)
-                        .foregroundColor(Color.black)
+                        .font(.body)
+                        .scrollContentBackground(.hidden) // Hide default background
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(backgroundColor) // Adaptive background
+                        )
+                        .foregroundColor(.primary)
                         .shadow(radius: 5)
                         .cornerRadius(10)
                         .keyboardType(.alphabet)
@@ -69,4 +75,13 @@ struct LearningView: View {
         .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.blue]), startPoint: .top, endPoint: .bottom))
 
     }
+    
+    private var backgroundColor: Color {
+            if colorScheme == .dark {
+                return Color.black.opacity(0.4)
+            } else {
+                return Color.secondary // White background for light mode
+            }
+        }
+    
 }
