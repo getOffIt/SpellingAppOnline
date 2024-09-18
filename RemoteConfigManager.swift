@@ -16,7 +16,7 @@ class RemoteConfigManager: ObservableObject {
     
     @Published var firsttabItemText = "Year 6"
     @Published var leoTabItemText = "Year 2"
-    @Published var firsttabItemWordList: [String] = WordsData().allWordsYear6Part7
+    @Published var firsttabItemWordList: [String] = WordsData().allWordsYear6Part8
     @Published var leoTabItemWordList: [String] = WordsData().allWordsYear2Part1
     @Published var secondTabItemText = "Uno"
     @Published var secondTabItemWordList: [String] = WordsData().wordsNotMastered
