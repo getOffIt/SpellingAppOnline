@@ -11,6 +11,8 @@ struct ContentView: View {
     @ObservedObject var remoteConfigLocal = RemoteConfigManager.shared
     
     @State private var testFull = SpellingTestMetadata(questions:RemoteConfigManager.shared.firsttabItemWordList)
+    @State private var testYear6 = SpellingTestMetadata(questions:WordsData().allWordsYear6)
+    @State private var testYear5 = SpellingTestMetadata(questions:WordsData().allWordsYear5)
     @State private var testLeo = SpellingTestMetadata(questions:RemoteConfigManager.shared.leoTabItemWordList)
     @State private var testUnoProd = SpellingTestMetadata(questions:RemoteConfigManager.shared.firsttabItemWordList)
     @State private var testUno = SpellingTestMetadata(questions:WordsData().testDataShort)
@@ -72,14 +74,17 @@ struct ContentView: View {
                 TabView(selection: $tabSelection.selectedTab) {
                     FullTestSequence(spellingTestMetadata: testFull)
                         .tabItem { Image(systemName: "1.circle"); Text(RemoteConfigManager.shared.firsttabItemText) }.tag(0)
-                    
                     UnoTestView(spellingTestMetadata: testUnoProd)
                         .tabItem { Image(systemName: "2.circle"); Text(RemoteConfigManager.shared.secondTabItemText) }.tag(1)
                     FullTestSequence(spellingTestMetadata: testLeo)
-                        .tabItem { Image(systemName: "1.circle"); Text(RemoteConfigManager.shared.leoTabItemText) }.tag(2)
+                        .tabItem { Image(systemName: "3.circle"); Text(RemoteConfigManager.shared.leoTabItemText) }.tag(2)
+                    FullTestSequence(spellingTestMetadata: testYear6)
+                        .tabItem { Image(systemName: "6.circle"); Text("Year 6 Final") }.tag(3)
+                    FullTestSequence(spellingTestMetadata: testYear5)
+                        .tabItem { Image(systemName: "5.circle"); Text("Year 5 All") }.tag(4)
                     if RemoteConfigManager.shared.yearViewToggle {
                         YearViewProgress()
-                            .tabItem { Image(systemName: "3.circle"); Text("Progress") }.tag(2)
+                            .tabItem { Image(systemName: "3.circle"); Text("Progress") }.tag(5)
                     }
                 }
                 .font(.subheadline.weight(.heavy))
