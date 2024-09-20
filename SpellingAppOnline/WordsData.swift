@@ -396,8 +396,8 @@ public struct WordsData {
 //        "compliment": "Compliment (noun/verb): Means a nice or kind thing you say to someone to praise them. Example: “He gave her a compliment on her new haircut.",
 //        "descent"   : "descent (noun): 'The plane began its descent towards the airport.' - an action of moving downward, dropping, or falling.",
 //        "dissent"   : "dissent (noun/verb): 'There was considerable dissent among the members of the committee.' - the expression or holding of opinions at variance with those previously, commonly, or officially held.",
-//        "desert"    : "Dessert (noun): A sweet treat you eat after a meal, like cake or ice cream. Example: “I had ice cream for dessert.",
-//        "dessert"   : "dessert (noun): 'For dessert, we had chocolate cake.' - the sweet course eaten at the end of a meal.",
+//        "desert"    : "desert A large, hot, dry area of land with very little rain and few plants. Example: “Camels live in the desert.",
+//        "dessert"   : "dessert: 'For dessert, we had chocolate cake.' - the sweet course eaten at the end of a meal.",
 //        "draft"     : "draft (noun/verb): 'The author completed the first draft of her novel.' - a preliminary version of a piece of writing.",
 //        "draught"   : "draught (noun): 'He enjoyed a draught of cold beer on a hot day.' - a single act of drinking or inhaling; also refers to beer served from a keg rather than from a bottle or can."
     ]
