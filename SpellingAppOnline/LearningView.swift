@@ -3,11 +3,12 @@ import SwiftUI
 
 struct LearningView: View {
     @Environment(\.colorScheme) var colorScheme  // Access current color scheme (light/dark)
-
+    
     // Updated to track the user input for each incorrect answer
     @State private var userInputs: [String: String] = [:]
     
     @ObservedObject private var spellingTestMetadata: SpellingTestMetadata
+    private let homophonesDefinition = WordsData().homophonesDescriptionForLearningView
     
     init(spellingTestMetadata: SpellingTestMetadata) {
         self.spellingTestMetadata = spellingTestMetadata
@@ -26,6 +27,11 @@ struct LearningView: View {
                             .font(.title2)
                             .foregroundStyle(.primary)
                             .foregroundColor(.white)
+                        if let definition = homophonesDefinition[question] {
+                            Text(" : \(definition)")
+                                .foregroundColor(.white)
+                        }
+                            
                         // Use the question to access or update the corresponding user input.
                         TextEditor(text: Binding(
                             get: { self.userInputs[question, default: ""] },
@@ -73,15 +79,15 @@ struct LearningView: View {
             }
         }
         .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.blue]), startPoint: .top, endPoint: .bottom))
-
+        
     }
     
     private var backgroundColor: Color {
-            if colorScheme == .dark {
-                return Color.black.opacity(0.4)
-            } else {
-                return Color.secondary // White background for light mode
-            }
+        if colorScheme == .dark {
+            return Color.black.opacity(0.4)
+        } else {
+            return Color.secondary // White background for light mode
         }
+    }
     
 }
