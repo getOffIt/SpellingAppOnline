@@ -1,47 +1,12 @@
 import Foundation
 
-struct Word {
-    var isDone: Bool
-    let word: String
-    var isWrong: Bool = false
-    var isSaid: Bool = true
-}
-
-struct YearWordSection {
+struct savedWords {
     let title: String
-    var index: Int = 0
-    var words: [Word]
-    var isDone: Bool {
-        words.allSatisfy { $0.isDone }
-    }
-    var count: Int {
-        words.count
-    }
+    let words: [String]
 }
 
 public struct WordsData {
-    var yearWordSection:[YearWordSection]
-    var allWords: [String] {
-        yearWordSection.flatMap { $0.words.map { $0.word } }
-    }
-    var count: Int {
-        var cpt = 0
-        yearWordSection.forEach { (section) in
-            cpt += section.count
-        }
-        return cpt
-    }
-    
-    public init() {
-        var tempSections: [YearWordSection] = []
-        theYear5WordsInFunnyFormat.forEach { (key: String, value: [String]) in
-            let yearWordSection:YearWordSection = YearWordSection(title: key, words: value.map { Word(isDone: false, word: $0) })
-            tempSections.append(yearWordSection)
-        }
-        self.yearWordSection = tempSections
-    }
-    
-    
+
     let wordsNotMastered = [
         "communicate",
         "twelfth",
