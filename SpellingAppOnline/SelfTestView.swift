@@ -62,7 +62,7 @@ struct SelfTestView: View {
                         Spacer() // To align the button to the center
                     }
                     
-                    TextField("Type word", text: $typedWord)
+                    TextField("", text: $typedWord, prompt: Text("Type word").foregroundStyle(.gray))
                         .foregroundColor(.black)
                         .padding()
                         .background(Color.white)
