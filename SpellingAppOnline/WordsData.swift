@@ -43,15 +43,38 @@ public struct WordsData {
     
     
     let wordsNotMastered = [
-        "communicate",
-        "twelfth",
-        "interrupt",
-        "community",
-        "aggressive",
-        "symbol",
-        "sincerely",
-        "determined"
+      "nuisance",
+      "privilege",
+      "restaurant",
+      "foreign",
+      "government",
+      "correspond",
+      "exaggerate",
+      "amateurish",
+      "especially",
+      "accommodation",
+      "preconception",
+      "convenience",
+      "existence",
+      "prejudice",
+      "conscious",
+      "marvellous",
+      "available",
+      "awkward",
+      "curiosity",
+      "secretary",
+      "aloud",
+      "allowed",
+      "complement",
+      "compliment"
     ]
+    
+//    nuisance, privilege, restaurant, foreign, government, correspond, exaggerate, amateurish, especially, accommodation, preconception, convenience, existence, prejudice, conscious, marvellous, mischievous, available, awkward, curiosity, secretary, aloud, complement, compliment
+
+
+
+
+
     
     let allWordsYear6Part1DebugResponses = [
         "bruise", // Unstressed vowels

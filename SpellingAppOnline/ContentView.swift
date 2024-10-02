@@ -18,6 +18,7 @@ struct ContentView: View {
     @State private var testUno = SpellingTestMetadata(questions:WordsData().testDataShort)
     @State private var resultsTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     @State private var learningTest = SpellingTestMetadata(questions: RemoteConfigManager.shared.firsttabItemWordList)
+    @State private var wordsNotMastered = SpellingTestMetadata(questions: WordsData().wordsNotMastered)
     
     private var enableTabBarForDebug = false
     @State private var testStatusResultsDebug = TestStatus.reviewing
@@ -72,8 +73,8 @@ struct ContentView: View {
         else {
             if RemoteConfigManager.shared.introduceTabBar {
                 TabView(selection: $tabSelection.selectedTab) {
-                    FullTestSequence(spellingTestMetadata: testFull)
-                        .tabItem { Image(systemName: "1.circle"); Text(RemoteConfigManager.shared.firsttabItemText) }.tag(0)
+                    FullTestSequence(spellingTestMetadata: wordsNotMastered)
+                        .tabItem { Image(systemName: "1.circle"); Text("last") }.tag(0)
                     UnoTestView(spellingTestMetadata: testUnoProd)
                         .tabItem { Image(systemName: "2.circle"); Text(RemoteConfigManager.shared.secondTabItemText) }.tag(1)
                     FullTestSequence(spellingTestMetadata: testLeo)
