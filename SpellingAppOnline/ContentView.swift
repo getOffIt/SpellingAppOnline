@@ -19,7 +19,7 @@ struct ContentView: View {
     @State private var resultsTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     @State private var learningTest = SpellingTestMetadata(questions: RemoteConfigManager.shared.firsttabItemWordList)
     
-    private var enableTabBarForDebug = false
+    private var enableTabBarForDebug = true
     @State private var testStatusResultsDebug = TestStatus.reviewing
     @State private var testStatusResultsDebugQuestions: [String] = WordsData().allWordsYear6Part1
     @State private var testStatusResultsDebugAnswers: [String] = WordsData().allWordsYear6Part1DebugResponses
@@ -35,8 +35,15 @@ struct ContentView: View {
     }
     
     var body: some View {
-        if RemoteConfigManager.shared.debugMode && enableTabBarForDebug {
+        if enableTabBarForDebug {
             TabView(selection: $selectedTabDebug) {
+                let tests = [
+                    SpellingTestMetadata(testTitle: "Autumn term 1", questions: Year2.autumn_term_1),
+                    SpellingTestMetadata(testTitle: "Autumn term 2", questions: Year2.autumn_term_2),
+                    SpellingTestMetadata(testTitle: "Autumn term 3", questions: Year2.autumn_term_3)
+                ]
+                ListView(tests: tests)
+                    .tabItem { Text("List View") }
                 LearningView(spellingTestMetadata: learningTest)
                     .tabItem {
                         Text("Learning")

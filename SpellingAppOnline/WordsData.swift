@@ -5,6 +5,38 @@ struct savedWords {
     let words: [String]
 }
 
+struct Year2 {
+    
+    //# Autumn Term
+    static let autumn_term_1 = ["Because", "Both", "Child"]
+    static let autumn_term_2 = ["Children", "Climb", "Cold"]
+    static let autumn_term_3 = ["Door", "Every", "Everybody"]
+//    autumn_term_4 = ["Find", "Floor", "Gold"]
+//    autumn_term_5 = ["Hold", "Kind", "Mind"]
+//    autumn_term_6 = ["Most", "Old", "Only"]
+//    autumn_term_7 = ["Poor", "Told", "Wild"]
+//    autumn_term_8 = ["Christmas"]
+//
+//    //# Spring Term
+//    spring_term_1 = ["Behind", "After", "Bath"]
+//    spring_term_2 = ["Beautiful", "Break", "Class"]
+//    spring_term_3 = ["Even", "Fast", "Father"]
+//    spring_term_4 = ["Grass", "Great", "Hour"]
+//    spring_term_5 = ["Improve", "Last", "Move"]
+//    spring_term_6 = ["Pass", "Path", "Plant"]
+//    spring_term_7 = ["Pretty", "Prove", "Steak"]
+//    spring_term_8 = ["Sure"]
+//
+//    //# Summer Term
+//    summer_term_1 = ["Again", "Mr", "Mrs"]
+//    summer_term_2 = ["Any", "Busy", "Clothes"]
+//    summer_term_3 = ["Parents", "People", "Should"]
+//    summer_term_4 = ["Sugar", "Could", "Eye"]
+//    summer_term_5 = ["Half", "Many", "Money"]
+//    summer_term_6 = ["Water", "Who", "Whole"]
+//    summer_term_7 = ["Would"]
+}
+
 public struct WordsData {
 
     let wordsNotMastered = [
