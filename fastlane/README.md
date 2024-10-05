@@ -79,10 +79,26 @@ Build prod App
 
 Update app version number using current date
 
+### ios noOperation
+
+```sh
+[bundle exec] fastlane ios noOperation
+```
+
+Update app version number using current date
+
 ### ios releaseLatestTestFlightBuildToAppStore
 
 ```sh
 [bundle exec] fastlane ios releaseLatestTestFlightBuildToAppStore
+```
+
+Release latest testflight build
+
+### ios releaseLatestTestFlightBuildToAppStoreGitHubAction
+
+```sh
+[bundle exec] fastlane ios releaseLatestTestFlightBuildToAppStoreGitHubAction
 ```
 
 Release latest testflight build
@@ -94,6 +110,14 @@ Release latest testflight build
 ```
 
 Increment build number dynamically and build for App Store distribution
+
+### ios betaGitHubAction
+
+```sh
+[bundle exec] fastlane ios betaGitHubAction
+```
+
+Build for App Store distribution and upload to TestFlight
 
 ### ios beta
 

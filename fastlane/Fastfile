@@ -186,6 +186,11 @@ platform :ios do
     )
     UI.message("Updated version number to #{new_version}")
   end
+
+  desc "Update app version number using current date"
+  lane :noOperation do
+    UI.message("BipBop")
+  end
   
   def has_commits_in_last_24_hours?
     last_24_hours_commits = `git log --since="24 hours ago" --oneline main`.strip
