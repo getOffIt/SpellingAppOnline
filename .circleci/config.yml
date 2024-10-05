@@ -88,10 +88,3 @@ jobs:
           path: output/scan
 workflows:
   version: 2
-  build_and_deploy:
-    jobs:
-      - beta:
-          filters:
-            branches:
-              only:
-                - main
