@@ -95,13 +95,3 @@ workflows:
             branches:
               only:
                 - main
-  nightly_release:
-    triggers:
-      - schedule:
-          cron: "0 21 * * *"
-          filters:
-            branches:
-              only:
-                - main
-    jobs:
-      - release_to_app_store

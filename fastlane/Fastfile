@@ -228,12 +228,61 @@ platform :ios do
     )
   end
 
+  desc "Release latest testflight build"
+  lane :releaseLatestTestFlightBuildToAppStoreGitHubAction do
+    unless has_commits_in_last_24_hours?
+      UI.important("No commits in the last 24 hours on the main branch. Skipping release.")
+      next
+    end
+
+    app_store_connect_api_key_setup
+    betaGitHubAction
+    deliver(
+      skip_binary_upload: true,
+      submit_for_review: true,
+      automatic_release: true,
+      skip_screenshots: true,
+      force: true,
+      precheck_include_in_app_purchases: false,
+      submission_information: {
+        add_id_info_uses_idfa: false,
+        content_rights_has_rights: false,
+        content_rights_contains_third_party_content: false,
+        export_compliance_platform: 'ios',
+        export_compliance_compliance_required: false,
+        export_compliance_encryption_updated: false,
+        export_compliance_app_type: nil,
+        export_compliance_uses_encryption: false,
+        export_compliance_is_exempt: false,
+        export_compliance_contains_third_party_cryptography: false,
+        export_compliance_contains_proprietary_cryptography: false,
+        export_compliance_available_on_french_store: false
+      },
+      release_notes: {
+        'en-GB' => "Updating words to master to finish year 6"
+      },
+    )
+  end
+
   desc "Increment build number dynamically and build for App Store distribution"
   lane :incrementBuildNumber do
     current_build_number = app_store_build_number(live: false) #//live false means Testflight, true would take the current production build
     increment_build_number(xcodeproj: 'SpellingAppOnline.xcodeproj', build_number: current_build_number + 1)
   end
 
+  desc "Build for App Store distribution and upload to TestFlight"
+  lane :betaGitHubAction do
+    fetchDistributionCertificatesAndProfiles
+    setup_xcode_version
+    app_store_connect_api_key_setup
+    updateVersionNumber
+    incrementBuildNumber
+    build_prod_app
+    upload_to_testflight
+    upload_symbols_to_crashlytics(dsym_path: "/Users/runner/work/SpellingAppOnline/SpellingAppOnline/SpellingAppOnline.app.dSYM.zip")
+    
+  end
+  
   desc "Build for App Store distribution and upload to TestFlight"
   lane :beta do
     fetchDistributionCertificatesAndProfiles
@@ -246,7 +295,7 @@ platform :ios do
     upload_symbols_to_crashlytics(dsym_path: "/Users/distiller/project/output/gym/SpellingAppOnline.app.dSYM.zip")
     
   end
-  
+
   desc "run the screenshot code"
   lane :snapshotlane do
     xcversion(version: "15.4")  # Ensure you have this version installed
