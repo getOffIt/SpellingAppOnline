@@ -223,7 +223,7 @@ platform :ios do
         export_compliance_available_on_french_store: false
       },
       release_notes: {
-        'en-GB' => "Redesigned the app to be more aesthetically pleasing with a friendly blue background"
+        'en-GB' => "Updating words to master to finish year 6"
       },
     )
   end
