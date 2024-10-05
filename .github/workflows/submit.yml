@@ -40,7 +40,7 @@ jobs:
         run: bundle install
 
       - name: submit to store
-        run: bundle exec fastlane releaseLatestTestFlightBuildToAppStore
+        run: bundle exec fastlane releaseLatestTestFlightBuildToAppStoreGitHubAction
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           APPFILE_APP_IDENTIFIER: ${{ secrets.APPFILE_APP_IDENTIFIER }}
