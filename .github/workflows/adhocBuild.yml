@@ -1,4 +1,4 @@
-name: iOS Development Build
+name: AdHoc build
 
 on:
   push:
