@@ -72,7 +72,7 @@ jobs:
           FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
           MATCH_TYPE: 'adhoc'
           
-      - name: Run Fastlane match
+      - name: Run Fastlane buildAdHoc
         run: bundle exec fastlane buildAdHoc
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
