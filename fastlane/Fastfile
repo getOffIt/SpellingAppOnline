@@ -33,6 +33,33 @@ platform :ios do
       export_xcargs: "-allowProvisioningUpdates")
   end
 
+# build_adhoc_app
+  lane:matchAdHoc do
+    match(
+      type: "adhoc",
+      app_identifier: ENV['APPFILE_APP_IDENTIFIER'],                        # Make sure this is 'adhoc' for AdHoc distribution
+      readonly: false,
+      verbose: true
+    )
+  end
+
+  lane:buildAdHoc do
+    build_app(
+      scheme: "SpellingAppOnline",
+      configuration: "Adhoc",
+      workspace: "SpellingAppOnline.xcworkspace",
+      export_method: "ad-hoc",
+      export_options: {
+        provisioningProfiles: {
+          ENV['APPFILE_APP_IDENTIFIER'] => "match AdHoc #{ENV['APPFILE_APP_IDENTIFIER']}"
+        }
+      },
+      export_xcargs: "-allowProvisioningUpdates",
+      output_directory: "gh-pages",
+      output_name: "SpellingAppOnline-AdHoc.ipa"
+    )
+  end
+
   desc "Build AdHoc App"
   lane :build_adhoc_app do
     setup_xcode_version
