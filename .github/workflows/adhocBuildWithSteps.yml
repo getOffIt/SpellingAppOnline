@@ -1,4 +1,4 @@
-name: AdHoc build
+name: AdHoc build with steps
 
 on:
   push:
