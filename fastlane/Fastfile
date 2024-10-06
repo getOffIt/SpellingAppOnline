@@ -19,7 +19,7 @@ default_platform(:ios)
 
 platform :ios do
   before_all do
-    setup_circle_ci
+    setup_ci
   end
 
   desc "Just build a dev build, no signing or upload"
@@ -35,6 +35,7 @@ platform :ios do
 
 # build_adhoc_app
   lane:matchAdHoc do
+    app_store_connect_api_key_setup
     match(
       type: "adhoc",
       app_identifier: ENV['APPFILE_APP_IDENTIFIER'],                        # Make sure this is 'adhoc' for AdHoc distribution
