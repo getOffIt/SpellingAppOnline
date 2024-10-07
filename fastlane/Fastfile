@@ -14,6 +14,8 @@ require 'fileutils'
 
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
+require 'fileutils'
+require 'spaceship'
 
 default_platform(:ios)
 
@@ -34,7 +36,7 @@ platform :ios do
   end
 
 # build_adhoc_app
-  lane:matchAdHoc do
+  lane :matchAdHoc do
     app_store_connect_api_key_setup
     match(
       type: "adhoc",
@@ -44,7 +46,7 @@ platform :ios do
     )
   end
 
-  lane:buildAdHoc do
+  lane :buildAdHoc do
     build_app(
       scheme: "SpellingAppOnline",
       configuration: "Adhoc",
@@ -103,13 +105,13 @@ platform :ios do
 
     # Generate the .plist file
     plist_content = <<-XML
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>items</key>
-    <array>
-        <dict>
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+      <dict>
+        <key>items</key>
+        <array>
+          <dict>
             <key>assets</key>
             <array>
                 <dict>
@@ -129,30 +131,30 @@ platform :ios do
                 <string>software</string>
                 <key>title</key>
                 <string>Spell Mate</string> <!-- Replace with your app's name -->
-            </dict>
+              </dict>
+          </dict>
+        </array>
         </dict>
-    </array>
-</dict>
-</plist>
+      </plist>
     XML
     puts "Writing plist content to #{plist_path} for debugging purposes"
     File.write(plist_path, plist_content)
 
     # Generate the HTML file
     html_content = <<-HTML
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spell Mate download</title>
-</head>
-<body>
-    <h1>Download Spell Mate</h1>
-    <p>Click the link below to download and install Spell Mate:</p>
-    <a href="itms-services://?action=download-manifest&url=https://getoffit.github.io/SpellingAppOnline/manifest.plist">Install Your App</a>
-</body>
-</html>
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Spell Mate download</title>
+        </head>
+        <body>
+          <h1>Download Spell Mate</h1>
+          <p>Click the link below to download and install Spell Mate:</p>
+          <a href="itms-services://?action=download-manifest&url=https://getoffit.github.io/SpellingAppOnline/manifest.plist">Install Your App</a>
+        </body>
+      </html>
     HTML
 
     File.write(html_path, html_content)
@@ -195,6 +197,25 @@ platform :ios do
     
   end
 
+  def latest_appstore_version_number
+    app_identifier = ENV['APPFILE_APP_IDENTIFIER']
+    
+    # Authenticate with App Store Connect
+    app_store_connect_api_key(
+      key_id: ENV['APP_STORE_CONNECT_API_KEY_KEY_ID'],
+      issuer_id: ENV['APP_STORE_CONNECT_API_KEY_ISSUER_ID'],
+      key_content: ENV['APP_STORE_CONNECT_API_KEY_FILE_BASE64'],
+      is_key_content_base64: true,
+      in_house: ENV['APP_STORE_CONNECT_API_KEY_IN_HOUSE'] == "true"
+    )
+
+    # Fetch the latest version
+    app = Spaceship::ConnectAPI::App.find(app_identifier)
+    latest_appstore_version = app.get_live_app_store_version.version_string
+    UI.message("Latest version: #{latest_appstore_version}")
+    return latest_appstore_version
+  end
+
   desc "Update app version number using current date"
   lane :updateVersionNumber do
 
@@ -207,6 +228,11 @@ platform :ios do
     month = current_time.strftime("%m")
     day = current_time.strftime("%d")
     new_version = "#{major_version}.#{year}#{month}#{day}.0"
+    
+    if new_version == latest_appstore_version_number 
+      new_version = "#{major_version}.#{year}#{month}#{day}.1"
+    end
+
     update_xcconfig_value(
       path: 'versionnumber.xcconfig',
       name: 'VERSION_NUMBER',
