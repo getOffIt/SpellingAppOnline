@@ -75,8 +75,8 @@ struct ContentView: View {
                 TabView(selection: $tabSelection.selectedTab) {
                     FullTestSequence(spellingTestMetadata: wordsNotMastered)
                         .tabItem { Image(systemName: "1.circle"); Text("last") }.tag(0)
-                    UnoTestView(spellingTestMetadata: testUnoProd)
-                        .tabItem { Image(systemName: "2.circle"); Text(RemoteConfigManager.shared.secondTabItemText) }.tag(1)
+                    UnoTestView(spellingTestMetadata: wordsNotMastered)
+                        .tabItem { Image(systemName: "2.circle"); Text("Uno") }.tag(1)
                     FullTestSequence(spellingTestMetadata: testLeo)
                         .tabItem { Image(systemName: "3.circle"); Text(RemoteConfigManager.shared.leoTabItemText) }.tag(2)
                     FullTestSequence(spellingTestMetadata: testYear6)
