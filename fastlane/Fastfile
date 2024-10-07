@@ -429,4 +429,122 @@ platform :ios do
     # no upload to test flight
   end
 
+
+  lane :tool_compareStoreToTestflightversion do
+    app_identifier = ENV['APPFILE_APP_IDENTIFIER']
+    
+    # Authenticate with App Store Connect
+    app_store_connect_api_key(
+      key_id: ENV['APP_STORE_CONNECT_API_KEY_KEY_ID'],
+      issuer_id: ENV['APP_STORE_CONNECT_API_KEY_ISSUER_ID'],
+      key_content: ENV['APP_STORE_CONNECT_API_KEY_FILE_BASE64'],
+      is_key_content_base64: true,
+      in_house: ENV['APP_STORE_CONNECT_API_KEY_IN_HOUSE'] == "true"
+    )
+  
+    # Fetch the latest version
+    app = Spaceship::ConnectAPI::App.find(app_identifier)
+    latest_appstore_version = app.get_live_app_store_version.version_string
+    latest_testflight = app.get_edit_app_store_version
+    if latest_testflight.nil?
+      UI.error("Could not fetch the latest App Store version.")
+      UI.message("Latest testflight object: #{latest_testflight.inspect}")
+      UI.message("app object: #{app.inspect}")
+    end
+    UI.message("Latest AppStore version: #{latest_appstore_version}")  
+  
+  end
+
+  def tool_authenticateToAppStoreConnect
+    app_store_connect_api_key(
+      key_id: ENV['APP_STORE_CONNECT_API_KEY_KEY_ID'],
+      issuer_id: ENV['APP_STORE_CONNECT_API_KEY_ISSUER_ID'],
+      key_content: ENV['APP_STORE_CONNECT_API_KEY_FILE_BASE64'],
+      is_key_content_base64: true,
+      in_house: ENV['APP_STORE_CONNECT_API_KEY_IN_HOUSE'] == "true"
+    )
+  end
+
+  lane :tutorial_playwithSpaceship do
+    tool_authenticateToAppStoreConnect
+    app_identifier = ENV['APPFILE_APP_IDENTIFIER']
+    app = Spaceship::ConnectAPI::App.find(app_identifier)
+    if !app
+      UI.error("Could not find app with identifier '#{app_identifier}'")
+      return
+    end
+    puts "App Name: #{app.name}"
+    puts "App ID: #{app.id}"
+    puts "Bundle ID: #{app.bundle_id}"
+
+    latest_appstore_version = app.get_live_app_store_version.version_string
+    UI.message("Latest version: #{latest_appstore_version}")
+
+    # begin
+    #   apps = Spaceship::ConnectAPI::App.all
+    #   if apps.empty?
+    #   UI.message("No apps found.")
+    #   else
+    #   apps.each do |app|
+    #     puts "App Name: #{app.name}"
+    #     puts "App ID: #{app.id}"
+    #     puts "Bundle ID: #{app.bundle_id}"
+    #     puts "---------------------------"
+    #   end
+    #   end
+    # rescue => e
+    #   UI.error("An error occurred while fetching apps: #{e.message}")
+    # end
+
+    # begin
+    #   builds = app.get_builds
+    #   if builds.empty?
+    #     UI.message("No builds found.")
+    #   else
+    #     builds.each do |build|
+    #       puts "Build Version: #{build.version}"
+    #       puts "Processing State: #{build.processing_state}"
+    #       puts "---------------------------"
+    #   end
+    # end
+    # rescue => e
+    #   UI.error("An error occurred while fetching builds: #{e.message}")
+    # end
+
+    live_app_store_version = app.get_live_app_store_version # the version that's currently available in the App Store
+    puts "Live App Store Version: #{live_app_store_version.version_string}"
+    
+    edit_app_store_version = app.get_edit_app_store_version # the version that's in `Prepare for Submission`, `Metadata Rejected`, `Rejected`, `Developer Rejected`, `Waiting for Review`, `Invalid Binary` mode
+    if edit_app_store_version
+      puts "Edit App Store Version: #{edit_app_store_version.version_string}"
+    else
+      puts "No edit version found"
+    end
+    
+    latest_app_store_version = app.get_latest_app_store_version # the version that's the latest one
+    if latest_app_store_version
+      puts "Latest App Store Version: #{latest_app_store_version.version_string}"
+    else
+      puts "No latest version found"
+    end
+    
+    pending_release_app_store_version = app.get_pending_release_app_store_version # the version that's in `Pending Developer Release` or `Pending Apple Release` mode
+    if pending_release_app_store_version
+      puts "Pending Release App Store Version: #{pending_release_app_store_version.version_string}"
+    else
+      puts "No pending release version found"
+    end
+   
+    in_review_app_store_version = app.get_in_review_app_store_version # the version that is in `In Review` mode
+    if in_review_app_store_version
+      puts "In Review App Store Version: #{in_review_app_store_version.version_string}"
+    else
+      puts "No in review version found"
+    end
+
+
+
+  end
+
+
 end
