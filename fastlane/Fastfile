@@ -293,7 +293,7 @@ platform :ios do
         export_compliance_available_on_french_store: false
       },
       release_notes: {
-        'en-GB' => "Updating words to master to finish year 6"
+        'en-GB' => "Updating words"
       },
     )
   end

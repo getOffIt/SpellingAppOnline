@@ -41,6 +41,34 @@ public struct WordsData {
         self.yearWordSection = tempSections
     }
     
+    let wordsNotMastered1 = [
+      "nuisance",
+      "privilege",
+      "restaurant",
+      "foreign",
+      "government",
+      "correspond",
+      "exaggerate",
+      "amateurish",
+      "especially",
+      "accommodation",
+      "preconception",
+      "convenience"
+      ]
+    let wordsNotMastered2 = [
+    "existence",
+    "prejudice",
+    "conscious",
+    "marvellous",
+    "available",
+    "awkward",
+    "curiosity",
+    "secretary",
+    "aloud",
+    "allowed",
+    "complement",
+    "compliment"
+  ]
     
     let wordsNotMastered = [
       "nuisance",
