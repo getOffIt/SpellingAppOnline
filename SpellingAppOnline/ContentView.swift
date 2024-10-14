@@ -83,7 +83,7 @@ struct ContentView: View {
                     FullTestSequence(spellingTestMetadata: testLeo)
                         .tabItem { Image(systemName: "4.circle"); Text(RemoteConfigManager.shared.leoTabItemText) }.tag(3)
                     FullTestSequence(spellingTestMetadata: testYear6)
-                        .tabItem { Image(systemName: "6.circle"); Text("Year 6 Final") }.tag(3)
+                        .tabItem { Image(systemName: "6.circle"); Text("Year 6 Final") }.tag(4)
 //                    FullTestSequence(spellingTestMetadata: testYear5)
 //                        .tabItem { Image(systemName: "5.circle"); Text("Year 5 All") }.tag(4)
                     if RemoteConfigManager.shared.yearViewToggle {
