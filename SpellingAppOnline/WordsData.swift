@@ -42,19 +42,18 @@ public struct WordsData {
     }
     
     let wordsNotMastered1 = [
-      "nuisance",
-      "privilege",
-      "restaurant",
-      "foreign",
-      "government",
-      "correspond",
-      "exaggerate",
-      "amateurish",
-      "especially",
-      "accommodation",
-      "preconception",
-      "convenience"
+     "immediately",
+     "convenience",
+     "conscious",
+     "instantaneous",
+     "mischievous",
+     "amateur",
+     "available",
+     "awkward",
+     "nuisance",
+     "amateurish"
       ]
+    
     let wordsNotMastered2 = [
     "existence",
     "prejudice",

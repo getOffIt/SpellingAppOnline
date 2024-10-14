@@ -19,7 +19,6 @@ struct ContentView: View {
     @State private var resultsTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     @State private var learningTest = SpellingTestMetadata(questions: RemoteConfigManager.shared.firsttabItemWordList)
     @State private var wordsNotMastered = SpellingTestMetadata(questions: WordsData().wordsNotMastered1)
-    @State private var wordsNotMastered2 = SpellingTestMetadata(questions: WordsData().wordsNotMastered2)
     
     private var enableTabBarForDebug = false
     @State private var testStatusResultsDebug = TestStatus.reviewing
@@ -76,16 +75,14 @@ struct ContentView: View {
                 TabView(selection: $tabSelection.selectedTab) {
                     FullTestSequence(spellingTestMetadata: wordsNotMastered)
                         .tabItem { Image(systemName: "1.circle"); Text("last-1") }.tag(0)
-                    FullTestSequence(spellingTestMetadata: wordsNotMastered2)
-                            .tabItem { Image(systemName: "2.circle"); Text("last-2") }.tag(1)
                     UnoTestView(spellingTestMetadata: wordsNotMastered)
-                        .tabItem { Image(systemName: "3.circle"); Text("Uno") }.tag(2)
+                        .tabItem { Image(systemName: "3.circle"); Text("Uno") }.tag(1)
                     FullTestSequence(spellingTestMetadata: testLeo)
-                        .tabItem { Image(systemName: "4.circle"); Text(RemoteConfigManager.shared.leoTabItemText) }.tag(3)
+                        .tabItem { Image(systemName: "4.circle"); Text(RemoteConfigManager.shared.leoTabItemText) }.tag(2)
                     FullTestSequence(spellingTestMetadata: testYear6)
-                        .tabItem { Image(systemName: "6.circle"); Text("Year 6 Final") }.tag(4)
-//                    FullTestSequence(spellingTestMetadata: testYear5)
-//                        .tabItem { Image(systemName: "5.circle"); Text("Year 5 All") }.tag(4)
+                        .tabItem { Image(systemName: "6.circle"); Text("Year 6 Final") }.tag(3)
+                    FullTestSequence(spellingTestMetadata: testYear5)
+                        .tabItem { Image(systemName: "5.circle"); Text("Year 5 All") }.tag(4)
                     if RemoteConfigManager.shared.yearViewToggle {
                         YearViewProgress()
                             .tabItem { Image(systemName: "3.circle"); Text("Progress") }.tag(5)
