@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>items</key>
-    <array>
-        <dict>
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+      <dict>
+        <key>items</key>
+        <array>
+          <dict>
             <key>assets</key>
             <array>
                 <dict>
@@ -24,8 +24,8 @@
                 <string>software</string>
                 <key>title</key>
                 <string>Spell Mate</string> <!-- Replace with your app's name -->
-            </dict>
+              </dict>
+          </dict>
+        </array>
         </dict>
-    </array>
-</dict>
-</plist>
+      </plist>
