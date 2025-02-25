@@ -42,13 +42,23 @@ public struct WordsData {
     }
     
     let wordsNotMasteredYr6 = [
-   "obstinate",
-"secretary",
+   "desperate",
+   "restaurant",
+   "exaggerate",
+   "excellent",
+   "convenience",
+   "existence",
+   "instantaneous",
+   "available",
    "ascent",
    "assent",
    "complement",
-   "compliment"
-      ]
+   "compliment",
+   "descent",
+   "dissent",
+   "desert",
+   "dessert"
+    ]
     
     let wordsNotMasteredYr5 = [
    "practice",
