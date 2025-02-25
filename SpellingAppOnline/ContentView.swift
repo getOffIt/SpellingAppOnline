@@ -19,7 +19,7 @@ struct ContentView: View {
     @State private var resultsTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     @State private var learningTest = SpellingTestMetadata(questions: RemoteConfigManager.shared.firsttabItemWordList)
     @State private var wordsNotMastered = SpellingTestMetadata(questions: WordsData().wordsNotMasteredYr5)
-    @State private var wordsNotMasteredYr5 = SpellingTestMetadata(questions: WordsData().wordsNotMasteredYr5)
+    @State private var wordsNotMasteredLeo = SpellingTestMetadata(questions: WordsData().wordsNotMasteredLeo)
     @State private var wordsNotMasteredYr6 = SpellingTestMetadata(questions: WordsData().wordsNotMasteredYr6)
     
     private var enableTabBarForDebug = false
@@ -75,11 +75,11 @@ struct ContentView: View {
         else {
             if RemoteConfigManager.shared.introduceTabBar {
                 TabView(selection: $tabSelection.selectedTab) {
-                    FullTestSequence(spellingTestMetadata: wordsNotMasteredYr5)
-                        .tabItem { Image(systemName: "1.circle"); Text("Yr5") }.tag(0)
+                    FullTestSequence(spellingTestMetadata: wordsNotMasteredLeo)
+                        .tabItem { Image(systemName: "1.circle"); Text("Leo") }.tag(0)
                     FullTestSequence(spellingTestMetadata: wordsNotMasteredYr6)
                         .tabItem { Image(systemName: "2.circle"); Text("Yr6") }.tag(1)
-                    UnoTestView(spellingTestMetadata: wordsNotMasteredYr5)
+                    UnoTestView(spellingTestMetadata: wordsNotMasteredLeo)
                         .tabItem { Image(systemName: "3.circle"); Text("Uno") }.tag(2)
                     FullTestSequence(spellingTestMetadata: testYear6)
                         .tabItem { Image(systemName: "4.circle"); Text("Year 6 Final") }.tag(3)
