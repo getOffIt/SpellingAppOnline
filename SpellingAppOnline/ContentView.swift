@@ -19,7 +19,7 @@ struct ContentView: View {
     @State private var resultsTest = SpellingTestMetadata(questions: WordsData().testDataShort)
     @State private var learningTest = SpellingTestMetadata(questions: RemoteConfigManager.shared.firsttabItemWordList)
     @State private var wordsNotMastered = SpellingTestMetadata(questions: WordsData().wordsNotMasteredYr5)
-    @State private var wordsNotMasteredLeo = SpellingTestMetadata(questions: WordsData().wordsNotMasteredLeo)
+    @State private var wordsNotMasteredLeo = SpellingTestMetadata(questions: WordsData().wordsNotMasteredLeo2)
     @State private var wordsNotMasteredYr6 = SpellingTestMetadata(questions: WordsData().wordsNotMasteredYr6)
     
     private var enableTabBarForDebug = false

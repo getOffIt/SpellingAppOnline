@@ -54,6 +54,12 @@ public struct WordsData {
    "going"
    ]
     
+    let wordsNotMasteredLeo2 = [
+   "caring",
+   "hating",
+   "hiking"
+   ]
+    
     let wordsNotMasteredYr5 = [
    "practice",
    "practise",
