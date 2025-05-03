@@ -59,6 +59,23 @@ public struct WordsData {
    "hating",
    "hiking"
    ]
+    let wordsLeoLy1 = [
+        "actually", "clearly", "finally"
+   ]
+   
+    let wordsLeoLy2 = [
+        "friendly", "kindly", "madly"
+   ]
+    
+    let wordsLeoLy3 = [
+        "poorly", "quickly", "safely", "suddenly"
+   ]
+    
+    let wordsLeoLy4 = [
+   "caring",
+   "hating",
+   "hiking"
+   ]
     
     let wordsNotMasteredYr5 = [
    "practice",

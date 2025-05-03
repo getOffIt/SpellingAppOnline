@@ -20,6 +20,10 @@ struct ContentView: View {
     @State private var learningTest = SpellingTestMetadata(questions: RemoteConfigManager.shared.firsttabItemWordList)
     @State private var wordsNotMastered = SpellingTestMetadata(questions: WordsData().wordsNotMasteredYr5)
     @State private var wordsNotMasteredLeo = SpellingTestMetadata(questions: WordsData().wordsNotMasteredLeo2)
+    @State private var wordsLeoLy1 = SpellingTestMetadata(questions: WordsData().wordsLeoLy1)
+    @State private var wordsLeoLy2 = SpellingTestMetadata(questions: WordsData().wordsLeoLy2)
+    @State private var wordsLeoLy3 = SpellingTestMetadata(questions: WordsData().wordsLeoLy3)
+
     @State private var wordsNotMasteredYr6 = SpellingTestMetadata(questions: WordsData().wordsNotMasteredYr6)
     
     private var enableTabBarForDebug = false
@@ -75,12 +79,12 @@ struct ContentView: View {
         else {
             if RemoteConfigManager.shared.introduceTabBar {
                 TabView(selection: $tabSelection.selectedTab) {
-                    FullTestSequence(spellingTestMetadata: wordsNotMasteredLeo)
-                        .tabItem { Image(systemName: "1.circle"); Text("Leo") }.tag(0)
-                    FullTestSequence(spellingTestMetadata: wordsNotMasteredYr6)
-                        .tabItem { Image(systemName: "2.circle"); Text("Yr6") }.tag(1)
-                    UnoTestView(spellingTestMetadata: wordsNotMasteredLeo)
-                        .tabItem { Image(systemName: "3.circle"); Text("Uno") }.tag(2)
+                    FullTestSequence(spellingTestMetadata: wordsLeoLy1)
+                        .tabItem { Image(systemName: "1.circle"); Text("Ly1") }.tag(0)
+                    FullTestSequence(spellingTestMetadata: wordsLeoLy2)
+                        .tabItem { Image(systemName: "2.circle"); Text("Ly2") }.tag(1)
+                    FullTestSequence(spellingTestMetadata: wordsLeoLy3)
+                        .tabItem { Image(systemName: "3.circle"); Text("Ly3") }.tag(2)
                     FullTestSequence(spellingTestMetadata: testYear6)
                         .tabItem { Image(systemName: "4.circle"); Text("Year 6 Final") }.tag(3)
                     FullTestSequence(spellingTestMetadata: testYear5)
