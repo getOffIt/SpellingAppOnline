@@ -22,7 +22,7 @@ platform :ios do
 
   desc "Just build a dev build, no signing or upload"
   lane :justbuildDevelopmentbuild do
-    xcversion(version: "16.3")
+    # xcversion(version: "16.3")
     fetchDistributionCertificatesAndProfiles
     match(type: "development")
     build_app(scheme: "SpellingAppOnline",
@@ -168,7 +168,7 @@ platform :ios do
 
   desc "setup xcode version"
   lane :setup_xcode_version do
-    xcversion(version: "16.3")  # Ensure you have this version installed
+    # xcversion(version: "16.3")  # Ensure you have this version installed
   end
   
   desc "Setup App Store Connect connection"
@@ -368,7 +368,7 @@ platform :ios do
 
   desc "run the screenshot code"
   lane :snapshotlane do
-    xcversion(version: "16.3")  # Ensure you have this version installed
+    # xcversion(version: "16.3")  # Ensure you have this version installed
     match(
       type: "development",
       verbose: true)  # Fetch distribution certificates and profiles
@@ -388,7 +388,7 @@ platform :ios do
 
   desc "increment build number +1 based on test flight latest number"
   lane :incrementBuildNumberDynamically do
-    xcversion(version: "16.3")  # Ensure you have this version installed
+    # xcversion(version: "16.3")  # Ensure you have this version installed
     match(
       type: "appstore",
       verbose: true)  # Fetch distribution certificates and profiles
@@ -412,7 +412,7 @@ platform :ios do
 
   desc "reset my build number to current version"
   lane :fixbuildnumbertocurrentversion do
-    xcversion(version: "16.3")  # Ensure you have this version installed
+    # xcversion(version: "16.3")  # Ensure you have this version installed
     match(
       type: "appstore",
       verbose: true)  # Fetch distribution certificates and profiles
