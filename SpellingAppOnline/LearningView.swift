@@ -44,7 +44,9 @@ struct LearningView: View {
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(backgroundColor) // Adaptive background
                         )
-                        .foregroundColor(.primary)
+                        .foregroundColor(Color.black)
+                        .font(.body)
+                        .fontWeight(.regular)
                         .shadow(radius: 5)
                         .cornerRadius(10)
                         .keyboardType(.alphabet)
@@ -83,6 +85,7 @@ struct LearningView: View {
     }
     
     private var backgroundColor: Color {
+        return Color.white
         if colorScheme == .dark {
             return Color.black.opacity(0.4)
         } else {

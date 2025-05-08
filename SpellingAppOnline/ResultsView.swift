@@ -144,12 +144,16 @@ struct ResultsView: View {
                                 HStack {
                                     Text("\(index + 1). \(question)")
                                         .foregroundColor(.white)
+                                        .font(.body)
+                                        .fontWeight(.regular)
                                     Spacer()
                                 }
                                 HStack {
                                     Text(spellingTestMetadata.answers[index])
                                         .frame(width: 100, alignment: .center)
                                         .foregroundColor(.white)
+                                        .font(.body)
+                                        .fontWeight(.regular)
                                     Spacer()
                                 }
                                 HStack {

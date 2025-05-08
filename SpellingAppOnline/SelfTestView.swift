@@ -64,6 +64,8 @@ struct SelfTestView: View {
                     
                     TextField("", text: $typedWord, prompt: Text("Type word").foregroundStyle(.gray))
                         .foregroundColor(.black)
+                        .font(.body)
+                        .fontWeight(.regular)
                         .padding()
                         .background(Color.white)
                         .cornerRadius(10)
